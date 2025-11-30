@@ -83,10 +83,10 @@ text_color_dark = "#e0e0e0"                        # Default is #EEE
 # Giscus comments settings
 [giscus]
   enable = true
-  repo = "darrenzheng24/darrenzheng24.github.io"
-  repoId = "R_kgDOO8yaKw"
-  category = "Comments"
-  categoryId = "DIC_kwDOO8yaK84CwB5F"
+  data-repo="darrenzheng24/darrenzheng24.github.io"
+  data-repo-id="R_kgDOQfuVOA"
+  data-category="Comments"
+  data-category-id="DIC_kwDOQfuVOM4CzNmJ"
   mapping = "pathname"
   strict = "1"
   reactionsEnabled = "1"

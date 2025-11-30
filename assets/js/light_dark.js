@@ -44,9 +44,9 @@ function loadGiscus() {
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
     script.setAttribute("data-repo", "darrenzheng24/darrenzheng24.github.io");
-    script.setAttribute("data-repo-id", "R_kgDOO8yaKw");
+    script.setAttribute("data-repo-id", "R_kgDOQfuVOA");
     script.setAttribute("data-category", "Comments");
-    script.setAttribute("data-category-id", "DIC_kwDOO8yaK84CwB5F");
+    script.setAttribute("data-category-id", "DIC_kwDOQfuVOM4CzNmJ");
     script.setAttribute("data-mapping", "pathname");
     script.setAttribute("data-strict", "1");
     script.setAttribute("data-reactions-enabled", "1");
