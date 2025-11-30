@@ -1,0 +1,101 @@
+# Params Settings
+
+# Used for sidebar
+brand = "Darren Zheng"
+sidebar_description = "Personal Website"
+# Used for search indices
+description = "Greetings, welcome to the personal site of Darren Zheng (he/him)! I'm a recent C'25 graduate with a B.A. in Mathematics from the University of Pennsylvania."
+dark_mode = false
+brand_image = "/images/profile-professional.jpg"    # Path to the image shown in the sidebar
+# remote_brand_image = 'https://github.com/USERNAME.png' # Path to a remote file
+# Overwriting layouts/partial/head/head.html. keep below for meta.html
+favicon = "/favicons/favicon.ico"             # Path to favicon (defaults to favicon.png)
+
+# Title for RSS Feed
+rssTitle = "Darren Zheng's Blog"
+
+# Show content from your existing `content/post/` section on the front page
+front_page_content = ["post"]
+
+# Hide table of contents (optional)
+hideToc = false
+
+# Menu configuration
+menu = [
+  {Name = "Home", URL = "/", HasChildren = false},
+  {Name = "About", URL = "/about/", HasChildren = false},
+  {Name = "Projects", URL = "/projects/", HasChildren = false},
+  {Name = "Posts", URL = "/post/", HasChildren = true, Limit = 5},
+]
+
+# Social links (comment out any you don't use)
+email_url = "mailto://dzheng24@sas.upenn.edu"
+github_url = "https://github.com/darrenzheng24"
+linkedin_url = "https://www.linkedin.com/in/darrenzheng24/"
+
+# RSS configuration
+rss_icon = true
+rss_section = "post"
+
+# Hex colors for your sidebar
+moon_sun_background_color = "#515151"   # Default is #515151
+moon_sun_color = "#F0F1C5"                 # Default is #FFF
+sidebar_a_color = "#F0F1C5"                # Default is #FFF
+sidebar_bg_color = "#3E5641"            # Default is #202020
+sidebar_h1_color = "#F0F1C5"               # Default is #FFF
+sidebar_img_border_color = "#6a994e"    # Default is #515151
+sidebar_p_color = "#F0F1C5"             # Default is #909090
+sidebar_socials_color = "#F0F1C5"          # Default is #FFF
+
+# Hex colors for your content in light mode
+code_color = "#000"                     # Default is #000
+code_background_color = "#E5E5E5"       # Default is #E5E5E5
+code_block_color = "#FFF"               # Default is #FFF
+code_block_background_color = "#272822" # Default is #272822
+content_bg_color = "#F2F1EB"            # Default is #FAF9F6
+date_color = "#515151"                  # Default is #515151
+link_color = "#268BD2"                  # Default is #268BD2
+list_color = "#222"                  # Default is #5A5A5A
+post_title_color = "#1E1E1E"            # Default is #303030
+table_border_color = "#E5E5E5"          # Default is #E5E5E5
+table_stripe_color = "#F9F9F9"          # Default is #F9F9F9
+text_color = "#222"                     # Default is #222
+
+# Hex colors for your content in dark mode
+code_color_dark = "#FFD166"                        # Default is #FFF
+code_background_color_dark = "#515151"          # Default is #515151
+code_block_color_dark = "#FFF"                  # Default is #FFF
+code_block_background_color_dark = "#272822"    # Default is #272822
+content_bg_color_dark = "#323339"               # Default is #121212
+date_color_dark = "#f0ececff"                     # Default is #9A9A9A
+link_color_dark = "#3A86FF"                     # Default is #268BD2
+list_color_dark = "#e0e0e0"                     # Default is #9D9D9D
+post_title_color_dark = "#FFA500"               # Default is #DBE2E9
+table_border_color_dark = "#515151"             # Default is #515151
+table_stripe_color_dark = "#202020"             # Default is #202020
+text_color_dark = "#e0e0e0"                        # Default is #EEE
+
+# More RSS settings
+[author]
+  email = 'dzheng24@sas.upenn.edu'
+  name = 'Darren Zheng'
+
+# Giscus comments settings
+[giscus]
+  enable = true
+  repo = "darrenzheng24/darrenzheng24.github.io"
+  repoId = "R_kgDOO8yaKw"
+  category = "Comments"
+  categoryId = "DIC_kwDOO8yaK84CwB5F"
+  mapping = "pathname"
+  strict = "1"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "top"
+  theme = "preferred_color_scheme" # Automatically uses catppuccin_latte for light and catppuccin_frappe for dark
+  data-loading = "lazy"
+  lang = "en"
+
+# SEO and social sharing
+# og_image = ""                       # Path to social icon
+# publisher_icon = ""                 # Path to publisher icon

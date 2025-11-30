@@ -1,0 +1,116 @@
+/* Components - Reusable UI components */
+
+/* From uiverse.io by @satyamchaudharydev */
+/* removing default style of button */
+#sidebar-search-form button {
+	border: none;
+	background: none;
+	color: #8b8ba7;
+}
+/* styling of whole input container */
+#sidebar-search-form {
+	--timing: 0.3s;
+	--width-of-input: 100%;
+	--height-of-input: 40px;
+	--border-height: 2px;
+	--input-bg: #fff;
+	--border-color: #2f2ee9;
+	--border-radius: 30px;
+	--after-border-radius: 1px;
+	position: relative;
+	width: var(--width-of-input);
+	height: var(--height-of-input);
+	display: flex;
+	align-items: center;
+	padding-inline: 0.8em;
+	border-radius: var(--border-radius);
+	transition: border-radius 0.5s ease;
+	background: var(--input-bg, #fff);
+	margin-left: auto;
+	margin-right: auto;
+}
+/* styling of Input */
+#sidebar-search-input {
+	font-size: 0.9rem;
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	padding-inline: 0.5em;
+	padding-block: 0.7em;
+	border: none;
+}
+/* styling of animated border */
+#sidebar-search-form:before {
+	content: "";
+	position: absolute;
+	background: var(--border-color);
+	transform: scaleX(0);
+	transform-origin: center;
+	width: 100%;
+	height: var(--border-height);
+	left: 0;
+	bottom: 0;
+	border-radius: 1px;
+	transition: transform var(--timing) ease;
+}
+/* Hover on Input */
+#sidebar-search-form:focus-within {
+	border-radius: var(--after-border-radius);
+}
+#sidebar-search-input:focus {
+	outline: none;
+}
+/* here is code of animated border */
+#sidebar-search-form:focus-within:before {
+	transform: scale(1);
+}
+/* sizing svg icons and button */
+#sidebar-search-form button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	/* match form height */
+	height: 40px;
+	/* ensures consistent sizing */
+}
+#sidebar-search-form svg {
+	margin-top: 3px;
+	/* remove the nudge */
+	width: 20px;
+	/* or larger if you want */
+	height: 20px;
+}
+
+/* DRP (Details element) styling */
+.DRP > summary {
+	box-sizing: border-box;
+	background-color: #D3E298;
+	border-radius: 10px;
+	padding-left: 10px;
+}
+
+.DRP[open] > summary {
+	border-radius: 10px 10px 0 0;
+	border-bottom: 1px solid #1E1E1E;
+}
+
+.DRP {
+	border: 1px solid #1E1E1E;
+	border-radius: 10px;
+}
+
+/* sidebar toggle styling and logic */
+.btn-sidebar-toggle {
+	height: 40px;
+	width: 40px;
+	padding: 0px;
+	margin: 1em;
+	padding-inline: 0px;
+	padding-block: 0px;
+	visibility: visible;
+	cursor: pointer;
+	border-radius: 0.5rem;
+	border:none;
+	background-color: #F2F1EB;
+}

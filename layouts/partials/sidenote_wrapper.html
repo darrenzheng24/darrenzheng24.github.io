@@ -1,0 +1,20 @@
+{{ $sidenotes := findRE "<span class=\"sidenote-content\">([\\s\\S]*?)</span>" .Content }}
+{{ if $sidenotes }}
+  <h4 style="margin-bottom: 0; margin-top: 0;">Sidenotes</h4>
+{{ end }}
+<div class="sidenote-wrapper">
+  <div id="sidenote-list">
+    {{ $index := -1 }}
+    {{ range $sidenotes }}
+      {{ $index = add $index 1 }}
+      <div class="sidenote-item" number="{{ $index }}">
+        {{ $imgSrc := findRE "src=\"([^\"]+)\"" . }}
+        {{ if $imgSrc }}
+          <img src="{{ index $imgSrc 0 | replaceRE "^src=\"|\"$" "" }}" alt="{{path.Base ( index $imgSrc 0 | replaceRE "^src=\"|\"$" "")}}" />
+        {{ end }}
+        {{ add $index 1 }}.
+        {{ . | replaceRE "<span class=\"sidenote-content\">|</span>|<img[^>]*>" "" }}
+      </div>
+    {{ end }}
+  </div>
+</div>

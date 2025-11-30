@@ -1,0 +1,53 @@
+{{- $imagePath := .Destination | safeURL -}}
+{{- $imageExt := path.Ext $imagePath | lower -}}
+{{- $isSVG := eq $imageExt ".svg" -}}
+{{- $imageResource := false -}}
+
+{{- /* Try to load image as Hugo resource from assets/ */ -}}
+{{- if not (hasPrefix $imagePath "http") -}}
+  {{- $imagePathClean := strings.TrimPrefix "/" $imagePath -}}
+  {{- $imagePathClean = strings.TrimPrefix "assets/" $imagePathClean -}}
+  {{- $imageResource = resources.Get $imagePathClean -}}
+  {{- if not $imageResource -}}
+    {{- $imageResource = resources.Get $imagePath -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and $imageResource (not $isSVG) -}}
+  {{- /* Process image through Hugo pipeline */ -}}
+  {{- $image := $imageResource -}}
+  {{- /* Resize to max 800px width for better performance, maintain aspect ratio */ -}}
+  {{- $image = $image | images.Filter (images.Resize "800x") -}}
+  {{- /* Create responsive srcset for different screen sizes */ -}}
+  {{- $imageSmall := $image | images.Filter (images.Resize "400x") -}}
+  {{- $imageMedium := $image | images.Filter (images.Resize "600x") -}}
+  {{- /* Fingerprint for cache busting */ -}}
+  {{- $image = $image | fingerprint -}}
+  {{- $imageSmall = $imageSmall | fingerprint -}}
+  {{- $imageMedium = $imageMedium | fingerprint -}}
+  {{- /* Get image dimensions for aspect ratio */ -}}
+  {{- $width := $image.Width -}}
+  {{- $height := $image.Height -}}
+  <img
+    src="{{ $image.RelPermalink }}"
+    srcset="{{ $imageSmall.RelPermalink }} 400w, {{ $imageMedium.RelPermalink }} 600w, {{ $image.RelPermalink }} 800w"
+    sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, 800px"
+    {{- with $width }} width="{{ . }}"{{ end -}}
+    {{- with $height }} height="{{ . }}"{{ end -}}
+    {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+    {{- with .Title }} title="{{ . }}"{{ end -}}
+    loading="lazy"
+    decoding="async"
+    class="data-zoomable"
+    style="max-width: 400px; width: 40%; height: auto; display: block; margin: 0 auto;">
+{{- else -}}
+  {{- /* Fallback for static images, external URLs, or SVG */ -}}
+  <img
+    src="{{ $imagePath }}"
+    {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+    {{- with .Title }} title="{{ . }}"{{ end -}}
+    loading="lazy"
+    decoding="async"
+    style="max-width: 400px; width: 40%; height: auto; display: block; margin: 0 auto;"
+    class="data-zoomable">
+{{- end -}}

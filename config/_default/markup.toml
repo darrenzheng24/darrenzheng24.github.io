@@ -1,0 +1,23 @@
+# Markdown Configuration
+[tableOfContents]
+  startLevel = 1
+  ordered = true
+  endLevel = 3
+[goldmark]
+  [goldmark.extensions.passthrough]
+    enable = true
+    [goldmark.extensions.passthrough.delimiters]
+      block = [['\[', '\]'], ['$$', '$$']]
+      inline = [['\(', '\)'], ['$', '$']]
+  [goldmark.extensions.extras]
+    [goldmark.extensions.extras.insert]
+      enable = true
+    [goldmark.extensions.extras.mark]
+      enable = true
+    [goldmark.extensions.extras.superscript]
+      enable = true
+  [goldmark.renderHooks]
+    [goldmark.renderHooks.image]
+      useEmbedded = 'fallback'
+    [goldmark.renderHooks.links]
+      useEmbedded = 'fallback'

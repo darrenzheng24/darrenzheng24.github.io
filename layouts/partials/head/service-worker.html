@@ -1,0 +1,21 @@
+{{/* Service Worker Registration */}}
+{{- $js := resources.Get "service-worker.js" }}
+{{- $js = $js | js.Build | minify | fingerprint }}
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('{{ $js.RelPermalink }}').then(reg => {
+        reg.onupdatefound = () => {
+          const newWorker = reg.installing;
+          newWorker.onstatechange = () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              window.location.reload();
+            }
+          };
+        };
+      });
+    });
+  }
+</script>
+

@@ -1,0 +1,27 @@
+<!-- Three.js short code for linking JS code and rendering a scene -->
+<!-- Source: https://jorgemartinez.space/posts/tutorials/running-threejs-in-my-website/ -->
+
+{{ $version := .Get "version" }}
+{{ $id := .Get "id" }}
+{{ $src := .Get "src" }}
+
+<!-- Create a container for rendering the scene -->
+<div id="threejs-container-{{ $id }}" class="threejs-content"> 
+  <!-- Fallback message for non-JS environments -->
+  <noscript style="display: flex; align-items: center; justify-content: center; border: 3px dotted red; padding: 10px; min-height: 60px;">
+    <p style=" margin-bottom: 0px"> [Warning] Please enable JavaScript to view the 3D content. </p>
+  </noscript>
+</div>
+
+<!-- Import Three.js -->
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@{{ $version }}/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@{{ $version }}/examples/jsm/"
+    }
+  }
+</script>
+
+<!-- Load the script -->
+<script type="module" src="{{ $src }}"></script>

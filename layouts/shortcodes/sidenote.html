@@ -1,0 +1,11 @@
+<span class="sidenote">
+  <label class="sidenote-label" for="sidenote-{{ $.Ordinal }}">{{ .Get 0 }}</label>
+  <input class="sidenote-checkbox" type="checkbox" id="sidenote-{{ $.Ordinal }}"></input>
+  <span class="sidenote-content">
+    {{ if .Get 1 }}
+      <img src="{{ .Get 1 }}" alt="{{ path.Base (.Get 1) }}">
+    {{ end }}
+    {{ .Inner }}
+  </span>
+</span>
+

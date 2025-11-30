@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
+<head>
+  <!-- Essential Meta Tags -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO & Social Meta -->
+  {{ partial "head/meta.html" . }}
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="pOhtIhpRVNGTiZL6K0_anIjQwubhKvC2fHmLEa-oWjo" />
+  <!-- Bing Site Verification -->
+  <meta name="msvalidate.01" content="E72B402D2C2324B3B3627274D3FD1029" />
+
+  <!-- CSS stylesheets -->
+  {{ partial "head/stylesheets.html" . }}
+
+  <!-- Custom style tag for parameterized CSS -->
+  {{ partial "head/css.html" . }}
+
+  <!-- Favicon -->
+  {{ partial "head/favicon.html" . }}
+
+  <!-- External Dependencies -->
+  {{ partial "head/external-scripts.html" . }}
+
+  <!-- Service Worker -->
+  {{ partial "head/service-worker.html" . }}
+
+  <!-- Custom Scripts -->
+  {{ partial "head/scripts.html" . }}
+</head>

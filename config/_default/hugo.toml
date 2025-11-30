@@ -1,0 +1,29 @@
+# Default Settings
+baseURL = 'https://darrenzheng24.github.io/'
+languageCode = 'en-us'
+title = 'Darren Zheng | Mathematics Grad @ University of Pennsylvania' # Search index title for home page
+RelativeURLs = true
+CanonifyURLs = true
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+
+# Disable taxonomy pages for categories and tags
+disableKinds = ["taxonomy"]
+
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+# Taxonomies (required for Poison theme)
+[taxonomies]
+  series = 'series'
+  tags = 'tags'
+
+# Build Settings
+cleanDestinationDir = true

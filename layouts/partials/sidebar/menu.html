@@ -1,0 +1,34 @@
+<nav>
+  <form id="sidebar-search-form" action="/search/" method="GET" role="search" aria-label="Site search">
+    <button id="sidebar-search-button" type="submit" title="Sidebar Search Button" aria-label="Submit search">
+      <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <input type="text" name="q" id="sidebar-search-input" placeholder="Search..." aria-label="Search site content" />
+  </form>
+  <ul class="sidebar-nav" data-pagefind-ignore="all">
+    {{ range .Site.Params.menu }}
+      {{ $menu_item := . }}
+      {{ if not $menu_item.URL }}
+        <li class="heading">{{ $menu_item.Name }}</li>
+      {{ else }}
+        <li class="heading">
+          <a href="{{ $menu_item.URL }}">{{ $menu_item.Name }}</a>
+        </li>
+        {{ if $menu_item.HasChildren }}
+          <li class="sub-heading">{{ $menu_item.Pre }}</li>
+          {{ $section := site.GetPage $menu_item.URL }}
+          {{ if $section }}
+            {{ range first $menu_item.Limit $section.Pages }}
+              <li class="bullet">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ul>
+</nav>
+

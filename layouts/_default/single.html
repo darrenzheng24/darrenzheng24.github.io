@@ -1,0 +1,44 @@
+{{ define "main" -}}
+  <div class="post">
+    {{ partial "post/info.html" . }}
+    {{ $footnotes_tag:= `<div class="footnotes" role="doc-endnotes">` }}
+    {{ if strings.Contains .Content $footnotes_tag }}
+
+      <!-- split content and store the result into a variable -->
+      {{ $split := split .Content $footnotes_tag }}
+
+      <!-- render content before footnotes -->
+      {{ index $split 0 | safeHTML }}
+
+      <!--
+        Add template logic here!
+      -->
+      <hr />
+      <time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" }}" class="last-modified">
+        <strong> Last Modified: </strong>{{ .Lastmod.Format "January 2, 2006" }}
+      </time>
+      
+      <!-- render footnotes -->
+      {{ $footnotes_tag | safeHTML }}{{ index $split 1 | safeHTML }}
+
+    {{ else }}
+      {{ .Content }}
+      <hr />
+      <time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" }}" class="last-modified">
+        <strong> Last Modified: </strong>{{ .Lastmod.Format "January 2, 2006" }}
+      </time>
+    {{ end }}
+    {{ partial "post/navigation.html" . }}
+    {{ if and (ne .Title "About Page") (.Site.Params.giscus.enable) }}
+      {{ partial "post/comments.html" . }}
+    {{ end }}
+  </div>
+{{- end }}
+
+{{ define "sidebar" }}
+  {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+    {{ partial "table_of_contents.html" . }}
+  {{ end }}
+{{ end }}
+
+

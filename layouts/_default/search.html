@@ -1,0 +1,17 @@
+<html>
+  {{ partial "head/meta.html" . }}
+  {{ partial "head/head.html" . }}
+  <body>
+    <div class="wrapper">
+      {{ partial "sidebar/sidebar.html" . }}
+      <main class="content container">
+        <head>
+          {{ $js := resources.Get "js/search.js" | resources.Minify | resources.Fingerprint }}
+          <script type="module" src="{{ $js.RelPermalink }}" defer></script>
+        </head>
+        <h1 id="search-results-title">Search Results</h1>
+        <div id="search-results"></div>
+      </main>
+    </div>
+  </body>
+</html>

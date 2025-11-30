@@ -1,0 +1,6 @@
+{{ $src := .Get "src" }}
+<pdfjs-viewer-element 
+src="{{.Page.Permalink}}{{ $src }}" 
+viewer-path="/pdfjs-5.4.394-dist"
+iframe-title="pdfjs-viewer"
+style="width: 90%; height: 500px; margin-left: 5%; padding-top: 20px; padding-bottom: 20px;"></pdfjs-viewer-element>

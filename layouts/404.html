@@ -1,0 +1,11 @@
+{{ define "main" -}}
+  <div class="lead" style="text-align: left;">
+    <h1>404: Page not found</h1>
+    <p>Sorry, I've broken this URL, or it's pointing to something that doesn't exist.</p>
+    <ul >
+      <li style="margin-bottom: 10px;">If you believe this should be a valid page, try clearing your cache and reloading the page.</li>
+      <li style="margin-bottom: 10px;">Feel free to email me <a href="mailto:dzheng24@sas.upenn.edu">here</a> if you think a file is missing.</li>
+      <li style="margin-bottom: 10px;">Otherwise, <a href="{{ .Site.BaseURL }}">head back home</a> to try finding it again.</li>
+    </ul>
+  </div>
+{{- end }}

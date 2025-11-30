@@ -1,0 +1,23 @@
+<div class="sidebar-about" data-pagefind-ignore="all">
+  <div class="brand-image">
+    {{ if .Site.Params.remote_brand_image }}
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.Params.remote_brand_image }}" alt="{{ .Site.Params.brand | default "Site author" }} profile photo">
+      </a>
+    {{ else if .Site.Params.brand_image }}
+      <a href="{{ .Site.BaseURL }}">
+        <img src="{{ .Site.Params.brand_image }}" alt="{{ .Site.Params.brand | default "Site author" }} profile photo">
+      </a>
+    {{ end }}
+  </div>
+  <div class="brand-text">
+    {{ if .Site.Params.brand }}
+      <a href="{{ .Site.BaseURL }}">
+        <h2>{{ .Site.Params.brand }}</h2>
+      </a>
+    {{ end }}
+    <p class="lead">
+      {{ with .Site.Params.sidebar_description }}{{. | safeHTML}}{{end}}
+    </p>
+  </div>
+</div>

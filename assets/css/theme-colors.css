@@ -1,0 +1,38 @@
+/* Theme Colors and Color Variables */
+/* Color palette variables */
+:root {
+	--neon-pink: #ff6ec7;
+	--gold: #e8be33;
+}
+
+/* Dark theme heading styles */
+body.dark-theme .post h2,
+body.dark-theme .post h3 {
+	text-decoration: underline;
+	color: orange;
+}
+
+/* Light theme heading styles */
+.post h2,
+.post h3 {
+	text-decoration: underline;
+	color: #1E1E1E;
+}
+
+/* Dark theme reading time color override */
+body.dark-theme .reading-time {
+	color: #f0ecec;
+}
+
+/* Dark theme DRP summary styling */
+body.dark-theme .DRP > summary {
+	background-color: #3e5642;
+}
+
+/* Sidebar heading styling */
+.sidebar-about h2 {
+	color: var(--sidebar_h1_color);
+	font-size: 1.5rem;
+	font-family: "abril fatface", serif;
+	font-weight: 300;
+}

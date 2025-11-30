@@ -1,0 +1,69 @@
+/* Custom CSS - Layout and Spacing */
+
+.sidebar {
+	padding-top: 10px;
+	padding-bottom: 0px;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+/* Spacing adjustments for post metadata */
+ .reading-time {
+	 margin-left: 0.5rem;
+}
+ .post-date {
+	 margin-right: 0.5rem;
+}
+/* Limit content width for better readability */
+ .content {
+	 max-width: 48rem;
+}
+
+/* Spacing for search results */
+ .search-result {
+	margin-top: 1.2rem;
+}
+/* Customize scrollbar for content area */
+ .content.container::-webkit-scrollbar {
+	 width: 8px !important;
+}
+/*Modify the read-more-link and .seriesname to be inline */
+ .post-footer {
+	 display: flex;
+	 align-items: flex-start;
+	/* aligns children to the top of the container */
+	 justify-content: space-between;
+	/* Push elements to opposite ends */
+}
+ .post-footer .read-more-link, .post-footer .seriesname {
+	 margin: 0;
+}
+.post {
+	margin-bottom: 60px;
+}
+
+.container.sidebar-sticky {
+	margin: 0 auto;
+}
+
+/* adjust the overflow of post list */
+.entries .title {
+	white-space: wrap;
+	display: inline-block;
+	max-inline-size: 70%;
+}
+
+/* Remove top margin from the first h2 in a post */
+.post > h2:first-of-type {
+	margin-top: 0;
+}
+
+/* Adjust spacing for footer and comments */
+.footer > p {
+	margin-bottom: 0.5rem;
+}
+
+/* Remove part of the top margin from comments section */
+.comments {
+	margin-top: 0px;
+}

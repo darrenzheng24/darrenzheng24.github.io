@@ -1,0 +1,26 @@
+{{ $base_css := slice
+    "css/poole.css"
+    "css/codeblock.css"
+    "css/hyde.css"
+    "css/poison.css"
+    "css/fonts.css"
+    "css/lib/katex.css"
+    "css/tabs.css" }}
+
+{{ $css_bundle := slice }}
+{{ $added_names := slice }}
+{{ range $base_css }}
+  {{ with resources.Get . }}
+    {{ $css_bundle = $css_bundle | append . }}
+    {{ $added_names = $added_names | append .Name }}
+  {{ end }}
+{{ end }}
+
+{{ range resources.Match "css/*.css" }}
+  {{ if not (in $added_names .Name) }}
+    {{ $css_bundle = $css_bundle | append . }}
+  {{ end }}
+{{ end }}
+{{ $css_bundle := $css_bundle | resources.Concat "css/bundle.css" | minify | fingerprint }}
+
+<link type="text/css" rel="stylesheet" href="{{ $css_bundle.RelPermalink }}">

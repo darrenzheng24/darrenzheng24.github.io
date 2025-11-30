@@ -1,0 +1,6 @@
+[[imports]]
+  path = "github.com/lukeorth/poison"
+[[imports]]
+  path = "github.com/KKKZOZ/hugo-admonitions"
+[[imports]]
+    path = "github.com/gohugoio/hugo-mod-jslibs/instantpage"

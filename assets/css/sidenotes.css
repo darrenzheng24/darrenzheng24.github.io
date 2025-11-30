@@ -1,0 +1,130 @@
+/* Sidenotes and Inline Notes Styling */
+
+/* Sidenote styling */
+.sidenote-wrapper {
+	flex: 1;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+/* Sidenote label and hover effects */
+.sidenote:hover {
+	background-color: var(--neon-pink);
+}
+
+.sidenote:hover .sidenote-label {
+	text-decoration: none;
+}
+
+.sidenote:hover .sidenote-content {
+	border: dashed 3px var(--neon-pink);
+}
+
+.sidenote {
+	border-bottom: dashed 3px var(--neon-pink);
+}
+
+.sidenote-checkbox {
+	display: none;
+}
+
+.sidenote-content {
+	display: none;
+}
+
+.sidenote-item.visible {
+	display: block;
+	color: var(--text-color)
+}
+
+.sidenote-item {
+	position: absolute;
+	display: none;
+}
+
+/* Sidenote inline only - responsive styles */
+@media screen and (max-width: 100em) {
+	.sidenote-content {
+		position: static;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 100%;
+		display: none;
+		padding: 20px;
+		overflow-x: auto;
+	}
+
+	.sidenote-checkbox:checked ~ .sidenote-content {
+		display: block;
+	}
+
+	.sidenote-item {
+		display: none !important;
+	}
+}
+
+/* Inline notes styling */
+.inline:hover {
+	background-color: var(--gold);
+}
+
+.inline:hover .inline-label {
+	text-decoration: none;
+}
+
+.inline .inline-content {
+	border: dashed 3px var(--gold);
+}
+
+.inline {
+	border-bottom: dashed 3px var(--gold);
+}
+
+.inline-checkbox {
+	display: none;
+}
+
+.inline-item {
+	position: absolute;
+	display: none;
+}
+
+.inline-content {
+	position: static;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	display: none;
+	padding: 20px;
+	overflow-x: auto;
+}
+
+.inline-checkbox:checked ~ .inline-content {
+	display: block;
+}
+
+.inline-item {
+	display: none !important;
+}
+
+/* Modify the scrollbar for sidenote and inline content */
+span.inline-content::-webkit-scrollbar {
+	width: 12px; /* width of the vertical scrollbar */
+	height: 12px; /* height of the horizontal scrollbar */
+}
+
+span.inline-content::-webkit-scrollbar-track {
+	background: #f1f1f1; /* color of the track */
+	border-radius: 10px;
+}
+
+span.inline-content::-webkit-scrollbar-thumb {
+	background: #888; /* color of the thumb */
+	border-radius: 10px;
+	border: 3px solid #f1f1f1; /* creates a margin around the thumb */
+}
+
+span.inline-content::-webkit-scrollbar-thumb:hover {
+	background: #555; /* color of the thumb on hover */
+}

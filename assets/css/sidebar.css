@@ -1,0 +1,55 @@
+/* Sidebar - Sidebar-specific styles */
+
+/* Centers non-rectangular images for sidebar */
+.sidebar-about img {
+	max-width: 100%;
+	display: block;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* Adds bullets for Recent under Sidebar */
+.sidebar-nav .bullet {
+	list-style-type: square;
+	margin-left: 1.5em;
+}
+
+.sidebar-nav {
+	margin-top: 1.5rem;
+}
+
+.light-dark {
+	text-align: left;
+}
+
+/* Sidebar toggle responsive styles */
+@media (min-width: 48em) {
+	.sidebar.toggled .btn-light-dark {
+		position: absolute;
+		left: 1.5rem;
+		top: 5rem;
+	}
+	.sidebar.toggled {
+		overflow-x: hidden;
+	}
+
+	.sidebar.toggled nav,
+	.sidebar.toggled .sidebar-about {
+		visibility: hidden;
+	}
+
+	.sidebar.toggled a,
+	.sidebar.toggled p.footnote {
+		display: none;
+	}
+
+	.sidebar.toggled {
+		width: 7rem;
+	}
+}
+
+@media (min-width: 76em) {
+	.sidebar.toggled {
+		margin-right: 11rem;
+	}
+}

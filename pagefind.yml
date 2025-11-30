@@ -1,0 +1,5 @@
+site: public
+output_subdir: pagefind
+# Exclude KaTeX from search indexing
+exclude_selectors:
+  - ".katex"

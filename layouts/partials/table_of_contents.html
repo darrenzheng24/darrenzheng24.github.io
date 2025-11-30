@@ -1,0 +1,7 @@
+<div class="article-toc {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
+  <details class="toc-wrapper">
+    <summary id="contents"></summary>
+    {{ .TableOfContents }}
+  </details>
+  {{ partial "sidenote_wrapper.html" . }}
+</div>

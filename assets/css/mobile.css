@@ -1,0 +1,118 @@
+/* Mobile-Specific Styles */
+
+/* Resize for smaller mobile screens */
+@media (max-width: 48em) {
+	.sidebar-about {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.sidebar-about .brand-image {
+		margin-right: 15px;
+	}
+
+	.sidebar-about img {
+		height: 140px;
+		width: 140px;
+	}
+
+	.sidebar-about h1 {
+		font-size: 1.2em;
+	}
+
+	.sidebar-about p {
+		font-size: 1em;
+	}
+
+	.sidebar-nav {
+		margin: 10px;
+		margin-bottom: 1em;
+	}
+
+	.sidebar-nav li {
+		display: inline-block;
+		margin: 0 10px;
+	}
+
+	.sidebar-nav li.bullet,
+	li.sub-heading {
+		display: none;
+	}
+
+	aside.sidebar a.social,
+	aside.sidebar p.footnote {
+		display: none;
+	}
+
+	/* Center and make sidebar sticky in mobile view */
+	aside.sidebar {
+		position: static;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		z-index: 100;
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.content,
+	.container,
+	footer {
+		margin-right: 0 !important;
+		padding-right: 20px !important;
+		max-width: 100% !important;
+		width: 100% !important;
+		box-sizing: border-box;
+	}
+
+	#sidebar-search-form {
+		--width-of-input: 75% !important;
+	}
+
+	/* Adjust posts list when on smaller screen */
+	.entries .post-list {
+		font-size: 0;
+	}
+
+	.entries .post-list::after {
+		content: attr(shortenedtime);
+		font-size: 1rem;
+	}
+
+	.entries .title {
+		white-space: nowrap;
+		overflow: hidden;
+		max-inline-size: 70%;
+	}
+}
+
+/* Larger screens */
+@media (min-width: 48em) {
+	footer {
+		display: none;
+	}
+
+	.content::-webkit-scrollbar-thumb {
+		background-color: rgb(200, 200, 200);
+		border-radius: 10px;
+	}
+
+	.content::-webkit-scrollbar-thumb:hover {
+		background-color: rgb(150, 150, 150);
+	}
+}
+
+/* sidebar toggle styling and logic for mobile*/
+@media (max-width: 48em) {
+	.sidebar.toggled nav,
+	.sidebar.toggled .sidebar-about {
+		display: none !important;
+	}
+	.btn-sidebar-toggle {
+		visibility: visible !important;
+	}
+}

@@ -1,0 +1,49 @@
+/* Table of Contents Styling */
+
+/* TOC container and title */
+#TableOfContents {
+	margin-left: 0px !important;
+}
+
+#contents {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.25;
+	color: var(--text-color);
+	margin: 1rem 0 .5rem 0;
+	text-rendering: optimizeLegibility;
+}
+
+summary:empty::marker {
+	content: none;
+	/* removes the marker entirely */
+}
+
+/* Collapsible TOC styling */
+.article-toc {
+	width: auto !important;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 85%;
+}
+
+.article-toc ol {
+	padding-left: 20px;
+}
+
+.article-toc ol li {
+	margin-bottom: 5px;
+}
+
+.toc-wrapper {
+	margin-bottom: 20px;
+	position: relative !important;
+	/* or just remove fixed */
+}
+
+/* Show TOC on larger screens */
+@media screen and (min-width: 90em) {
+	.article-toc {
+		display: flex !important;
+	}
+}

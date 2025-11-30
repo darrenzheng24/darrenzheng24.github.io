@@ -1,0 +1,82 @@
+/* Content Enhancements - Images, links, code blocks, and special features */
+
+/* Heading markers */
+.heading {
+	margin-top: 20px !important;
+}
+.heading::marker {
+	content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 3 16 16" fill="rgb(240, 241, 197)" width="24" height="24" transform="rotate(90)"><path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"/></svg>') " ";
+}
+
+/* Code Block Styling */
+pre {
+	overflow-x: auto;
+}
+.highlight {
+	margin-left: 0;
+	margin-right: 0;
+}
+.highlight figcaption span {
+	background-color: purple;
+	/* or a custom color */
+	color: #fff;
+	padding: 0.25em 0.5em;
+	border-radius: 3px;
+}
+
+/* Footnote image styling */
+.footnotes li img {
+	max-width: 50%;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footnotes li {
+	list-style-position: outside;
+}
+
+.footnotes li:has(img) {
+	list-style-position: outside;
+}
+
+/* Changed images display in footnotes */
+.footnotes img {
+	display: inline-block;
+}
+
+/* Add mail icon for links */
+.post a[href^="mailto:"]::after {
+	content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 -75 485.211 485.211"><path fill="RoyalBlue" d="M301.393,241.631L464.866,424.56H20.332l163.474-182.928l58.801,51.443L301.393,241.631z M462.174,60.651H23.027 l219.579,192.142L462.174,60.651z M324.225,221.67l160.986,180.151V80.792L324.225,221.67z M0,80.792v321.029L160.972,221.64 L0,80.792z"/></svg>') " ";
+	font-size: 1em;
+	margin-left: 0.25em;
+}
+
+/* Three.js animation container styling */
+.threejs-content > canvas {
+	width: 80% !important;
+	height: auto !important;
+	object-fit: contain;
+	display: block;
+	margin: auto;
+}
+
+/* No CSS message hidden if CSS loads */
+#no-css-message {
+	display: none;
+}
+
+/* Medium Zoom styles */
+.data-zoomable {
+	cursor: zoom-in;
+	transition: transform 0.3s ease;
+}
+
+.medium-zoom-overlay {
+	z-index: 999;
+}
+
+.medium-zoom-image {
+	cursor: zoom-out;
+	z-index: 1000;
+}

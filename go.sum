@@ -1,0 +1,13 @@
+github.com/KKKZOZ/hugo-admonitions v0.10.1 h1:ZJU157gve6JhmB5fHKWjwgRI80s+mFyCqASTkAHazLI=
+github.com/KKKZOZ/hugo-admonitions v0.10.1/go.mod h1:4PsJAsqo3mS3VzAtDLa8k0ds+CJQUWZhAo9kLi1NRlM=
+github.com/adityatelange/hugo-PaperMod v0.0.0-20250921135154-8e06a8ab4340 h1:R+2MMeFxCkq/oVd+sRbT47j9pvNDRyDpFz2XY8TXGVs=
+github.com/adityatelange/hugo-PaperMod v0.0.0-20250921135154-8e06a8ab4340/go.mod h1:HCHxNMKYdGafUYjVV3ICiAqznZK2yH0iI53jqcDFDdQ=
+github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1 h1:Aig+0MOPXiuQNZpnxOMS4uwUsnyq41JnQzGW4Gk3o7Y=
+github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1/go.mod h1:N4EUbbL7Cw4Yq+GHeK3MUSiOJQbzfuUFRyvBKvnVBR8=
+github.com/instantpage/instant.page v5.1.0+incompatible/go.mod h1:GXVDktwI+K4T9o5mcK2NYDqPFxAUrB9U9goR9oG1SaI=
+github.com/janraasch/hugo-bearblog v0.0.0-20250821143536-e43c252b8dde h1:Jz/iVz8mpFCXD+x1Tk903svu80nmJQ6sMwSrc+e83CY=
+github.com/janraasch/hugo-bearblog v0.0.0-20250821143536-e43c252b8dde/go.mod h1:qVJ3S3qhkRf6smf5f8vveeV/QX3ui8poHckF6Ykt9AU=
+github.com/lukeorth/poison v0.0.0-20240905132908-07485e85f024 h1:wJgYgCnf0vPFzcLWOTroGM23eq3iONBhAKMyAPMvSz8=
+github.com/lukeorth/poison v0.0.0-20240905132908-07485e85f024/go.mod h1:fYVpevZiA79ef8Q1DkUgg/MF53oy4mKFSFTnK+EeiO0=
+github.com/yihui/hugo-xmin v0.0.0-20250821032850-c871e5665f5e h1:BRhJUJ4i1NVkNwEKOsPJlFSLxKcMPrw/bpDhT2KzPjM=
+github.com/yihui/hugo-xmin v0.0.0-20250821032850-c871e5665f5e/go.mod h1:RiCR4psTF4iydlh4bR9BijKIHmivp7IeBaokx0CvzRA=

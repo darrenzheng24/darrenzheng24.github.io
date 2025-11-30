@@ -1,0 +1,8 @@
+# hello robots [^_^]
+# let's be friends <3
+# This code is taken from https://runtimeterror.dev/dynamic-robots-txt-hugo-external-data-sources/
+Sitemap: {{ .Site.BaseURL }}sitemap.xml
+User-agent: *
+Disallow:
+# except for these bots which are not friends:
+{{ partial "bad-robots.html" . }}

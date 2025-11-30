@@ -1,0 +1,31 @@
+/* Typography - Font and text styling */
+
+/* Katex font scaling override */
+.katex {
+	font-size: 1.1em;
+}
+
+/* Footnote styling */
+.footnote-ref::before {
+	content: "[";
+}
+.footnote-ref::after {
+	content: "]";
+}
+
+/* Controls base font size */
+html {
+	font-size: 18px;
+}
+
+.content.container {
+	font-size: 19px;
+}
+
+/* Adjust heading sizes in sidebar about section */
+.sidebar-about h1 {
+	font-size: 1.5em;
+}
+.lead {
+	font-size: 1em;
+}

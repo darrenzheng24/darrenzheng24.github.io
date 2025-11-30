@@ -1,0 +1,16 @@
+{{/* External third-party scripts and dependencies */}}
+{{/* PDF.js viewer web component */}}
+{{ if .HasShortcode "embedPDF" }}
+    <script defer type="module" src="https://cdn.skypack.dev/pdfjs-viewer-element" crossorigin="anonymous"></script>
+{{ end }}
+
+{{/* Simple Analytics - 100% privacy-first analytics */}}
+<script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js" crossorigin="anonymous"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+
+{{/* KaTeX CSS version 16.25*/}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css" integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js" integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ" crossorigin="anonymous"></script>
+
+{{/* Medium Zoom for image zooming */}}
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>

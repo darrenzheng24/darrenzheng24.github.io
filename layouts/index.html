@@ -1,0 +1,32 @@
+{{ define "main" -}}
+  <div class="posts">
+    {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
+      <article class="post">
+        {{ partial "post/info.html" . }}
+        {{ if or (.Site.Params.noSummary) (.Params.noSummary) }}
+          {{ .Content | truncate 500 }}
+        {{ else }}
+          <!-- controls the size of the default summmary on home page -->
+          {{ .Summary | truncate 500 }}
+        {{ end }}
+
+        <!-- Wrap read-more-link and seriesname in a container -->
+        <div class="post-footer">
+          {{ if .Truncated }}
+            <div class="read-more-link">
+              <a href="{{ .RelPermalink }}">Read More…</a>
+            </div>
+          {{ end }}
+          {{ $Site := .Site }}
+          {{ if .Params.series }}
+            <p class="seriesname">
+              Series: <a href="{{ $Site.BaseURL }}series/{{ .Params.series | urlize }}">{{ .Params.series }}</a>
+            </p>
+          {{ end }}
+        </div>
+      </article>
+    {{- end }}
+  </div>
+  {{ partial "pagination.html" . }}
+{{- end }}
