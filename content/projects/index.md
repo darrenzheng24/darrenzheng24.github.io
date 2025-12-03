@@ -77,7 +77,7 @@ Presentation: TBA
 
 **STAT 4770 - Statistical Programming in R:** EWS Detection using Topological Data Analysis  
 Report: [Final Report](class-projects/Final%20Report.pdf)  
-Presentation: [Slides]()   
+Presentation: [Slides](class-projects/Topological%20Data%20Analysis%20for%20Financial%20Markets.pdf)   
 Code: TBA
 
 ## Assorted Talks
