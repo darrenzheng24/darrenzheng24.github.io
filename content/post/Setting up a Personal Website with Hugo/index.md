@@ -147,6 +147,9 @@ Instead, as of November 2025, I've switched over to using [GitSync](https://gith
 
 By design, the static site served to the user by GitHub pages is a bundle of HTML, CSS, JavaScript, etc. This makes the problem of scheduling posts via Hugo's own [PublishDate](https://gohugo.io/methods/page/publishdate/#article) frontmatter parameter difficult. The workaround is to use a CRON job to trigger a rebuild of your website each day (I schedule mine for 1 AM EST). More details on the solution can be found in Mike Rhodes' [post](https://dx13.co.uk/articles/2023/04/16/scheduled-posts-hugo-gh-pages-actions/).
 
+## Columns in posts
+I used this [shortcode](https://github.com/McShelby/hugo-theme-relearn/issues/716#issuecomment-1894351244) borrows from the hugo-relearn theme.
+
 ## Mobile View + Sidebar-Toggle
 
 The standard view on mobile devices for the **Poison** theme causes the sidebar to cover up much of the content. Taking inspiration from [this github issue](https://github.com/lukeorth/poison/issues/165), we can use CSS media queries to change the sizing. You can see the customization for this and other features in my `assets/custom.css` file.

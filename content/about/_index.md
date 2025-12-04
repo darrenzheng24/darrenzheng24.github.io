@@ -13,15 +13,12 @@ Hello there :wave:! I'm Darren Zheng (he/him), a recent graduate from the Univer
 
 I hope to be able to write regularly, so long as life doesn't get too busy. On this website, you will mostly find more academic, technical discussion about problems and topics I find interesting. The purpose of this site is to help motivate me to write down my thoughts more often. Posts will mainly focus on mathematics, but dependent on my motivation, may include a collection of programming, computer science, physics, finance, and general puzzling. During my undergraduate studies, I encountered a wide variety of disciplines throughout my education, thanks to my peers and professors. Inevitably, my subjective opinions may seep into my writing, but I'll aim to keep it to a minimum. As time progresses, I hope to be able to strike the right balance. 
 
+<style>
+    .book-columns>:first-child { overflow-wrap: anywhere; padding-left: 0px !important; }
+    .book-columns>:last-child { display: flex; justify-content: center; align-items: center; }
+</style>
+{{< columns >}}
 ## Contact
-
-{{< raw >}}
-<img src="/images/lauder-picture.jpg"
-    alt="Lauder Photo of Darren Zheng"
-    class="data-zoomable"
-    style="float: right; max-width: 220px; margin-bottom: 0px"
-    id="lauder-photo">
-{{< /raw>}}
 Feel free to reach out to me through:
 - **Email**: [dzheng24@sas.upenn.edu](mailto:dzheng24@sas.upenn.edu) 
 - **GitHub**: [@darrenzheng24](https://github.com/darrenzheng24)
@@ -30,6 +27,15 @@ Feel free to reach out to me through:
 ## Resume + Curriculum Vitae
 - **Resume**: TBA
 - **CV**: TBA
+<--->
+{{< raw >}}
+<img src="/images/lauder-picture.jpg"
+    alt="Lauder Photo of Darren Zheng"
+    class="data-zoomable"
+    style="float: right; max-width: 220px; margin-bottom: 0px"
+    id="lauder-photo">
+{{< /raw>}}
+{{< /columns >}}
 
 ## About This Site
 

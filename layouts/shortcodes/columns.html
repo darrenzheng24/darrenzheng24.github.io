@@ -1,0 +1,17 @@
+<style>
+.flex{display:flex}
+.flex-auto{flex:auto}
+.flex-even{flex:1 1}
+.flex-wrap{flex-wrap:wrap}
+.book-columns>div{margin:1rem 0;min-width:10rem;padding:0 1rem}
+.markdown-inner>:first-child{margin-top:0}
+.markdown-inner>:last-child{margin-bottom:0}
+</style>
+
+<div class="book-columns flex flex-wrap">
+{{ range split .Inner "<--->" }}
+  <div class="flex-even markdown-inner">
+    {{ . | $.Page.RenderString }}
+  </div>
+{{ end }}
+</div>

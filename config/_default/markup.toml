@@ -21,3 +21,5 @@
       useEmbedded = 'fallback'
     [goldmark.renderHooks.links]
       useEmbedded = 'fallback'
+  [goldmark.renderer]
+    unsafe = true
