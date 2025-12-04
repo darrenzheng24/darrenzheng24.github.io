@@ -152,13 +152,15 @@ If we had a particular estimate, combining it with Proposition 15.3 would yield 
 ### The Missing Step
 
 In the early 2000's, Wolff (in $n=2$) & Erdoğan (for $n \geq 2$) proved the following.
+
 **Theorem 15.5** - For all $\frac{n-2}{2} \leq s < n$, $n \geq 2$, $\epsilon > 0$ and $\mu \in \mathcal{M}(\R^{n})$ with spt$\mu \subset B(0, 1)$, we have for $r > 1$
 $$\sigma(\mu)(r) \leq C(n, s, \epsilon)r^{\epsilon - \frac{n + 2s - 2}{4}}I_{s}(\mu)$$
 
 In the above bound, comparing the exponents, we get something along the lines of $\epsilon + \frac{n - 2s}{4} \leq \frac{1}{4} + \epsilon$. How do we know that this is sharp?[^3]
 
 ## Sketching How to Prove Wolff-Erdoğan in dimension 2
-We can prove an almost equivalent result.
+We can prove an almost equivalent result.  
+
 **Theorem 16.1** - For any $s \in [\frac{n-2}{2}, n]$, $n \geq 2$, $\epsilon > 0$ and every $\mu$ with support inside $B_{1}(0)$, if we have
 $$\mu(B_{q}(x)) \leq q^{s} \text{ for all } x \in \R^{n}, q > 0$$
 , then the spherical averages satisfy
