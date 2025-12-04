@@ -116,3 +116,11 @@
 		visibility: visible !important;
 	}
 }
+
+/* About page photo adjustments for mobile */
+@media (max-width: 48em) {
+	#about-photo {
+		float: none !important;
+		display: block !important;
+	}
+}

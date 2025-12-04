@@ -6,3 +6,4 @@ TO-DO List:
 4. [ ] Fix OpenGraph Image logic
 5. [ ] Medium Zoom Dark mode?
 6. [ ] books based on obsidian css
+7. [ ] Implement a better columns shortcode
