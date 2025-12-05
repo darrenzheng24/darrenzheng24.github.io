@@ -11,6 +11,9 @@ brand_image = "/images/profile-professional.jpg"    # Path to the image shown in
 # Overwriting layouts/partial/head/head.html. keep below for meta.html
 favicon = "/favicons/favicon.ico"             # Path to favicon (defaults to favicon.png)
 
+#Text on home page (Can write in markdown & multiline)
+intro_text = """Welcome to my website :grinning:! I'm Darren Zheng (he/him), a recent graduate from the University of Pennsylvania C'25 with a B.A. in Mathematics. For more about me and this website, see my [About Me](/about) page and check out the sidebar links. Below are some of my recent blog posts."""
+
 # Title for RSS Feed
 rssTitle = "Darren Zheng's Blog"
 
@@ -24,8 +27,9 @@ hideToc = false
 menu = [
   {Name = "Home", URL = "/", HasChildren = false},
   {Name = "About", URL = "/about/", HasChildren = false},
-  {Name = "Projects", URL = "/projects/", HasChildren = false},
-  {Name = "Posts", URL = "/post/", HasChildren = true, Limit = 5},
+  {Name = "Projects", URL = "/projects/", HsasChildren = false},
+  {Name = "Teaching", URL = "/teaching", HasChildren = false},
+  {Name = "Posts", URL = "/post/", HasChildren = true, Limit = 3}
 ]
 
 # Social links (comment out any you don't use)

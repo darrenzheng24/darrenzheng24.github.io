@@ -12,6 +12,10 @@ body.dark-theme .post h3 {
 	color: orange;
 }
 
+.post-title {
+	text-decoration: none !important;
+}
+
 /* Light theme heading styles */
 .post h2,
 .post h3 {

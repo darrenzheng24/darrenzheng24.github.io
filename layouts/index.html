@@ -1,4 +1,11 @@
 {{ define "main" -}}
+  <div class="intro">
+    <h1 style="margin-top: 0;"> Home </h1>
+    {{ with .Site.Params.intro_text }}
+      <p>{{ . | markdownify }}</p>
+    {{ end }}
+  </div>
+  <hr>
   <div class="posts">
     {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
     {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
@@ -13,11 +20,9 @@
 
         <!-- Wrap read-more-link and seriesname in a container -->
         <div class="post-footer">
-          {{ if .Truncated }}
             <div class="read-more-link">
               <a href="{{ .RelPermalink }}">Read More…</a>
             </div>
-          {{ end }}
           {{ $Site := .Site }}
           {{ if .Params.series }}
             <p class="seriesname">

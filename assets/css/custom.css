@@ -67,3 +67,17 @@
 .comments {
 	margin-top: 0px;
 }
+
+/* Increase post-footer spacing on home page */
+.post-footer {
+	margin-top: 1rem;
+}
+
+/* Increase h2 size in posts (exclude home page) */
+.post-title {
+	font-size: 1.75rem;
+}
+
+.posts .post-title {
+	font-size: 1.5rem;
+}
