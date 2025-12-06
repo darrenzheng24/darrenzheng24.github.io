@@ -1,7 +1,7 @@
 {{ partial "head/head.html" . }}
   <body class="{{if .Site.Params.layoutReverse}}layout-reverse {{end}}{{if .Site.Params.dark_mode}}dark-theme{{end}}">
     <div class="wrapper">
-      <p id="no-css-message">If you see no CSS/styling on the page, you need to hard-refresh your cache via CTRL + SHIFT + R, or clear your webpage cache.</p>
+      <p id="no-css-message">If you see no CSS/styling on the page, you need to clear your webpage cache.</p>
       {{ partial "sidebar/sidebar.html" . }}
       <main class="content container" data-pagefind-body>
         {{ block "main" . -}}{{- end }}
