@@ -216,3 +216,30 @@ Following the implementation by [Redstrate](https://redstrate.com/blog/2025/01/i
 
 ## MediumZoom.js
 This [library](https://github.com/francoischalifour/medium-zoom) allows for zooming in on images in my posts when you click on them. 
+
+## Apache Echarts shortcode
+I implemented a shortcode `chart.html` to display some nice charts/graphs for data visualization. You can feed it data as part of the shortcode, or pass a parameter to access the Hugo `data` directory. Some other popular libraries include [chartjs](https://www.chartjs.org/), or [D3](https://d3js.org/).
+{{< chart  data="example_1">}}
+{
+  legend: {},
+  tooltip: {},
+  dataset: {
+    // Provide a set of data.
+    source: [
+      ['product', '2015', '2016', '2017'],
+      ['Matcha Latte', 43.3, 85.8, 93.7],
+      ['Milk Tea', 83.1, 73.4, 55.1],
+      ['Cheese Cocoa', 86.4, 65.2, 82.5],
+      ['Walnut Brownie', 72.4, 53.9, 39.1]
+    ]
+  },
+  // Declare an x-axis (category axis).
+  // The category map the first column in the dataset by default.
+  xAxis: { type: 'category' },
+  // Declare a y-axis (value axis).
+  yAxis: {},
+  // Declare several 'bar' series,
+  // every series will auto-map to each column by default.
+  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+};
+{{< /chart >}}
