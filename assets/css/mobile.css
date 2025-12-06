@@ -67,11 +67,14 @@
 	.container,
 	footer {
 		margin-right: 0 !important;
-		margin-bottom: -18px !important;
 		padding-right: 20px !important;
 		max-width: 100% !important;
 		width: 100% !important;
 		box-sizing: border-box;
+	}
+
+	footer {
+		margin-bottom: -18px !important;
 	}
 
 	#sidebar-search-form {
