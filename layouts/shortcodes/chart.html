@@ -1,7 +1,16 @@
 {{ $id := printf "echart-%03d" .Ordinal }}
 {{ $width := .Get "width" | default "90%" }}
 {{ $height := .Get "height" | default "400px" }}
-<div id="{{ $id }}" style="width: {{ $width }}; height: {{ $height }}; margin: 3% auto;"></div>
+
+{{ $data := .Get "data" }}
+{{ if $data }}
+  {{ $data = index site.Data.echarts $data }}
+{{ else }}
+  {{ $data = .Inner | safeJS }}
+{{ end }}
+
+
+<div id="{{ $id }}" style="width: {{ $width }}; height: {{ $height }}; margin: 3% auto;">test</div>
 
 <script type="text/javascript">
   (function() {
@@ -20,8 +29,7 @@
       }
       chartInstance = echarts.init(chartContainer, getTheme());
       // Store the options to reapply on theme change
-      var option = {};
-      {{ .Inner | safeJS }}
+      var option = {{ $data }};
       chartOption = option;
       chartInstance.setOption(option);
     }
