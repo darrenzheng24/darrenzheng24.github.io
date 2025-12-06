@@ -114,3 +114,18 @@
 	border:none;
 	background-color: #F2F1EB;
 }
+
+/* Animate the opening of DRP details element */
+.DRP::details-content {
+	interpolate-size: allow-keywords;
+	block-size: 0;
+	overflow: hidden;
+	transition-property: block-size, content-visibility;
+	transition-duration: 0.5s;
+	transition-behavior: allow-discrete;
+}
+
+.DRP:open::details-content {
+  block-size: auto;
+  block-size: calc-size(auto, size);
+}

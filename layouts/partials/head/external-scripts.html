@@ -4,6 +4,10 @@
     <script defer type="module" src="https://cdn.skypack.dev/pdfjs-viewer-element" crossorigin="anonymous"></script>
 {{ end }}
 
+{{ if .HasShortcode "chart" }}
+    <script src="https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js" crossorigin="anonymous"></script>
+{{ end }}
+
 {{/* Simple Analytics - 100% privacy-first analytics */}}
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js" crossorigin="anonymous"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>

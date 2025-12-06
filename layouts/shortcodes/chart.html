@@ -1,0 +1,55 @@
+{{ $id := printf "echart-%03d" .Ordinal }}
+{{ $width := .Get "width" | default "90%" }}
+{{ $height := .Get "height" | default "400px" }}
+<div id="{{ $id }}" style="width: {{ $width }}; height: {{ $height }}; margin: 3% auto;"></div>
+
+<script type="text/javascript">
+  (function() {
+    var chartContainer = document.getElementById("{{ $id }}");
+    var chartInstance = null;
+    var chartOption = null;
+
+    // Can load more themes from https://echarts.apache.org/en/theme-builder.html
+    function getTheme() {
+      return document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+    }
+
+    function initChart() {
+      if (chartInstance) {
+        chartInstance.dispose();
+      }
+      chartInstance = echarts.init(chartContainer, getTheme());
+      // Store the options to reapply on theme change
+      var option = {};
+      {{ .Inner | safeJS }}
+      chartOption = option;
+      chartInstance.setOption(option);
+    }
+
+    function updateChartTheme() {
+      initChart();
+    }
+
+    // Initialize chart on first load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initChart);
+    } else {
+      initChart();
+    }
+
+    // Watch for "dark-theme" class changes on body HTML element
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          var hasDarkTheme = document.body.classList.contains('dark-theme');
+          var hadDarkTheme = mutation.oldValue && mutation.oldValue.includes('dark-theme');
+          if (hasDarkTheme !== hadDarkTheme) {
+            updateChartTheme();
+          }
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true });
+  })();
+</script>
