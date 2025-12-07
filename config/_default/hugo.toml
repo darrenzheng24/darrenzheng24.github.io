@@ -27,3 +27,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
 
 # Build Settings
 cleanDestinationDir = true
+
+# Number of posts on the homepage before generating next page
+[pagination]
+  pagerSize = 10
