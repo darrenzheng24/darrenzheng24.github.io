@@ -12,7 +12,7 @@ brand_image = "/images/profile-professional.jpg"    # Path to the image shown in
 favicon = "/favicons/favicon.ico"             # Path to favicon (defaults to favicon.png)
 
 #Text on home page (Can write in markdown & multiline)
-intro_text = """Welcome to my website :grinning:! I'm Darren Zheng (he/him), a recent graduate from the University of Pennsylvania C'25 with a B.A. in Mathematics. For more about me and this website, see my [About Me](/about) page and check out the sidebar links. Below are some of my recent blog posts."""
+intro_text = """Welcome to my website :smile:! I'm Darren Zheng (he/him), a recent graduate from the University of Pennsylvania C'25 with a B.A. in Mathematics. For more about me and this website, see my [About Me](/about) page and check out the sidebar links. Below are some of my recent blog posts."""
 
 # Title for RSS Feed
 rssTitle = "Darren Zheng's Blog"

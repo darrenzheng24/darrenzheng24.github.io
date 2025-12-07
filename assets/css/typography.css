@@ -29,3 +29,12 @@ html {
 .lead {
 	font-size: 1em;
 }
+
+/* Abbreviation html tag styling*/
+abbr {
+	text-decoration: underline dotted;
+	cursor: help;
+	font-size: 19px;
+	color: inherit;
+	font-weight: 500;
+}

@@ -1,0 +1,3 @@
+{{ $text := .Get "text" }}
+{{ $title := .Get "title" }}
+<abbr {{ if $title }}title="{{ $title }}"{{ end }}>{{ $text }}</abbr>

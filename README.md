@@ -6,4 +6,3 @@ TO-DO List:
 4. [ ] Medium Zoom Dark mode?
 5. [ ] books based on obsidian css
 6. [ ] Implement a better columns shortcode
-7. [ ] Add a teaching page?
