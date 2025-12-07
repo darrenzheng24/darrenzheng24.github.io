@@ -11,9 +11,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Daily publish at 05:00AM to allow for scheduled posts
+  # Daily publish at 5AM EST (Default in Z) to allow for scheduled posts
   schedule:
-  - cron: '0 5 * * *'
+  - cron: '0 10 * * *'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
