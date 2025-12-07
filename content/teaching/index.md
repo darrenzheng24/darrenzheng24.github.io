@@ -5,6 +5,7 @@ draft: false
 layout: single
 readingtime: false
 summary: Overview of teaching and outreach experiences
+tocDisabled: true
 ---
 
 # Teaching
