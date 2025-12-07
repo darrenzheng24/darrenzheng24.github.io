@@ -1,3 +1,4 @@
+
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
 name: Deploy Hugo site to Pages
 
@@ -12,7 +13,7 @@ on:
 
   # Daily publish at 05:00AM to allow for scheduled posts
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: '0 5 * * *'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
