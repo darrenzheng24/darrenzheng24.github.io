@@ -9,7 +9,7 @@
 {{ end }}
 
 
-<figure{{ with .Get "class" }} class="{{ . }}"{{ end }} id="{{ .Get "id" }}" >
+<figure{{ with .Get "class" }} class="custom-figure {{ . }}" {{ else }} class="custom-figure" {{ end }} id="{{ .Get "id" }}" >
   {{- if .Get "link" -}}
     <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
   {{- end -}}

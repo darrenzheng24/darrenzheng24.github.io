@@ -33,7 +33,7 @@ Part of the strengths of any well-developed SSG is the community support. Thankf
 - [XMIN](https://github.com/yihui/hugo-xmin)
 - [BearBlog](https://github.com/janraasch/hugo-bearblog)
 
-It's important when selecting a theme to look at the config file; this will usually tell you how much control you have over the styling of the site and how you can organize your content. 
+It's important when selecting a theme to look at the config file; this will usually tell you how much control you have over the styling of the site and how you can organize your content. I took a lot of inspiration from components found on [freefrontend](https://freefrontend.com/), or [32-Bit Cafe resources list](https://discourse.32bit.cafe/t/resources-list-for-the-personal-web/49).
 
 ## Implementing LaTeX support via KaTeX
 

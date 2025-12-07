@@ -81,7 +81,7 @@ pre {
 }
 
 /* Custom Figure Shortcode Enhancements */
-figure {
+.custom-figure {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
