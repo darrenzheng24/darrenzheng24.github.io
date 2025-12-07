@@ -7,6 +7,9 @@
         {{ block "main" . -}}{{- end }}
       </main>
       {{ block "sidebar" . }}{{ end }}
+      {{ if .Page.IsHome }}  
+        {{ partial "homepage_widgets.html" . }}
+      {{ end }}
     </div>
 
     <!--
