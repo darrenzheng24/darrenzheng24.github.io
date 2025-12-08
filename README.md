@@ -5,5 +5,5 @@ TO-DO List:
 3. [ ] Fix OpenGraph Image logic
 4. [ ] Medium Zoom Dark mode?
 5. [ ] books based on obsidian css
-6. [ ] Implement a better columns shortcode
+6. [ ] update ToC on Hugo documentation post 
 7. [ ] Add some homepage widgets

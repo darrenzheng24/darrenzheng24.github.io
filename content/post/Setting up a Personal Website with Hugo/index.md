@@ -243,3 +243,42 @@ I implemented a shortcode `chart.html` to display some nice charts/graphs for da
   series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
 };
 {{< /chart >}}
+
+
+## Quizdown
+The quizdown shortcode below was made by [bonartm](https://github.com/bonartm/hugo-quiz).
+
+{{< quizdown >}}
+
+---
+primary_color: orange
+secondary_color: lightgray
+text_color: black
+shuffle_questions: false
+---
+
+## The sound of dog
+
+---
+shuffle_answers: false
+---
+
+What do dogs sound like?
+
+> Some hint
+
+- [ ] yes
+- [ ] no
+- [ ] `self.sound = "meow"`
+- [x] wuff
+
+## Put the [days](https://en.wikipedia.org/wiki/Day) in order!
+
+> Monday is the *first* day of the week.
+
+1. Monday
+2. Tuesday
+3. Wednesday
+4. Friday
+5. Saturday  
+{{< /quizdown >}}
