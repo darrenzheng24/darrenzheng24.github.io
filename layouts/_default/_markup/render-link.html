@@ -178,15 +178,16 @@ either of these shortcodes in conjunction with this render hook.
 {{- /* Render anchor element. */ -}}
 <a
   {{- with .Title }} title="{{ . }}" {{- end -}}
-  {{- /* Open external links in a new tab/window. */ -}}
-  {{ if strings.HasPrefix .Destination  "http" }} target="_blank" rel="noopener noreferrer" {{ end -}}
   {{- range $k, $v := $attrs }}
     {{- if $v }}
       {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr }}
     {{- end }}
   {{- end -}}
 >{{ .Text }}</a>
-
+  {{- /*
+      We can use the following to open all http(s) links in a new tab/window, but no enabled for accessibility reasons, since middle click does the same thing.
+    {{ if strings.HasPrefix .Destination  "http" }} target="_blank" rel="noopener noreferrer" {{ end -}}
+  */}}
 {{- define "_partials/inline/h-rh-l/validate-fragment.html" }}
   {{- /*
   Validates the fragment portion of a link destination.
