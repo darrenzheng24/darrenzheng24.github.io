@@ -13,6 +13,9 @@ disableKinds = ["taxonomy"]
 
 ignoreLogs = ['warning-goldmark-raw-html']
 
+# Ignore files under "hugo-ignore" subdirectories of content page bundles
+ignoreFiles = ["hugo-ignore"]
+
 [permalinks]
   post = "/:year/:month/:day/:slug/"
 

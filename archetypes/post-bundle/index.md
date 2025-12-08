@@ -9,4 +9,5 @@ series: ""
 categories: []
 featuredImage: ""
 readingtime: true
+hidetoc: false
 ---
