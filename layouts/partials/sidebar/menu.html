@@ -20,7 +20,7 @@
           <li class="sub-heading">{{ $menu_item.Pre }}</li>
           {{ $section := site.GetPage $menu_item.URL }}
           {{ if $section }}
-            {{ range first $menu_item.Limit $section.Pages }}
+            {{ range first $menu_item.Limit (where $section.Pages ".Params.displayHomepage" "ne" false) }}
               <li class="bullet">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
               </li>
