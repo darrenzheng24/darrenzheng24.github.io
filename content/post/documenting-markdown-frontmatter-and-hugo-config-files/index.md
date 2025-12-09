@@ -22,3 +22,7 @@ categories: []
 featuredImage: ""  
 readingtime: true  
 displayHomepage: true  
+
+
+-I think best way for liminal implementation would be as a custom layout in frontmatter
+[test](/liminal-master/index.html)

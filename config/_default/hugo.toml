@@ -34,3 +34,11 @@ cleanDestinationDir = true
 # Number of posts on the homepage before generating next page
 [pagination]
   pagerSize = 10
+
+# Serve HTML as resource files (Liminal Integration)
+[contentTypes]
+  [contentTypes.'text/asciidoc']
+  [contentTypes.'text/markdown']
+  [contentTypes.'text/org']
+  [contentTypes.'text/pandoc']
+  [contentTypes.'text/rst']

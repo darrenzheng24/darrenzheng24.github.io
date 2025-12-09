@@ -20,7 +20,11 @@ I hope to be able to write regularly, so long as life doesn't get too busy. On t
 {{< columns >}}
 ## Contact
 Feel free to reach out to me through:
-- **Email**: [dzheng24@sas.upenn.edu](mailto:dzheng24@sas.upenn.edu) 
+- **Email**: <span class="spamspan">
+<span class="u">dzheng24</span>
+[at]
+<span class="d">sas [dot] upenn [dot] edu</span>
+</span> 
 - **GitHub**: [@darrenzheng24](https://github.com/darrenzheng24)
 - **LinkedIn**: [Darren Zheng](https://www.linkedin.com/in/darrenzheng24/)
 
