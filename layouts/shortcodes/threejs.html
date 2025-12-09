@@ -3,7 +3,10 @@
 
 {{ $version := .Get "version" }}
 {{ $id := .Get "id" }}
-{{ $src := .Get "src" }}
+{{ $src := .Page.Resources.GetMatch (.Get "src") }}
+{{ if not $src }}
+  {{ $src = resources.Get (.Get "src") }}
+{{ end }}
 
 <!-- Create a container for rendering the scene -->
 <div id="threejs-container-{{ $id }}" class="threejs-content"> 
@@ -24,4 +27,4 @@
 </script>
 
 <!-- Load the script -->
-<script type="module" src="{{ $src }}"></script>
+<script type="module" src="{{ $src.Permalink }}"></script>
