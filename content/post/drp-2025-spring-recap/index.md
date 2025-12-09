@@ -6,6 +6,7 @@ summary: Final DRP semester studying mapping class groups and Dehn twists, explo
 description: null
 tags:
   - DRP
+  - Math
 series: "Directed Reading Program"
 categories: []
 featuredImage: ""

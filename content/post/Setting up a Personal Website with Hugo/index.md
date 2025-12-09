@@ -2,7 +2,7 @@
 title: Setting up a Personal Website with Hugo
 date: 2025-06-19T16:52:25Z
 draft: false
-summary: Some details about creating this blog and implementing certain features
+summary: Some technical details about creating this blog and implementing certain features
 description: null
 tags: ""
 series: ""
@@ -10,6 +10,9 @@ categories: ""
 featuredImage: null
 readingtime: true
 ---
+
+> [!Caution]
+> While the content is still valid, this article is in need of major organizational changes due to length. TO-DO: Split into sections.
 
 Lately, I have been reorganizing some of my past work scattered across many paper notebooks, computer folders, and OneNote. I wanted to create a minimalist, academic site to showcase some of my projects and general mathematical thoughts. At the same time, establishing an internet presence beyond a LinkedIn profile seemed to be a good investment for the modern era. This blog post details part of my journey into setting up this website (and serves as documentation for me). While this post may lack certain details, it is useful to check out the following sources for more information.
 

@@ -1,10 +1,11 @@
 ---
-title: Wolff-Erdoğan Theorem
-date: 2025-11-05T05:57:13Z
+title: "Wolff-Erdoğan Theorem"
+date: "2025-11-05T05:57:13Z"
 draft: false
-summary: Explores an intermediate result towards solving Falconer's Conjecture, establishing a lower bound of $\frac{n}{2} + \frac{1}{3}$
-description: 
-tags: []
+summary: "Explores an intermediate result towards solving Falconer's Conjecture, establishing a lower bound of $\\frac{n}{2} + \\frac{1}{3}$"
+description: null
+tags:
+    - "Math"
 series: ""
 categories: []
 featuredImage: ""

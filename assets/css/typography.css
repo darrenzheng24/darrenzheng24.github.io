@@ -19,7 +19,7 @@ html {
 }
 
 .content.container {
-	font-size: 19px;
+	font-size: 20px;
 }
 
 /* Adjust heading sizes in sidebar about section */
@@ -32,9 +32,13 @@ html {
 
 /* Abbreviation html tag styling*/
 abbr {
-	text-decoration: underline dotted;
 	cursor: help;
 	font-size: 19px;
 	color: inherit;
 	font-weight: 500;
+}
+
+/* Remove underline from abbr with title attribute from theme*/
+abbr[title] {
+	border-bottom: none;
 }
