@@ -4,7 +4,8 @@ date: 2025-06-19T16:52:25Z
 draft: false
 summary: Some technical details about creating this blog and implementing certain features
 description: null
-tags: ""
+tags: 
+  - Hugo
 series: ""
 categories: ""
 featuredImage: null

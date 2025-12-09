@@ -4,7 +4,8 @@ date: 2025-11-24T00:57:01Z
 draft: true
 summary: A standardized guide to frontmatter schema and Hugo configuration for maintaining consistent metadata
 description: null
-tags: []
+tags: 
+  - Hugo
 series: ""
 categories: []
 featuredImage: ""
