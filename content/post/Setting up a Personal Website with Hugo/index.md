@@ -11,11 +11,7 @@ categories: ""
 featuredImage: null
 readingtime: true
 ---
-
-> [!Caution]
-> While the content is still valid, this article is in need of major organizational changes due to length. TO-DO: Split into sections.
-
-Lately, I have been reorganizing some of my past work scattered across many paper notebooks, computer folders, and OneNote. I wanted to create a minimalist, academic site to showcase some of my projects and general mathematical thoughts. At the same time, establishing an internet presence beyond a LinkedIn profile seemed to be a good investment for the modern era. This blog post details part of my journey into setting up this website (and serves as documentation for me). While this post may lack certain details, it is useful to check out the following sources for more information.
+Lately, I have been reorganizing some of my past work scattered across many paper notebooks, computer folders, writing tablet and OneNote. I wanted to create a minimalist, academic site to showcase some of my projects and general mathematical thoughts. At the same time, establishing an internet presence beyond a LinkedIn profile seemed to be a good investment for the modern era. This blog post serves as documentation for myself. While this post may lack certain details, it is useful to check out the following sources for more information. This page mainly documents the global features. For specific extensions to post content, see [Documenting Markdown Frontmatter & Content Extensions](/post/markdown-documentation/).
 
 - [Hugo Forums](https://discourse.gohugo.io/)
 - [Collection of Hugo Themes](https://themes.gohugo.io/)
@@ -83,82 +79,23 @@ Pagefind is a static search package that builds an index after your static site 
 
 The search bar design I ended up using is modified from [uiverse.io by @satyamchaudharydev](https://uiverse.io/satyamchaudharydev/plastic-bobcat-37).
 
-## Code Highlighting
-
-[Syntax highlighting](https://gohugo.io/content-management/syntax-highlighting/) is built into Hugo. I overwrote the code block rendering hook using the file below. This is based on this [solution](https://write.rog.gr/writing/labeling-code-blocks-in-hugo/) by Roger Steve Ruiz.
-
-```html{title = "layouts\_default\_markup\render-codeblock.html" verbatim = true}
-{{- $isVerbatim := true -}}
-{{- if isset .Attributes "verbatim" -}}
-  {{- $isVerbatim = .Attributes.verbatim -}}
-{{- end -}}
-<figure class="highlight">
-  {{- with .Attributes.title }}
-    <figcaption>
-      {{- if $isVerbatim -}}
-        <span>{{ . }}</span> {{/* As a file name */}}
-      {{- else -}}
-        <span>{{ . | markdownify }}</span> {{/* As a code description */}}
-      {{- end -}}
-    </figcaption>
-  {{- end }}
-  {{- if transform.CanHighlight .Type }}
-    <pre tabindex="0" class="chroma"><code class="language-{{ .Type }}" data-lang="{{ .Type }}">
-      {{- with transform.HighlightCodeBlock . -}}
-        {{ .Inner }}
-      {{- end -}}
-    </code></pre>
-  {{- else }}
-    <pre tabindex="0"><code class="language-{{ .Type }}" data-lang="{{ .Type }}">{{ .Inner }}</code></pre>
-  {{- end }}
-</figure>
-```
-
-## GitHub-style Alerts
-
-Not much to say here. [hugo-admonitions](https://github.com/KKKZOZ/hugo-admonitions) is a Hugo Module that extends markdown with some nicely formatted alerts. Great that it also supports Light/Dark mode right out of the box.
-
-> [!CODE]
-> ```go{title = "hugo.toml" verbatim = true}
-> [module]
-> 	[[module.imports]]
-> 		path = "github.com/KKKZOZ/hugo-admonitions"
-> ```
-
 ## Table of Contents
 
-Hugo comes with a built-in Table of Contents method. It works by detecting `<h1>`-`<h6>` elements and generating it based on that. The bolded entry in the table of contents represents the items that most recently entered the viewfinder. This leads to some finicky behavior using [sidsbrmnn's](https://github.com/sidsbrmnn/scrollspy) ScrollSpy implementation using IntersectionObserver. 
+Hugo comes with a built-in Table of Contents method. It is generated based on `<h1>`-`<h6>` elements. The bolded entry in the table of contents represents the items that most recently entered the viewfinder. This leads to some finicky behavior using [sidsbrmnn's](https://github.com/sidsbrmnn/scrollspy) ScrollSpy implementation using IntersectionObserver. 
 
-## Markdown Footnotes
+## Deployment via GitHub Pages
 
-Hugo uses [goldmark](https://github.com/yuin/goldmark) as its markdown renderer. Luckily, there are many ways to customize it, through enabling [footnotes](https://michal.sapka.pl/tips/footnotes-in-hugo-and-goldmark/) or writing render hooks.
-
-## Sidenotes via Intersection Observer
-
-Sidenotes are an alternative to footnotes and created as a Hugo shortcode. Since it may break up the reader's flow when it redirects their eyes to the bottom of the page, requiring another click to return. As an alternative to footnotes, I wanted sidenotes to be textual snippets that are located in horizontal alignment with the corresponding label in the text. We allow {{< sidenote "sidenotes" >}} Hello there! {{< /sidenote >}}to optionally accept one image and sidenotes disappear as the label is moved out of the viewport.
-
-## Inline Notes
-
-{{< inlineNote "Inline notes">}} $$\begin{align} \frac{\,d}{\,dx}(e^{x}) = e^{x} \end{align}$$ {{< /inlineNote >}}are very similar to Sidenotes, except they can only generate, as their name suggests, inline. These are collapsible elements regardless of the window size. They replicate the mobile-view behavior of Sidenotes.
-
-## Mobile Publishing
-
-Since I want to be able to edit content on my phone, I looked for an Android-based markdown editor with GitHub sync support. I initially used [GitJournal](https://gitjournal.io/), but the app does not seem to be in active development. I disliked the syncing issues and it just seems I was running into more problems as I tried to fix them. Additionally, the relatively high cost put me off the app. 
-
-Instead, as of November 2025, I've switched over to using [GitSync](https://github.com/ViscousPot/GitSync) and [Obsidian](https://obsidian.md/) for mobile writing. So far, it seems to work well, and I'm considering transitioning more of my note-taking ecosystem towards the Obsidian framework (Unfortunately at the moment, my notes are scattered across my [reMarkable 2](https://remarkable.com/) tablet + paper + LaTeX).
+There are some number of options for static website hosting, including Netlify and Cloudflare. In the end, I choose GitHub pages for its simplicity, free-to-use, and my familiarity with its ecosystem. You can see this [tutorial](https://gohugo.io/host-and-deploy/host-on-github-pages/) on how to get it up and running.
 
 ## Daily Website Refresh via CRON Job for Scheduled Posts
 
 By design, the static site served to the user by GitHub pages is a bundle of HTML, CSS, JavaScript, etc. This makes the problem of scheduling posts via Hugo's own [PublishDate](https://gohugo.io/methods/page/publishdate/#article) frontmatter parameter difficult. The workaround is to use a CRON job to trigger a rebuild of your website each day (I schedule mine for 1 AM EST). More details on the solution can be found in Mike Rhodes' [post](https://dx13.co.uk/articles/2023/04/16/scheduled-posts-hugo-gh-pages-actions/).
 
-## Columns in posts
-I used this [shortcode](https://github.com/McShelby/hugo-theme-relearn/issues/716#issuecomment-1894351244) borrows from the hugo-relearn theme.
-
 ## Mobile View + Sidebar-Toggle
 
 The standard view on mobile devices for the **Poison** theme causes the sidebar to cover up much of the content. Taking inspiration from [this github issue](https://github.com/lukeorth/poison/issues/165), we can use CSS media queries to change the sizing. You can see the customization for this and other features in my `assets/custom.css` file.
 
-I added a button to also toggle the sidebar, since it may be distracting for desktop users on longer files.
+I added a button to also toggle the sidebar, since it may be distracting for desktop users.
 
 ## Faster Loading using InstantPage
 
@@ -173,10 +110,6 @@ Along the way, I also added a `webmanifest.json` file, so that readers could dow
 ## Favicons
 
 Favicons are the brand logos desktop users see in the tab of your webpage, or for mobile users, the app icon. I used [FaviCraft](https://favicraft.com/) to generate and check my favicons I created.
-
-## Deployment via GitHub Pages
-
-There are some number of options for static website hosting, including Netlify and Cloudflare. In the end, I choose GitHub pages for its simplicity, free-to-use, and my familiarity with its ecosystem. You can see this [tutorial](https://gohugo.io/host-and-deploy/host-on-github-pages/) on how to get it up and running.
 
 ## Content Management System (CMS)
 
@@ -207,86 +140,14 @@ The icons are taken from [Simple Icons](https://simpleicons.org/). The emojis ar
 
 Hugo automatically generates an RSS feed. I replaced the link using [Subscribe Openly](https://subscribeopenly.net/) to make it more digestible.
 
-## Embeddable PDFs
-Embedded PDF files may be viewed differently across browsers. To standardize this, I've used a [pdfjs viewer element](https://github.com/alekswebnet/pdfjs-viewer-element) directly.
-
-{{< embedPDF src="example-pdf/PJAS-2020-2.pdf">}}
-
 ## Robots.txt
-With excessive AI crawlers and LLMs being used today, I took care to implement a `robots.txt` file at the root of my project to [prevent crawlers](https://en.wikipedia.org/wiki/Robots.txt). Originally, I wrote it by hand, but using the method from [Dynamic Robots.txt with Hugo External Data Sources](https://runtimeterror.dev/dynamic-robots-txt-hugo-external-data-sources/) helps make sure that it stays somewhat up-to-date. Unfortunately, a non-compliant web bot could choose to simply ignore such protocols, but it would be difficult to prevent all of them without some serious security implementations. Note that despite blocking crawling, it does not block indexing by search engines necessarily, although it may impact the description generated.
-
-## Three.js
-Following the implementation by [Redstrate](https://redstrate.com/blog/2025/01/integrating-katex-and-three.js-into-hugo/) and [Jorge Martinez](https://jorgemartinez.space/posts/tutorials/running-threejs-in-my-website/), we add a shortcode `layouts\shortcodes\threejs.html` for adding mathematical animations in WebGL. I'm still playing around, so this section will be updated in the future with a better tutorial. 
+With excessive AI crawlers and LLMs being used today, I took care to implement a `robots.txt` file at the root of my project to [prevent crawlers](https://en.wikipedia.org/wiki/Robots.txt). We can use the method from [Dynamic Robots.txt with Hugo External Data Sources](https://runtimeterror.dev/dynamic-robots-txt-hugo-external-data-sources/) helps make sure that it stays up-to-date.
 
 ## MediumZoom.js
 This [library](https://github.com/francoischalifour/medium-zoom) allows for zooming in on images in my posts when you click on them. 
 
-## Apache Echarts shortcode
-I implemented a shortcode `chart.html` to display some nice charts/graphs for data visualization. You can feed it data as part of the shortcode, or pass a parameter to access the Hugo `data` directory. Some other popular libraries include [chartjs](https://www.chartjs.org/), or [D3](https://d3js.org/).
-{{< chart  data="example_1">}}
-{
-  legend: {},
-  tooltip: {},
-  dataset: {
-    // Provide a set of data.
-    source: [
-      ['product', '2015', '2016', '2017'],
-      ['Matcha Latte', 43.3, 85.8, 93.7],
-      ['Milk Tea', 83.1, 73.4, 55.1],
-      ['Cheese Cocoa', 86.4, 65.2, 82.5],
-      ['Walnut Brownie', 72.4, 53.9, 39.1]
-    ]
-  },
-  // Declare an x-axis (category axis).
-  // The category map the first column in the dataset by default.
-  xAxis: { type: 'category' },
-  // Declare a y-axis (value axis).
-  yAxis: {},
-  // Declare several 'bar' series,
-  // every series will auto-map to each column by default.
-  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
-};
-{{< /chart >}}
-
-
-## Quizdown
-The quizdown shortcode below was made by [bonartm](https://github.com/bonartm/hugo-quiz).
-
-{{< quizdown >}}
-
----
-primary_color: orange
-secondary_color: lightgray
-text_color: black
-shuffle_questions: false
----
-
-## The sound of dog
-
----
-shuffle_answers: false
----
-
-What do dogs sound like?
-
-> Some hint
-
-- [ ] yes
-- [ ] no
-- [ ] `self.sound = "meow"`
-- [x] wuff
-
-## Put the [days](https://en.wikipedia.org/wiki/Day) in order!
-
-> Monday is the *first* day of the week.
-
-1. Monday
-2. Tuesday
-3. Wednesday
-4. Friday
-5. Saturday  
-{{< /quizdown >}}
-
 ## Liminal + Remarkjs
+This is a [system](https://github.com/jonathanlilly/liminal) created by Johnathan Lilly using [remarkjs](https://remarkjs.com/#1) to create in-browser slides from Markdown. You can see a demo [here](/liminal-master/template.html).
 
-## Link-render-hook
+## Hugo Render Hooks
+There are a number of custom render hooks written into this website to enable smarter organization of page resources. See [here](https://www.veriphor.com/articles/link-and-image-render-hooks/) for documentation for the link and image ones.
