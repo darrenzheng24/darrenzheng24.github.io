@@ -58,6 +58,11 @@
           "title": "Reading time",
           "name": "readingtime",
           "type": "boolean"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
         }
       ]
     }
@@ -220,7 +225,9 @@
   },
   "frontMatter.website.host": "https://darrenzheng24.github.io/",
   "frontMatter.framework.startCommand": "npx pagefind; hugo server -D --disableFastRender",
-  "frontMatter.panel.actions.disabled": ["optimizeSlug"],
+  "frontMatter.panel.actions.disabled": [
+    "optimizeSlug"
+  ],
   "frontMatter.site.baseURL": "https://darrenzheng24.github.io",
   "frontMatter.snippets.wrapper.enabled": false,
   "frontMatter.taxonomy.quoteStringValues": true
