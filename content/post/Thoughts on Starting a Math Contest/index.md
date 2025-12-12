@@ -5,7 +5,7 @@ draft: true
 summary: Some reflections on the challenges in organizing a mathematics competition
 description: 
 tags: [Education]
-series: "test"
+series: ""
 featuredImage: "/images/pmc-logo.avif"
 readingtime: true
 ---
