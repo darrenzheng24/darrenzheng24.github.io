@@ -1,6 +1,6 @@
 ---
 title: "DRP 2022 Fall Recap"
-date: "2025-09-26T23:08:47Z"
+date: "2025-07-01T23:08:47Z"
 draft: true
 summary: "Reflections on my first DRP experience about knot theory"
 description: null

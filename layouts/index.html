@@ -6,6 +6,17 @@
     {{ end }}
   </div>
   <hr>
+  <style>
+    .featured.image.container {
+      float: left;
+    }
+    .featured.image.container img {
+      max-width: 150px; 
+      height: auto; 
+      margin: 0; 
+      margin-right: 10px;
+    }
+  </style>
   <div class="posts">
     {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
     {{ $pages := where .Site.RegularPages ".Params.displayHomepage" "ne" false }}

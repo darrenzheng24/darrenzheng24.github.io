@@ -1,6 +1,6 @@
 ---
 title: DRP 2025 Spring Recap
-date: 2025-06-16T23:38:32Z
+date: 2025-08-15T23:38:32Z
 draft: true
 summary: Final DRP semester studying mapping class groups and Dehn twists, exploring tools for classifying topological spaces
 description: null

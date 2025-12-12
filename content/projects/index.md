@@ -1,10 +1,10 @@
 ---
-title: Projects
-date: 2024-01-01
+title: "Projects"
+date: "2024-01-01"
 draft: false
-layout: single
+layout: "single"
 readingtime: false
-summary: Collection of my past projects.
+summary: "Collection of my past projects."
 ---
 Listed below are some of my past projects.  
 

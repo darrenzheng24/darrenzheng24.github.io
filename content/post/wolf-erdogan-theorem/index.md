@@ -7,7 +7,6 @@ description: null
 tags:
     - "Math"
 series: ""
-categories: []
 featuredImage: ""
 readingtime: true
 ---

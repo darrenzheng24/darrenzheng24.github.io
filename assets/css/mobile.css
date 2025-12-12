@@ -132,3 +132,9 @@
 		display: block !important;
 	}
 }
+
+/* Katex scroll for mobile view */
+katex-display {
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+}

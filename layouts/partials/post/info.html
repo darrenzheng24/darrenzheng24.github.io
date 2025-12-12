@@ -42,8 +42,8 @@
   </div>
 
   {{ if .Params.featuredImage }}
-    <p>
-      <img src="{{.Params.featuredImage}}"><br>
-    </p>
+      <p class="featured image container" style = "display: flex; text-align: center; justify-content: center; align-items: center; max-width: 100%;">
+        <img src="{{ .RelPermalink }}{{ .Params.featuredImage }}" ><br>
+      </p>
   {{ end }}
 </div>
