@@ -147,7 +147,7 @@ With excessive AI crawlers and LLMs being used today, I took care to implement a
 This [library](https://github.com/francoischalifour/medium-zoom) allows for zooming in on images in my posts when you click on them. 
 
 ## Liminal + Remarkjs
-This is a [system](https://github.com/jonathanlilly/liminal) created by Johnathan Lilly using [remarkjs](https://remarkjs.com/#1) to create in-browser slides from Markdown. You can see a demo [here](/liminal-master/template.html).
+This is a [system](https://github.com/jonathanlilly/liminal) created by Johnathan Lilly using [remarkjs](https://remarkjs.com/#1) to create in-browser slides from Markdown. You can see a demo [here](/liminal/template.html).
 
 ## Hugo Render Hooks
 There are a number of custom render hooks written into this website to enable smarter organization of page resources. See [here](https://www.veriphor.com/articles/link-and-image-render-hooks/) for documentation for the link and image ones.
