@@ -1,7 +1,7 @@
 ---
 title: Thoughts on Starting a High School Math Contest
 date: 2025-09-26T23:08:47Z
-draft: false
+draft: true
 summary: Some reflections on the challenges in organizing a mathematics competition
 description: 
 tags: [Education]
