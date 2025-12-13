@@ -95,7 +95,7 @@ Embedded PDF files may be viewed differently across browsers. To standardize thi
 ## Three.js
 Following the implementation by [Redstrate](https://redstrate.com/blog/2025/01/integrating-katex-and-three.js-into-hugo/) and [Jorge Martinez](https://jorgemartinez.space/posts/tutorials/running-threejs-in-my-website/), we add a shortcode `layouts\shortcodes\threejs.html` for adding mathematical animations in WebGL. I'm still playing around, so this section will be updated in the future with a better tutorial. 
 
-{{< threejs src="/threejs/hello.js">}}
+{{< threejs src="/threejs/hello.js" id="hello" version="0.160.0">}}
 
 ## Apache Echarts shortcode
 I implemented a shortcode `chart.html` to display some nice charts/graphs for data visualization. You can feed it data as part of the shortcode, or pass a parameter to access the Hugo `data` directory. Some other popular libraries include [chartjs](https://www.chartjs.org/), or [D3](https://d3js.org/).
