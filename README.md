@@ -5,3 +5,5 @@ TO-DO List:
 3. [ ] Consider re-adding taxonomy tags list page, or post date filters on homepage
 4. [ ] Change liminal set-up to a custom layout
 5. [ ] Consider use cases of [content adapters](https://gohugo.io/content-management/content-adapters/)
+6. [ ] Add shortcodes for Theorems, Definitions, Propositions, etc.
+7. [ ] Bibtex generator in combination with footnotes
