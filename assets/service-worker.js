@@ -9,9 +9,8 @@ if (self.location.hostname === 'localhost') {
 }
 
 if (workbox) {
-  // Precache about, index, 404 pages
+  // Precache about, 404 pages
   workbox.precaching.precacheAndRoute([
-    { url: '/', revision: '7' },
     { url: '/about/', revision: '3' },
     { url: '/404.html', revision: '1' },
   ]);
