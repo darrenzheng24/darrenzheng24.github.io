@@ -44,7 +44,7 @@
 }
 
 /* Sidenote inline only - responsive styles */
-@media screen and (max-width: 100em) {
+@media screen and (max-width: 90em) {
 	.sidenote-content {
 		position: static;
 		margin-top: 10px;
