@@ -1,6 +1,13 @@
 {{ define "main" -}}
   <div class="post">
     {{ partial "post/info.html" . }}
+    
+    {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
+      <details class="mobile-toc-wrapper" open>
+        <summary id="mobile-toc"> Table of Contents </summary>
+          {{ .TableOfContents }}
+      </details>
+    {{ end }}
     {{ $footnotes_tag:= `<div class="footnotes" role="doc-endnotes">` }}
     {{ if strings.Contains .Content $footnotes_tag }}
 
