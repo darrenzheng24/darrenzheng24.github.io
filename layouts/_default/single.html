@@ -3,7 +3,7 @@
     {{ partial "post/info.html" . }}
     
     {{ if and (not .Params.hideToc) (not .Site.Params.hideToc) }}
-      <details class="mobile-toc-wrapper" open>
+      <details class="mobile-toc-wrapper">
         <summary id="mobile-toc"> Table of Contents </summary>
           {{ .TableOfContents }}
       </details>
