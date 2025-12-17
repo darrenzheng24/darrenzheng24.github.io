@@ -138,3 +138,63 @@
 	overflow-x: auto !important;
 	overflow-y: hidden !important;
 }
+
+/* Conditional ToC for mobile */
+.mobile-toc-wrapper {
+	display: none;
+}
+
+@media (max-width: 48em) {
+	.mobile-toc-wrapper {
+		display: block;
+		margin-bottom: 15px;
+		border: 2px solid blueviolet;
+		border-radius: 10px;
+	}
+	.mobile-toc-wrapper > summary {
+		box-sizing: border-box;
+		padding-left: 10px;
+		tab-size: 2;
+	}
+
+	.mobile-toc-wrapper[open] > summary {
+		border-radius: 10px 10px 0 0;
+		border-bottom: 2px solid blueviolet;
+	}
+
+	.mobile-toc-wrapper > nav :is(ol, li) {
+		list-style-type: none;
+		padding-inline-start: 10px;
+		margin-top: 2px;
+		margin-bottom: 0; 
+		list-style-type: "-";
+	}
+	.mobile-toc-wrapper > nav > ol {
+		padding-inline-start: 0;
+	}
+
+	.mobile-toc-wrapper > nav li a {
+		text-decoration-line: underline;
+		color: inherit;
+	}
+
+	/* Dark mode nav link color reset */
+	body.dark-theme .mobile-toc-wrapper > nav li a {
+		color: var(--link-color);
+	}
+
+	/* Animate the opening of DRP details element */
+	.mobile-toc-wrapper::details-content {
+		interpolate-size: allow-keywords;
+		block-size: 0;
+		overflow: hidden;
+		transition-property: block-size, content-visibility;
+		transition-duration: 0.5s;
+		transition-behavior: allow-discrete;
+	}
+
+	.mobile-toc-wrapper:open::details-content {
+		block-size: auto;
+		block-size: calc-size(auto, size);
+	}
+}

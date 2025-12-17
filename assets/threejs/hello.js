@@ -4,8 +4,29 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xEEEEEE);
 
 // Create a camera
-const camera = new THREE.PerspectiveCamera(20,  window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
+
+// Update camera based on aspect ratio
+const updateCameraForAspect = () => {
+    const aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = aspect;
+    
+    if (aspect < 1) {
+        // Portrait mode: zoom out to keep cube visible
+        camera.fov = 35;
+        camera.position.z = 10;
+    } else {
+        // Landscape mode: default settings
+        camera.fov = 20;
+        camera.position.z = 5;
+    }
+    
+    camera.updateProjectionMatrix();
+};
+
+// Apply initial aspect ratio settings
+updateCameraForAspect();
 
 // Create a renderer
 const renderer = new THREE.WebGLRenderer();
@@ -40,6 +61,14 @@ const stopAnimation = () => {
         animationFrameId = null;
     }
 };
+
+// Handle window resize
+const onWindowResize = () => {
+    updateCameraForAspect();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+};
+
+window.addEventListener('resize', onWindowResize);
 
 // Start animation initially
 startAnimation();

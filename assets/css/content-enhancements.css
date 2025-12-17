@@ -53,7 +53,7 @@ pre {
 
 /* Three.js animation container styling */
 .threejs-content > canvas {
-	width: 80% !important;
+	width: 90% !important;
 	height: auto !important;
 	object-fit: contain;
 	display: block;
@@ -85,4 +85,11 @@ pre {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+/* Markdown table spacing */
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+	width: 100%;
 }

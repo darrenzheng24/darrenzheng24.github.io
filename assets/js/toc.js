@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         entries.forEach(entry => {
             if (activeElement) {
-                document.querySelectorAll("nav[id='TableOfContents'] li").forEach((node) => {
+                document.querySelectorAll(".toc-wrapper nav[id='TableOfContents'] li").forEach((node) => {
                     node.classList.add('inactive');
                     node.classList.replace('active', 'inactive');
                 });
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 activeElement = entry.target.getAttribute('id');
             }
             if (activeElement) {
-                const link = document.querySelector(`nav[id='TableOfContents'] li a[href="#${activeElement}"]`);
+                const link = document.querySelector(`.toc-wrapper nav[id='TableOfContents'] li a[href="#${activeElement}"]`);
                 if (link && link.parentElement) {
                     link.parentElement.classList.replace('inactive', 'active');
                 }

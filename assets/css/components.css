@@ -129,3 +129,21 @@
   block-size: auto;
   block-size: calc-size(auto, size);
 }
+
+/* Table Styling */
+table {
+  display: block;
+  max-width: fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Quizdown shortcode styling */
+@media (max-width: 36em) {
+	.quizdown {
+		position: relative; 
+		right: 31px; 
+		width: 120%
+	}
+}

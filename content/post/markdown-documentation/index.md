@@ -164,4 +164,4 @@ What do dogs sound like?
 {{< /quizdown >}}
 
 ## Various shortcodes
-For some images, I can use the `custom-figure.html` and `figref.html` shortcodes. 
+For some images, I can use the `custom-figure.html` and `figref.html` shortcodes.
