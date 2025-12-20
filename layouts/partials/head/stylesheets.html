@@ -21,9 +21,10 @@
     {{ $css_bundle = $css_bundle | append . }}
   {{ end }}
 {{ end }}
-{{ $css_bundle := $css_bundle | resources.Concat "css/bundle.css" | css.PostCSS | minify | fingerprint }}
 {{ if hugo.IsProduction }} 
-    {{ $css_bundle = $css_bundle | resources.PostProcess }} 
+  {{ $css_bundle = $css_bundle | resources.Concat "css/bundle.css" | css.PostCSS | minify | fingerprint | resources.PostProcess }} 
+{{ else }}
+  {{ $css_bundle = $css_bundle | resources.Concat "css/bundle.css" | minify | fingerprint }}
 {{ end }}
 
 <link
