@@ -11,11 +11,13 @@ categories: ""
 featuredImage: null
 readingtime: true
 ---
-Lately, I have been reorganizing some of my past work scattered across many paper notebooks, computer folders, writing tablet and OneNote. I wanted to create a minimalist, academic site to showcase some of my projects and general mathematical thoughts. At the same time, establishing an internet presence beyond a LinkedIn profile seemed to be a good investment for the modern era. This blog post serves as documentation for myself. While this post may lack certain details, it is useful to check out the following sources for more information. This page mainly documents the global features. For specific extensions to post content, see [Documenting Markdown Frontmatter & Content Extensions](/post/markdown-documentation/).
+Lately, I have been reorganizing some of my past work scattered across many paper notebooks, computer folders, writing tablet and OneNote. I wanted to create a minimalist, academic site to showcase some of my projects and general mathematical thoughts. At the same time, establishing an internet presence beyond a LinkedIn profile seemed to be a good investment for the modern era. This blog post serves as documentation for myself. While this post may lack certain details, it is useful to check out the following sources for more information. 
 
 - [Hugo Forums](https://discourse.gohugo.io/)
 - [Collection of Hugo Themes](https://themes.gohugo.io/)
 - [CloudCannon Beginner Tutorial](https://cloudcannon.com/tutorials/hugo-beginner-tutorial/)
+
+This page mainly documents the global features. For specific extensions to post content, see [Documenting Markdown Frontmatter & Content Extensions](/post/markdown-documentation/).
 
 ## Why Hugo?
 
