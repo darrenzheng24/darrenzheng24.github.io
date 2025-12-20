@@ -7,4 +7,3 @@ TO-DO List:
 5. [ ] Consider use cases of [content adapters](https://gohugo.io/content-management/content-adapters/)
 6. [ ] Add shortcodes for Theorems, Definitions, Propositions, etc.
 7. [ ] Bibtex generator in combination with footnotes
-8. [ ] Resizing of threejs animations particularly in mobile view.
