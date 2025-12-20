@@ -58,7 +58,7 @@ demonstrate some surprising properties.
 **Write-up:** [Besicovitch Sets](DRP-files/besicovitch%20sets.pdf)
 {{< /details >}}
 {{< details summary="Studying Mapping Class Groups using Dehn Twists (Spring 2025)" class="DRP">}}
-**Mentor:** Ellis Buckminster  
+**Mentor:** [Ellis Buckminster](https://ellisbuckminster.neocities.org/)  
 
 **Description:** Mapping groups are a tool from algebraic topology that allows us to study certain topological spaces. This talk will explore how we can use Dehn Twists, a simple type of homeomorphism, to classify mapping class groups.  
 

@@ -91,6 +91,7 @@ bower_components
 /.gitmodules
 /.vscode/settings.json 
 .harper-dictionary.txt
+hugo_stats.json
 
 #Obsidian settings
 .obsidian/

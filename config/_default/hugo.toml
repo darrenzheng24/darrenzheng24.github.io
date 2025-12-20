@@ -30,7 +30,10 @@ ignoreFiles = ["hugo-ignore"]
 
 # Build Settings
 cleanDestinationDir = true
-
+[build]
+  [build.buildStats]
+    enable = true
+    
 # Number of posts on the homepage before generating next page
 [pagination]
   pagerSize = 10
