@@ -4,3 +4,12 @@
   path = "github.com/KKKZOZ/hugo-admonitions"
 [[imports]]
     path = "github.com/gohugoio/hugo-mod-jslibs/instantpage"
+[module.hugoVersion]
+  extended = false
+  min      = "0.115.0"
+[[module.mounts]]
+  source = "assets"
+  target = "assets"
+[[module.mounts]]
+  source = "hugo_stats.json"
+  target = "assets/watching/hugo_stats.json"

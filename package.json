@@ -1,0 +1,26 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "TO-DO List: \r 1. [ ] books based on obsidian CSS + BentoGrid.js + calibre\r 2. [ ] Add some homepage widgets\r 3. [ ] Consider re-adding taxonomy tags list page, or post date filters on homepage\r 4. [ ] Change liminal set-up to a custom layout\r 5. [ ] Consider use cases of [content adapters](https://gohugo.io/content-management/content-adapters/)\r 6. [ ] Add shortcodes for Theorems, Definitions, Propositions, etc.\r 7. [ ] Bibtex generator in combination with footnotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrenzheng24/darrenzheng24.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrenzheng24/darrenzheng24.github.io/issues"
+  },
+  "homepage": "https://github.com/darrenzheng24/darrenzheng24.github.io#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
+  }
+}

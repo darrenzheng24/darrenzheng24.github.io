@@ -21,6 +21,15 @@
     {{ $css_bundle = $css_bundle | append . }}
   {{ end }}
 {{ end }}
-{{ $css_bundle := $css_bundle | resources.Concat "css/bundle.css" | minify | fingerprint }}
+{{ $css_bundle := $css_bundle | resources.Concat "css/bundle.css" | css.PostCSS | minify | fingerprint }}
+{{ if hugo.IsProduction }} 
+    {{ $css_bundle = $css_bundle | resources.PostProcess }} 
+{{ end }}
 
-<link type="text/css" rel="stylesheet" href="{{ $css_bundle.RelPermalink }}">
+<link
+  rel="stylesheet"
+  href="{{ $css_bundle.RelPermalink }}"
+  {{ if hugo.IsProduction -}} 
+    integrity="{{ $css_bundle.Data.Integrity }}"
+  {{- end }}
+/>
