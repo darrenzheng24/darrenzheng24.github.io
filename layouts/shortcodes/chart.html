@@ -59,5 +59,12 @@
     });
 
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'], attributeOldValue: true });
+
+    // Resize chart when window resizes
+    window.addEventListener('resize', function() {
+      if (chartInstance) {
+        chartInstance.resize();
+      }
+    });
   })();
 </script>
