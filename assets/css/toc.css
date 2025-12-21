@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Table of Contents Styling */
 
 /* TOC container and title */
@@ -47,3 +49,5 @@ summary:empty::marker {
 		display: flex !important;
 	}
 }
+
+/* purgecss end ignore */

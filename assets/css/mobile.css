@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Mobile-Specific Styles */
 
 /* Resize for smaller mobile screens */
@@ -198,3 +200,5 @@
 		block-size: calc-size(auto, size);
 	}
 }
+
+/* purgecss end ignore */

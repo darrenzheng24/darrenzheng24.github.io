@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Custom CSS - Layout and Spacing */
 
 .sidebar {
@@ -85,3 +87,5 @@
 .headline {
     flex-wrap: wrap;
 }
+
+/* purgecss end ignore */

@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Theme Colors and Color Variables */
 /* Color palette variables */
 :root {
@@ -40,3 +42,5 @@ body.dark-theme .DRP > summary {
 	font-family: "abril fatface", serif;
 	font-weight: 300;
 }
+
+/* purgecss end ignore */

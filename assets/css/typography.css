@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Typography - Font and text styling */
 
 /* Katex font scaling override */
@@ -42,3 +44,5 @@ abbr {
 abbr[title] {
 	border-bottom: none;
 }
+
+/* purgecss end ignore */

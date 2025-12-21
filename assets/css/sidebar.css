@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Sidebar - Sidebar-specific styles */
 
 /* Centers non-rectangular images for sidebar */
@@ -53,3 +55,5 @@
 		margin-right: 11rem;
 	}
 }
+
+/* purgecss end ignore */

@@ -153,3 +153,6 @@ This is a [system](https://github.com/jonathanlilly/liminal) created by Johnatha
 
 ## Hugo Render Hooks
 There are a number of custom render hooks written into this website to enable smarter organization of page resources. See [here](https://www.veriphor.com/articles/link-and-image-render-hooks/) for documentation for the link and image ones.
+
+## Using PurgeCSS
+There is a [guide](https://purgecss.com/guides/hugo.html) and some documentation [here](https://gohugo.io/functions/css/postcss/). This was actually fairly difficult to set-up and I am still ironing out bugs, but will add more detail here in the future.

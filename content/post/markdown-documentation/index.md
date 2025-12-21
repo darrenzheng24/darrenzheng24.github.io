@@ -165,3 +165,20 @@ What do dogs sound like?
 
 ## Various shortcodes
 For some images, I can use the `custom-figure.html` and `figref.html` shortcodes.
+
+## Tabs
+Tabs are shipped with the theme via `tabs.html` and `tab.html` shortcodes.
+
+{{< tabs tabTotal="2" >}}
+
+{{% tab tabName="First Tab" %}}
+This is markdown content.
+{{% /tab %}}
+
+{{< tab tabName="Second Tab" >}}
+{{< highlight text >}}
+This is a code block.
+{{< /highlight >}}
+{{< /tab >}}
+
+{{< /tabs >}}

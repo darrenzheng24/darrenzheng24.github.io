@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Components - Reusable UI components */
 
 /* From uiverse.io by @satyamchaudharydev */
@@ -147,3 +149,5 @@ table {
 		width: 120%
 	}
 }
+
+/* purgecss end ignore */

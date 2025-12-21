@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* Sidenotes and Inline Notes Styling */
 
 /* Sidenote styling */
@@ -128,3 +130,5 @@ span.inline-content::-webkit-scrollbar-thumb {
 span.inline-content::-webkit-scrollbar-thumb:hover {
 	background: #555; /* color of the thumb on hover */
 }
+
+/* purgecss end ignore */
