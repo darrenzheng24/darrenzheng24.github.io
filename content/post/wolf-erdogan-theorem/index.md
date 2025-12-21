@@ -218,7 +218,7 @@ The proof for $n > 2$ requires a "deep bilinear estimates" that won't be discuss
 ## Wrapping it all up
 
 We note that this Theorem 16.1 implies Theorem 15.1 by using Frostman's lemma + Proposition 15.3 + the hypothesis 
-$$\mu(B_{q}(x)) \leq q^{s} \text{ for all } x \in \R^{n}, q > 0 \implies I_{t}(\mu) < \infty$$.
+$$\mu(B_{q}(x)) \leq q^{s} \text{ for all } x \in \R^{n}, q > 0 \implies I_{t}(\mu) < \infty$$
 
 On the other hand, it does not yet show Theorem 15.5, since finite measures may not yield uniform bounds on the growth of balls. How can we solve this problem? We break it into cases by assuming that $\mu(B_{q}(x)) \leq q^{s}$ for $q \geq \frac{1}{r}$. Then, for all other $q < \frac{1}{r} \iff r < \frac{1}{q}$, we try to decompose into $\log{r}$ number of measures with the $g \geq \frac{1}{r}$ condition. Then, some summation estimation yields the desired result.
 
