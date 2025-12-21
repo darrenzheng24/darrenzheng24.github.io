@@ -12,7 +12,7 @@ const purgecss = purgeCSSPlugin({
     ];
   },
   // https://purgecss.com/safelisting.html
-  safelist: []
+  safelist: ["toggled", "dark-theme"]
 });
 
 module.exports = {
