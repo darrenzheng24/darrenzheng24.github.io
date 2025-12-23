@@ -1,6 +1,7 @@
 ---
 title: "Projects"
 draft: false
+date: "2024-01-01"
 layout: "single"
 readingtime: false
 summary: "Collection of my past projects."
