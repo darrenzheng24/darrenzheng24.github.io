@@ -120,14 +120,14 @@
   
   .month-header {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--text-color);
     cursor: pointer;
     padding: 0.25rem 0;
     overflow: hidden;
   }
   
   .month-header:hover {
-    color: var(--link-color, #007acc);
+    color: var(--link-color);
   }
   
   details.month-group[open] .month-header {
@@ -150,7 +150,7 @@
   
   .month-posts .post-date {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-color);
     min-width: 50px;
     font-family: monospace;
   }
