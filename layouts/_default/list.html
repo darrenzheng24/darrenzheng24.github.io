@@ -1,5 +1,5 @@
 {{ define "main" -}}
-  <h1 class="title" data-pagefind-ignore="all">{{ .Title }}</h1>
+  <h1 class="title" data-pagefind-ignore="all">Posts tagged with <b>{{ .Title }}</b></h1>
   <ul class="entries" data-pagefind-ignore="all">
     {{ range .Pages.GroupByDate "2006" }}
       <h3 style="text-align: center;">{{ .Key }}</h3>

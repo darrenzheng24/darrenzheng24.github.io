@@ -1,0 +1,20 @@
+{{/* Posts by Month Widget */}}
+<div class="posts-by-month">
+  {{/* Get all regular pages from posts section */}}
+  {{ $posts := where .Site.RegularPages "Section" "post" }}
+  
+  {{/* Group posts by year and month */}}
+  {{ range $posts.GroupByDate "January 2006" }}
+    <details class="month-group">
+      <summary class="month-header">{{ .Key }} ({{ len .Pages }})</summary>
+      <ul class="month-posts">
+        {{ range .Pages }}
+          <li>
+            <span class="post-date">{{ .Date.Format "Jan 2" }}</span>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </details>
+  {{ end }}
+</div>

@@ -1,3 +1,13 @@
+{{- /*
+Embeds a PDF viewer using PDF.js.
+
+@param {string} src The relative path to the PDF file (relative to the page).
+
+@examples
+
+  {{< embedPDF src="document.pdf" >}}
+
+*/}}
 {{ $src := .Get "src" }}
 <pdfjs-viewer-element 
 src="{{.Page.Permalink}}{{ $src }}" 

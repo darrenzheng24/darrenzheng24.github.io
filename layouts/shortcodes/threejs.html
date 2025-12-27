@@ -1,6 +1,18 @@
-<!-- Three.js short code for linking JS code and rendering a scene -->
-<!-- Source: https://jorgemartinez.space/posts/tutorials/running-threejs-in-my-website/ -->
+{{- /*
+Renders a Three.js 3D scene in a container.
 
+@param {string} version The Three.js version to load from unpkg CDN.
+@param {string} id A unique identifier for the container element.
+@param {string} src The path to the JavaScript module file containing the Three.js scene code.
+
+@reference https://threejs.org/
+@source https://jorgemartinez.space/posts/tutorials/running-threejs-in-my-website/
+
+@examples
+
+  {{< threejs version="0.160.0" id="my-scene" src="scene.js" >}}
+
+*/}}
 {{ $version := .Get "version" }}
 {{ $id := .Get "id" }}
 {{ $src := .Page.Resources.GetMatch (.Get "src") }}

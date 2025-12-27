@@ -1,3 +1,14 @@
+{{- /*
+Renders an HTML abbreviation element.
+
+@param {string} text The text to display for the abbreviation.
+@param {string} [title] The full form or explanation of the abbreviation (shown on hover).
+
+@examples
+
+  {{< abbr text="HTML" title="HyperText Markup Language" >}}
+
+*/}}
 {{ $text := .Get "text" }}
 {{ $title := .Get "title" }}
 <abbr {{ if $title }}title="{{ $title }}"{{ end }}>{{ $text }}</abbr>

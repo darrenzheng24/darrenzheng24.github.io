@@ -1,3 +1,17 @@
+{{- /*
+Renders a sidenote (marginal note) that appears in the page margin.
+
+@param {string} 0 The label/marker text for the sidenote (positional parameter).
+@param {string} [1] Optional image source URL to display in the sidenote (positional parameter).
+@content The content to display in the sidenote.
+
+@examples
+
+  This is some text{{< sidenote "1" >}}This is a sidenote explaining something.{{< /sidenote >}} that continues.
+
+  Here's another{{< sidenote "*" "diagram.png" >}}A sidenote with an image and text.{{< /sidenote >}} example.
+
+*/}}
 <span class="sidenote">
   <label class="sidenote-label" for="sidenote-{{ $.Ordinal }}">{{ .Get 0 }}</label>
   <input class="sidenote-checkbox" type="checkbox" id="sidenote-{{ $.Ordinal }}"></input>

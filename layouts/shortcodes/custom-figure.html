@@ -1,3 +1,28 @@
+{{- /*
+Renders a figure with automatic numbering and optional caption/attribution.
+
+@param {string} id A unique identifier for the figure (used for cross-references with figref).
+@param {string} src The source URL or path to the image.
+@param {string} [class] Additional CSS class(es) for the figure element.
+@param {string} [link] A URL to wrap the image in a link.
+@param {string} [target] The target attribute for the link (e.g., "_blank").
+@param {string} [rel] The rel attribute for the link.
+@param {string} [alt] Alt text for the image. Falls back to caption if not provided.
+@param {string} [width] The width of the image.
+@param {string} [height] The height of the image.
+@param {string} [loading] The loading attribute (e.g., "lazy").
+@param {string} [title] A title displayed as an h4 in the figcaption.
+@param {string} [caption] The caption text (supports Markdown).
+@param {string} [attr] Attribution text (supports Markdown).
+@param {string} [attrlink] A URL for the attribution link.
+
+@examples
+
+  {{< custom-figure id="fig1" src="image.png" caption="My figure caption" >}}
+
+  {{< custom-figure id="fig2" src="diagram.svg" caption="A diagram" attr="Source: Example" attrlink="https://example.com" >}}
+
+*/}}
 {{ if not (.Page.Store.Get "figCounter") }}
   {{ .Page.Store.Set "figCounter" 0 }}
 {{ end }}

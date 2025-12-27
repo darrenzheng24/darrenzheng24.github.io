@@ -1,3 +1,21 @@
+{{- /*
+Renders an inline note that can be toggled to show/hide content.
+
+@param {string} 0 The label text for the inline note (positional parameter).
+@param {string} [1] Optional image source URL (positional parameter).
+@content The content to display when the note is expanded.
+
+@examples
+
+  {{< inlineNote "Click me" >}}
+  This is the hidden content that appears when clicked.
+  {{< /inlineNote >}}
+
+  {{< inlineNote "View image" "image.png" >}}
+  Additional description below the image.
+  {{< /inlineNote >}}
+
+*/}}
 <span class="inline">
   <label class="inline-label" for="inline-{{ $.Ordinal }}">{{ .Get 0 }}</label>
   <input class="inline-checkbox" type="checkbox" id="inline-{{ $.Ordinal }}"></input>

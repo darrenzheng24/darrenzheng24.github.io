@@ -1,3 +1,25 @@
+{{- /*
+Renders content in a flexible multi-column layout.
+
+@content Markdown content separated by "<--->" delimiters to create columns.
+
+@examples
+
+  {{< columns >}}
+  **First Column**
+
+  Content for the first column.
+  <--->
+  **Second Column**
+
+  Content for the second column.
+  <--->
+  **Third Column**
+
+  Content for the third column.
+  {{< /columns >}}
+
+*/}}
 <style>
 .flex{display:flex}
 .flex-auto{flex:auto}
