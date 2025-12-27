@@ -1,3 +1,21 @@
+{{- /*
+Renders an interactive quiz using the Quizdown library.
+
+@content Quizdown-formatted quiz content (Markdown-based quiz syntax).
+
+@reference https://github.com/bonartm/quizdown-js
+
+@examples
+
+  {{< quizdown >}}
+  # What is 2 + 2?
+
+  - [ ] 3
+  - [x] 4
+  - [ ] 5
+  {{< /quizdown >}}
+
+*/}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class='quizdown'>
   {{ .Inner }}

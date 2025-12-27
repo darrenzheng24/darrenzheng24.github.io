@@ -99,4 +99,68 @@
 	}
 }
 
+/* Homepage posts sorted by months styling */
+
+  .posts-by-month {
+    margin: 4rem 0 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 768px) {
+    .posts-by-month {
+      display: none;
+    }
+  }
+  
+  .month-group {
+    margin-bottom: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .month-header {
+    font-size: 0.95rem;
+    color: #555;
+    cursor: pointer;
+    padding: 0.25rem 0;
+    overflow: hidden;
+  }
+  
+  .month-header:hover {
+    color: var(--link-color, #007acc);
+  }
+  
+  details.month-group[open] .month-header {
+    margin-bottom: 0.5rem;
+  }
+  
+  .month-posts {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .month-posts li {
+    padding: 0.2rem 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  
+  .month-posts .post-date {
+    font-size: 0.8rem;
+    color: #666;
+    min-width: 50px;
+    font-family: monospace;
+  }
+  
+  .month-posts a {
+    text-decoration: none;
+  }
+  
+  .month-posts a:hover {
+    text-decoration: underline;
+  }
+
 /* purgecss end ignore */

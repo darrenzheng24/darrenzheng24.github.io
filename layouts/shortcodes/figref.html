@@ -1,1 +1,11 @@
+{{- /*
+Creates a cross-reference link to a custom-figure by its id.
+
+@param {string} 0 The id of the figure to reference (positional parameter).
+
+@examples
+
+  See {{< figref "fig1" >}} for details.
+
+*/}}
 [Figure {{ .Page.Store.Get (.Get 0) }}](#{{ .Get 0 }})

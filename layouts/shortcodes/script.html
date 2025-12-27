@@ -1,2 +1,15 @@
+{{- /*
+Accumulates JavaScript code to be rendered later in the page.
+Multiple script shortcodes can be used, and their content will be collected into an array.
+
+@content JavaScript code to be added to the page's script collection.
+
+@examples
+
+  {{< script >}}
+  console.log('Hello from script shortcode!');
+  {{< /script >}}
+
+*/}}
 {{- $scriptArr := (.Page.Scratch.Get "this").scriptArr | default slice -}}
 {{- $scriptArr | append (trim .Inner "\n") | .Page.Scratch.SetInMap "this" "scriptArr" -}}
