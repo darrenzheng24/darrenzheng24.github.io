@@ -105,6 +105,8 @@
     margin: 4rem 0 1rem 0;
     overflow: hidden;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
   }
   
   @media (max-width: 768px) {
@@ -162,5 +164,6 @@
   .month-posts a:hover {
     text-decoration: underline;
   }
+
 
 /* purgecss end ignore */

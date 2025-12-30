@@ -17,4 +17,98 @@
       </ul>
     </details>
   {{ end }}
+
+  <table style="margin-top: auto;" class='calendar-table'>
+    <script type="text/javascript">
+      const monthnames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      
+      let linkcount = 0;
+      function addlink(month, day, href) {
+        const entry = [month, day, href];
+        this[linkcount++] = entry;
+      }
+      Array.prototype.addlink = addlink;
+      
+      const linkdays = [];
+      const monthdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      
+      const todayDate = new Date();
+      const thisday = todayDate.getDay();
+      const thismonth = todayDate.getMonth();
+      const thisdate = todayDate.getDate();
+      let thisyear = todayDate.getFullYear();
+      
+      // Leap year check
+      if ((thisyear % 4 == 0 && thisyear % 100 != 0) || (thisyear % 400 == 0)) {
+        monthdays[1] = 29;
+      }
+      
+      let startspaces = thisdate;
+      while (startspaces > 7) startspaces -= 7;
+      startspaces = thisday - startspaces + 1;
+      if (startspaces < 0) startspaces += 7;
+      
+      document.write("<tr><td colspan=7><center><strong>" 
+        + monthnames[thismonth] + " " + thisyear 
+        + "</strong></center></td></tr>");
+      document.write("<tr>");
+      document.write("<td align=center>Su</td>");
+      document.write("<td align=center>M</td>");
+      document.write("<td align=center>Tu</td>");
+      document.write("<td align=center>W</td>");
+      document.write("<td align=center>Th</td>");
+      document.write("<td align=center>F</td>");
+      document.write("<td align=center>Sa</td>");
+      document.write("</tr>");
+      document.write("<tr>");
+      
+      for (let s = 0; s < startspaces; s++) {
+        document.write("<td> </td>");
+      }
+      
+      let count = 1;
+      while (count <= monthdays[thismonth]) {
+        for (let b = startspaces; b < 7; b++) {
+          let linktrue = false;
+          document.write("<td>");
+          
+          for (let c = 0; c < linkdays.length; c++) {
+            if (linkdays[c] != null) {
+              if ((linkdays[c][0] == thismonth + 1) && (linkdays[c][1] == count)) {
+                document.write("<a href=\"" + linkdays[c][2] + "\">");
+                linktrue = true;
+              }
+            }
+          }
+          
+          if (count == thisdate) {
+            document.write("<span class='today'>");
+          }
+          
+          if (count <= monthdays[thismonth]) {
+            document.write(count);
+          } else {
+            document.write(" ");
+          }
+          
+          if (count == thisdate) {
+            document.write("</span>");
+          }
+          
+          if (linktrue) {
+            document.write("</a>");
+          }
+          
+          document.write("</td>");
+          count++;
+        }
+        document.write("</tr>");
+        document.write("<tr>");
+        startspaces = 0;
+      }
+    </script>
+  </table>
 </div>

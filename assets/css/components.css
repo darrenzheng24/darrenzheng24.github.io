@@ -150,4 +150,23 @@ table {
 	}
 }
 
+/* Calendar Widget */
+.calendar-table {
+  border: 2px solid var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-collapse: collapse;
+  display: table;
+}
+
+.calendar-table td {
+  text-align: center;
+  padding: 4px 8px;
+  border: 1px solid var(--text-color);
+}
+
+.calendar-table .today {
+  color: #FFA500;
+  font-weight: bold;
+}
 /* purgecss end ignore */
