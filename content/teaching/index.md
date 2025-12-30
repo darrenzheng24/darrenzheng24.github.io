@@ -7,8 +7,9 @@ readingtime: false
 summary: Overview of teaching and outreach experiences
 hideTOC: true
 ---
-
-# Teaching
+{{< raw >}}
+<h1 id="teaching" style="margin-top: -27px;">Teaching</h1>  
+{{< /raw >}}
 {{< horizontal-break >}}
 #### **Teaching at University of Pennsylvania**  
 I've been a TA/Grader for the following courses in the past.
