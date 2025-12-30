@@ -176,7 +176,7 @@
 	}
 
 	.mobile-toc-wrapper > nav li a {
-		text-decoration-line: underline;
+		text-decoration-line: none;
 		color: inherit;
 	}
 
