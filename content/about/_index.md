@@ -7,7 +7,7 @@ slug:
 readingtime: false
 ---
 ## About Darren Zheng
-Hello there :wave:! I'm Darren Zheng (he/him), a recent graduate from the University of Pennsylvania (Class of 2025). My primary mathematical interests are in low-dimensional topology, geometric analysis and geometric measure theory.
+Hello there :wave:! I'm Darren Zheng (he/him), a recent graduate from the University of Pennsylvania (Class of 2025). My primary mathematical interests are in low-dimensional topology, geometric analysis, and geometric measure theory. I enjoy participating in mathematical communities, hoping to make them more approachable and inclusive. 
 
 ## What You Will Find Here
 
