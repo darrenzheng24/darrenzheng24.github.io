@@ -20,21 +20,21 @@ Listed below are some of my past projects.
 
 ## Directed Reading Program Final Presentations/Write-ups
 {{< details summary="Knot Invariants using Algebraic Topology (Fall 2022)" class="DRP">}}
-**Mentor:** Yi Wang  
+**Mentor:** [Yi Wang](https://yiwang20.web.illinois.edu/) 
 
 **Description:** We hope to study some of the theory in the fields of topology and knot theory. In particular, the study of classifying and invariants used to distinguish spaces/knots. We begin the semester with a survey of standard techniques using [Topology of Surfaces](https://doi.org/10.1007/978-1-4612-0899-0) by L. Christine Kinsey and [The Knot Book](https://www.math.cuhk.edu.hk/course_builder/1920/math4900e/Adams--The%20Knot%20Book.pdf) by Colin Adams. We will end it by reading the first chapters of [Hyperbolic Knot Theory](https://doi.org/10.48550/arXiv.2002.12652) by Jessica Purcell.  
 
 **Presentation:** [The Figure-Eight Knot](DRP-files/figure%20eight%20knot.pdf)
 {{< /details >}}
 {{< details summary="Understanding Generating Functions (Spring 2023)" class="DRP">}}
-**Mentor:** Xinxuan (Jennifer) Zhang  
+**Mentor:** [Xinxuan Wang](https://sites.google.com/view/xwangmath/home?authuser=0)
 
 **Description:** The goal of this project is to see the widespread use of generating functions in counting particularly difficult sequences that may not have a closed form. In many cases, the generating functions captures a lot of information. We will begin the semester by studying general combinatorial principles and tools using [The Art of Counting](https://users.math.msu.edu/users/bsagan/Books/Aoc/final.pdf) by Bruce Sagan. Afterwards, we will focus more on generating functions and specific examples of their use in combinatorics, such as rook polynomials. We seek to understand generating functions more rigorously and how to manipulate them. After a few chapters, we will switch to select sections of [Enumerative Combinatorics, Vol. 1](https://www.ms.uky.edu/~sohum/putnam/enu_comb_stanley.pdf) by Richard Stanley.  
 
 **Presentation:** [Generating Functions](DRP-files/an%20introduction%20to%20generating%20functions.pdf)
 {{< /details >}}
 {{< details summary="Pontryagin Duality of LCA Groups (Fall 2023)" class="DRP">}}
-**Mentor:** Travis Leadbetter  
+**Mentor:** [Travis Leadbetter](https://tleadbe1.github.io/index.html) 
 
 **Description:** Both the discrete and real Fourier transforms have many applications, drawing from a rich theory. In this write-up, we will discuss a generalization of the Fourier transform onto locally compact abelian groups, introducing techniques in abstract harmonic analysis. We begin by talking about what it means to integrate over a group before constructing the general Haar measure. We will prove Pontryagin duality and finish by discussing some consequences of this result.  
 
@@ -48,7 +48,7 @@ Listed below are some of my past projects.
 **Write-up:** [Distinct Distances Problem](DRP-files/distinct%20distances%20problem.pdf)
 {{< /details >}}
 {{< details summary="Besicovitch Sets & Hausdorff Dimension (Fall 2024)" class="DRP" >}}
-**Mentor:** Hunter Stufflebeam  
+**Mentor:** [Hunter Stufflebeam](https://hstuff.github.io/)  
 
 **Description:** Let S be a set that contains a line in every direction. How small can S be? What
 do we mean by small sets in mathematics? This write-up seeks to construct these special sets and

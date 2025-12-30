@@ -29,7 +29,7 @@ Feel free to reach out to me through:
 - **LinkedIn**: [Darren Zheng](https://www.linkedin.com/in/darrenzheng24/)
 
 ## Resume + Curriculum Vitae
-- **Resume**: [PDF](resume-november-2025.pdf)
+- **Resume**: [PDF](resume-december-2025.pdf)
 - **Academic CV**: [PDF](math-cv-november-2025.pdf)
 <--->
 {{< raw >}}
