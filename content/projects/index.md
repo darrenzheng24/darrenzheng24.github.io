@@ -7,7 +7,7 @@ summary: "Collection of my past projects."
 ---
 Listed below are some of my past projects.  
 
-## Undergraduate Thesis
+### Undergraduate Thesis
 {{< details summary="Intrinsic Morse Functions on Grassmannians" class="DRP">}}
 **Advisor:** Dennis DeTurck 
 
@@ -18,7 +18,7 @@ Listed below are some of my past projects.
 {{< /details >}}
 
 
-## Directed Reading Program Final Presentations/Write-ups
+### Directed Reading Program Final Presentations/Write-ups
 {{< details summary="Knot Invariants using Algebraic Topology (Fall 2022)" class="DRP">}}
 **Mentor:** [Yi Wang](https://yiwang20.web.illinois.edu/) 
 
@@ -64,7 +64,8 @@ demonstrate some surprising properties.
 **Presentation:** [Dehn Twists](DRP-files/dehn%20twists.pdf)
 {{< /details>}}
 
-## Class Projects
+### Class Projects
+<!--
 **MATH 5010 - Differential Geometry:** Curve Shortening Flow  
 Presentation: TBA
 
@@ -73,11 +74,11 @@ Presentation: TBA
 
 **MATH 7610 - Geometry Seminar:** Intersection forms of 4-manifolds  
 Presentation: TBA
-
+-->
 **STAT 4770 - Statistical Programming in R:** EWS Detection using Topological Data Analysis  
 Report: [Final Report](class-projects/Final%20Report.pdf)  
 Presentation: [Slides](class-projects/Topological%20Data%20Analysis%20for%20Financial%20Markets.pdf)   
-Code: TBA
+<!-- Code: TBA -->
 
-## Assorted Talks
+### Assorted Talks
 **Ross Mathematics Camp:** [Introduction to Fundamental Groups](talks/Intro%20to%20Fundamental%20Group.pdf)
