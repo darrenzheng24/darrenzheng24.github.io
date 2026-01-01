@@ -10,7 +10,6 @@
 /* Dark theme heading styles */
 body.dark-theme .post h2,
 body.dark-theme .post h3 {
-	text-decoration: underline;
 	color: orange;
 }
 
@@ -21,8 +20,11 @@ body.dark-theme .post h3 {
 /* Light theme heading styles */
 .post h2,
 .post h3 {
-	text-decoration: underline;
 	color: #1E1E1E;
+}
+
+.post h2 {
+	text-decoration: underline;
 }
 
 /* Dark theme reading time color override */

@@ -75,7 +75,7 @@ Presentation: TBA
 **MATH 7610 - Geometry Seminar:** Intersection forms of 4-manifolds  
 Presentation: TBA
 -->
-**STAT 4770 - Statistical Programming in R:** EWS Detection using Topological Data Analysis  
+**EWS Detection using Topological Data Analysis** (STAT 4770 - Statistical Programming in R)  
 Report: [Final Report](class-projects/Final%20Report.pdf)  
 Presentation: [Slides](class-projects/Topological%20Data%20Analysis%20for%20Financial%20Markets.pdf)   
 <!-- Code: TBA -->

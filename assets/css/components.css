@@ -94,11 +94,11 @@
 
 .DRP[open] > summary {
 	border-radius: 10px 10px 0 0;
-	border-bottom: 1px solid #1E1E1E;
+	border-bottom: 0.5px solid #7D7D7F;
 }
 
 .DRP {
-	border: 1px solid #1E1E1E;
+	border: 0.5px solid #7D7D7F;
 	border-radius: 10px;
 }
 
@@ -125,6 +125,7 @@
 	transition-property: block-size, content-visibility;
 	transition-duration: 0.5s;
 	transition-behavior: allow-discrete;
+	margin-left: 5px;
 }
 
 .DRP:open::details-content {
