@@ -30,5 +30,8 @@ I've been a TA for the following courses in the past.
 - Co-founded a math contest for high schoolers in Fall 2021 with [Eric Tao](https://www.youtube.com/@erictao8396).
 - Find more details about it at ~~[Penn Math Contest](https://sites.google.com/view/pennmathcontest/home).~~ (As of 7/27/2025, there is a new [website](https://www.pennmathcontest.com/)).
 
+#### **Science Olympiad at Penn**
+- I've been an Event Supervisor for [SOUP](https://pennscienceolympiad.org/) from 2021-2025. I've written problems for the Optics, Codebusters, and It's About Time categories and designed the in-person practicals. Some of my past tests can be found at [Archive](https://pennscienceolympiad.org/archive/).
+
 #### **Bridge to Math**
 - I've run some of [Bridge to Math's](https://sites.google.com/view/bridge-to-math/home?authuser=0) review sessions, especially for MATH1410 at Penn.
