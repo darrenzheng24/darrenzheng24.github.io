@@ -33,21 +33,8 @@ defaults:
     shell: bash
 
 jobs:
-  #clean-up the past deployment history
-  cleanup:
-    runs-on: ubuntu-latest
-    permissions: write-all
-    steps:
-      - name: Delete old deployments
-        uses: strumwolf/delete-deployment-environment@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          environment: github-pages
-          onlyRemoveDeployments: true
-  # Build job
   build:
     runs-on: ubuntu-latest
-    needs: cleanup
     if: github.actor != 'github-actions[bot]'
     permissions:
       actions: write
@@ -73,7 +60,6 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      # Compile all .tex files to .pdf
       - name: Find LaTeX files
         id: find-tex
         run: |
@@ -84,11 +70,21 @@ jobs:
         with:
           root_file: ${{ steps.find-tex.outputs.root_file }}
           continue_on_error: true
+      - name: Move PDFs to source directories
+        run: |
+          find . -name "*.pdf" -type f | while read pdf; do
+            base="${pdf%.*}"
+            tex_file="$base.tex"
+            if [ -f "$tex_file" ]; then
+              dir=$(dirname "$tex_file")
+              mv "$pdf" "$dir/" || echo "Could not move $pdf"
+            fi
+          done
       - name: Commit generated PDFs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          find . -name "*.pdf" -type f | xargs git add
+          git add '*.pdf'
           if ! git diff --cached --quiet; then
             git commit --allow-empty-message -m ''
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
@@ -96,16 +92,11 @@ jobs:
             echo "No PDF changes to commit"
           fi
       - name: Cache Restore
-        id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
-          restore-keys:
-            hugo-
-      - name: Configure Git
-        run: git config core.quotepath false
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-cache-${{ github.ref }}
+          restore-keys: hugo-cache-
       - name: Build with Hugo
         run: |
           hugo \
@@ -113,30 +104,17 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
-      # Create the Pagefind index after the site is built
       - name: Build pagefind index
-        run: |
-          npx pagefind
+        run: npx pagefind
       - name: Cache Save
-        id: cache-save
         uses: actions/cache/save@v4
         with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-      # Upload the public directory as an artifact
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-cache-${{ github.ref }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-      # Delete past workflow runs, keeping at least 6 and those within the last 30 days
-      - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          retain_days: 30
-          keep_minimum_runs: 6
           
   # Deployment job
   deploy:
