@@ -76,16 +76,16 @@ jobs:
       - name: Install TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended cm-super dvipng
+          sudo apt-get install -y texlive-full texlive-fonts-extra fontforge
       - name: Compile LaTeX files
         run: |
           find . -name "*.tex" -type f | while read texfile; do
             dir=$(dirname "$texfile")
             filename=$(basename "$texfile")
-            cd "$dir"
-            pdflatex -interaction=nonstopmode "$filename" >/dev/null 2>&1 || true
-            pdflatex -interaction=nonstopmode "$filename" >/dev/null 2>&1 || true
-            cd - >/dev/null
+            name_without_ext="${filename%.tex}"
+            echo "Compiling $texfile..."
+            pdflatex -interaction=nonstopmode -output-directory="$dir" -jobname="$name_without_ext" "$texfile" 2>&1 | grep -E "(Error|Warning|Missing|undefined)" || true
+            pdflatex -interaction=nonstopmode -output-directory="$dir" -jobname="$name_without_ext" "$texfile" 2>&1 | grep -E "(Error|Warning|Missing|undefined)" || true
           done
       - name: Cache Restore
         id: cache-restore
