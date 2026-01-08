@@ -48,6 +48,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: cleanup
+    if: github.actor != 'github-actions[bot]'
     permissions:
       actions: write
       contents: write
@@ -87,9 +88,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add '*.pdf'
+          find . -name "*.pdf" -type f | xargs git add
           if ! git diff --cached --quiet; then
-            git commit -m "Build: Generate PDFs from LaTeX files [skip ci]"
+            git commit --allow-empty-message -m ''
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
           else
             echo "No PDF changes to commit"
