@@ -1,4 +1,3 @@
-
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
 name: Deploy Hugo site to Pages
 
@@ -33,6 +32,7 @@ defaults:
     shell: bash
 
 jobs:
+  #clean-up the past deployment history
   cleanup:
     runs-on: ubuntu-latest
     permissions: write-all
@@ -43,13 +43,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: github-pages
           onlyRemoveDeployments: true
+  # Build job
   build:
     runs-on: ubuntu-latest
     needs: cleanup
-    if: github.actor != 'github-actions[bot]'
     permissions:
       actions: write
-      contents: write
+      contents: read
     env:
       HUGO_VERSION: 0.147.2
       HUGO_ENVIRONMENT: production
@@ -71,43 +71,32 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Find LaTeX files
-        id: find-tex
+      # Install LaTeX dependencies and compile .tex files to .pdf
+      - name: Install TeX Live
         run: |
-          files=$(find . -name "*.tex" -type f | tr '\n' ' ')
-          echo "root_file=$files" >> $GITHUB_OUTPUT
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-extra texlive-xetex fontforge
       - name: Compile LaTeX files
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: ${{ steps.find-tex.outputs.root_file }}
-          continue_on_error: true
-      - name: Move PDFs to source directories
         run: |
-          find . -name "*.pdf" -type f | while read pdf; do
-            base="${pdf%.*}"
-            tex_file="$base.tex"
-            if [ -f "$tex_file" ]; then
-              dir=$(dirname "$tex_file")
-              mv -f "$pdf" "$dir/" || echo "Could not move $pdf"
-            fi
+          find . -name "*.tex" -type f | while read texfile; do
+            dir=$(dirname "$texfile")
+            filename=$(basename "$texfile")
+            name_without_ext="${filename%.tex}"
+            echo "Compiling $texfile..."
+            pdflatex -interaction=nonstopmode -output-directory="$dir" -jobname="$name_without_ext" "$texfile" 2>&1 | grep -E "(Error|Warning|Missing|undefined)" || true
+            pdflatex -interaction=nonstopmode -output-directory="$dir" -jobname="$name_without_ext" "$texfile" 2>&1 | grep -E "(Error|Warning|Missing|undefined)" || true
           done
-      - name: Commit generated PDFs
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add '*.pdf'
-          if ! git diff --cached --quiet; then
-            git commit --allow-empty-message -m ''
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
-          else
-            echo "No PDF changes to commit"
-          fi
       - name: Cache Restore
+        id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: hugo-cache-${{ github.ref }}
-          restore-keys: hugo-cache-
+          path: |
+            ${{ runner.temp }}/hugo_cache
+          key: hugo-${{ github.run_id }}
+          restore-keys:
+            hugo-
+      - name: Configure Git
+        run: git config core.quotepath false
       - name: Build with Hugo
         run: |
           hugo \
@@ -115,17 +104,30 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      # Create the Pagefind index after the site is built
       - name: Build pagefind index
-        run: npx pagefind
+        run: |
+          npx pagefind
       - name: Cache Save
+        id: cache-save
         uses: actions/cache/save@v4
         with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: hugo-cache-${{ github.ref }}
+          path: |
+            ${{ runner.temp }}/hugo_cache
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+      # Upload the public directory as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      # Delete past workflow runs, keeping at least 6 and those within the last 30 days
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 30
+          keep_minimum_runs: 6
           
   # Deployment job
   deploy:
