@@ -72,21 +72,12 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      # Install LaTeX dependencies and compile .tex files to .pdf
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended cm-super dvipng
-      - name: Compile LaTeX files
-        run: |
-          find . -name "*.tex" -type f | while read texfile; do
-            dir=$(dirname "$texfile")
-            filename=$(basename "$texfile")
-            cd "$dir"
-            pdflatex -interaction=nonstopmode "$filename" >/dev/null 2>&1 || true
-            pdflatex -interaction=nonstopmode "$filename" >/dev/null 2>&1 || true
-            cd - >/dev/null
-          done
+      # Install TeX Live and compile .tex files to .pdf
+      - name: Use TeX Live action
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file_glob_pattern: "**/*.tex"
+          glob_root_dir: "."
       - name: Cache Restore
         id: cache-restore
         uses: actions/cache/restore@v4
