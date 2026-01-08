@@ -22,6 +22,21 @@ public/
 _vendor/
 resources/
 
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# Frontmatter CMS
+.frontmatter/
+
 #Harper
 harper-custom-dictionary
 
@@ -57,7 +72,6 @@ coverage
 build/Release
 
 # Build directories
-public
 dist
 
 # Dependency directory
@@ -88,13 +102,11 @@ bower_components
 /.hugo_build.lock
 /.gitattributes
 /.gitmodules
-/.vscode/settings.json 
 .harper-dictionary.txt
 hugo_stats.json
 
 #Obsidian settings
 .obsidian/
-.obsidian/*
 preamble.md
 .trash
 .trash/*

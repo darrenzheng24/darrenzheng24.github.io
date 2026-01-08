@@ -90,6 +90,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      # Create the Pagefind index after the site is built
       - name: Build pagefind index
         run: |
           npx pagefind
@@ -100,10 +101,12 @@ jobs:
           path: |
             ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+      # Upload the public directory as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      # Delete past workflow runs, keeping at least 6 and those within the last 30 days
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
