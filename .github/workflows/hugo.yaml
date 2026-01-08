@@ -76,8 +76,7 @@ jobs:
       - name: Use TeX Live action
         uses: xu-cheng/latex-action@v4
         with:
-          root_file_glob_pattern: "**/*.tex"
-          glob_root_dir: "."
+          root_file: "**/*.tex"
       - name: Cache Restore
         id: cache-restore
         uses: actions/cache/restore@v4
