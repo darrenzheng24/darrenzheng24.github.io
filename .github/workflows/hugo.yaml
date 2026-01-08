@@ -75,7 +75,7 @@ jobs:
       - name: Install TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-extra texlive-xetex fontforge
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra fontforge fonts-font-awesome
       - name: Compile LaTeX files
         run: |
           find . -name "*.tex" -type f | while read texfile; do
