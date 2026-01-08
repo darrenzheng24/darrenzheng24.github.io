@@ -72,21 +72,17 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      # Install LaTeX dependencies and compile .tex files to .pdf
-      - name: Install TeX Live
+      # Compile all .tex files to .pdf
+      - name: Find LaTeX files
+        id: find-tex
         run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full texlive-fonts-extra fontforge
+          files=$(find . -name "*.tex" -type f | tr '\n' ' ')
+          echo "root_file=$files" >> $GITHUB_OUTPUT
       - name: Compile LaTeX files
-        run: |
-          find . -name "*.tex" -type f | while read texfile; do
-            dir=$(dirname "$texfile")
-            filename=$(basename "$texfile")
-            name_without_ext="${filename%.tex}"
-            echo "Compiling $texfile..."
-            pdflatex -interaction=nonstopmode -output-directory="$dir" -jobname="$name_without_ext" "$texfile" 2>&1 | grep -E "(Error|Warning|Missing|undefined)" || true
-            pdflatex -interaction=nonstopmode -output-directory="$dir" -jobname="$name_without_ext" "$texfile" 2>&1 | grep -E "(Error|Warning|Missing|undefined)" || true
-          done
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ steps.find-tex.outputs.root_file }}
+          continue_on_error: true
       - name: Cache Restore
         id: cache-restore
         uses: actions/cache/restore@v4
