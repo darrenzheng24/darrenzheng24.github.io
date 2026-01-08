@@ -15,6 +15,7 @@ $ErrorActionPreference = "Stop"
 
 Write-Host "=== Hugo Local Deployment ===" -ForegroundColor Green
 
+Write-Host "Compiling Latex Files..." -ForegroundColor Green
 # Compile LaTeX files to PDF
 if (-not $skipLatex) {
     Write-Host "Compiling LaTeX files..." -ForegroundColor Yellow
@@ -36,13 +37,14 @@ if (-not $skipLatex) {
 }
 
 # Clean and build
+Write-Host "Clearing public cache..." -ForegroundColor Green
 Remove-Item -Path "public" -Recurse -Force -ErrorAction SilentlyContinue
 
 Write-Host "Building Hugo site..." -ForegroundColor Yellow
 if ($drafts) {
-    hugo --gc --minify --buildDrafts
+    hugo --environment development --gc --minify --buildDrafts
 } else {
-    hugo --gc --minify
+    hugo --environment development --gc --minify
 }
 
 # Run Pagefind indexing

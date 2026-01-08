@@ -1,0 +1,236 @@
+%-------------------------
+% Resume in Latex
+% Author : Darren Zheng
+% Based on: https://github.com/jakegut/resume (which was itself based on https://github.com/sb2nov/resume)
+% License : MIT
+% Last Updated: January 2026
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+\input{glyphtounicode}
+
+% -------------------- FONT OPTIONS --------------------
+% sans-serif
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% serif
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-1in} % Default was -.5in
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+	\vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Subsection formatting
+\titleformat{\subsection}{
+	\vspace{-4pt}\scshape\raggedright\large
+}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% -------------------- CUSTOM COMMANDS --------------------
+\newcommand{\resumeItem}[1]{
+	\item\small{
+		{#1 \vspace{-2pt}}
+	}
+}
+
+\newcommand{\resumeSubheading}[4]{
+	\vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\textit{\small#1} & \textit{\small #2} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\small#1 & #2 \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\setlength{\footskip}{4.08003pt}
+
+% -------------------- START OF DOCUMENT --------------------
+\begin{document}
+	
+	% -------------------- HEADING--------------------
+	
+	\vspace*{-3pt}
+	
+	\begin{center}
+		\small
+		\textbf{\Large \scshape Darren Zhenggg} \\ \vspace{5pt}
+		\small 
+		\faIcon{address-card}
+		\href{https://darrenzheng24.github.io/}
+		{\underline{Personal Website}} \hspace{8pt} 
+		\faIcon{envelope}
+		\href{mailto:dzheng24@sas.upenn.edu}
+		{\underline{dzheng24@sas.upenn.edu}} \hspace{8pt}
+		\faIcon{linkedin}
+		\href{https://www.linkedin.com/in/darrenzheng24/}{\underline{linkedin}}
+	\end{center}
+	
+	% -------------------- EDUCATION --------------------
+	\section{Education}
+	\resumeSubHeadingListStart
+	
+	\resumeSubheading
+	{University of Pennsylvania}{August 2021 - May 2025}
+	{Bachelor of Arts in Mathematics, Minor in Statistics \& Data Science, Ben Franklin Scholar
+	}{B.A. GPA: 3.51/4.0
+	}
+	\resumeItemListStart
+	\resumeItem{Relevant Coursework: Data Analytics and Statistical Computing, Intro to Optimization, Corporate Finance, Abstract Probability Theory, Measure Theory, Stochastic Processes, Partial Differential Equations}
+	\resumeItemListEnd
+	
+	\vspace{-5pt}
+	\resumeSubHeadingListEnd
+	
+	% -------------------- PROJECTS --------------------
+	\section{Projects}
+	\resumeSubHeadingListStart
+	
+	\resumeProjectHeading
+	{\textbf{Undergraduate Honor's Thesis} $|$ \href{https://darrenzheng24.github.io/projects/papers/INTRINSIC\%20MORSE\%20FUNCTIONS\%20ON\%20GRASSMANNIANS.pdf}{\underline{\footnotesize\emph{Link to PDF}}}}{June 2024 - May 2025}
+	\resumeItemListStart
+	\resumeItem{Studied intrinsic Morse functions on Grassmannian manifolds under Prof. Dennis DeTurck}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{EWS Detection using Topological Data Analysis} $|$ \href{https://darrenzheng24.github.io/projects/class-projects/Final\%20Report.pdf}{\underline{\footnotesize\emph{Link to PDF}}}}{January 2024 - April 2024}
+	\resumeItemListStart
+	\resumeItem{Applied a proposed persistent-homology-based methodology from a paper by Gidea \& Katz in Python \& R to study the time-series of certain stock market indicators as potential early warning signs of market collapse}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Directed Reading Program} $|$ \href{https://darrenzheng24.github.io/projects/}{\underline{\footnotesize\emph{Link to Presentations}}}}{August 2022 - May 2025}
+	\resumeItemListStart
+	\resumeItem{Semester-long independent study with a graduate student. Prepares a presentation/write-up at the end of each semester to rest of participants and mentors}
+	\resumeItem{Topics: Classification of Hyperbolic Knots, Generating Functions, Pontryagin Duality, Brownian Motion, Erdős Set Distance Problem, Falconer's Conjecture, Mapping Class Groups}
+	\resumeItemListEnd
+	
+	
+	\vspace{-5pt}
+	\resumeSubHeadingListEnd
+	
+	% -------------------- EXPERIENCE --------------------
+	\section{Activities}
+	\resumeSubHeadingListStart
+	
+	\resumeProjectHeading
+	{\textbf{Penn Math Contest Club} $|$ \footnotesize\emph{Co-founder \& President }\vspace{1pt}}{August 2021 -- May 2025}
+	\resumeItemListStart
+	\resumeItem{Co-founded new club during freshmen year, focused on hosting a math contest for high schoolers}
+	\resumeItem{Help write/quality-check $\sim$120 original problems per year for the test, organize day-of logistics, operate social outreach with local schools, and secure funding from sponsors}
+	\resumeItem{Grew club from 40 participants (online due to COVID) to $\sim$150 in-person and $\sim$220 online participants in Spring 2025; \href{https://sites.google.com/view/pennmathcontest/home}{\underline{\footnotesize\emph{More details on website here}}}}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Penn Undergraduate Math Society} $|$ \footnotesize\emph{President}\vspace{1pt}}{January 2021 -- May 2025}
+	\resumeItemListStart
+	\resumeItem{Joined board as freshmen liaison, president during senior year. Run events for all math-adjacent undergraduates}
+	\resumeItem{Events include: Course \& Major Advising, Graduate Student Talks, Integration Bee, Department Merch Sale,  Alumni Career Insights, Weekly Office Hours, DRP × PUMS Mini-Talks, Faculty Lunches, Industry Recruiting}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Science Olympiad at Penn} $|$ \footnotesize\emph{Test Writer \& Event Supervisor}\vspace{1pt}}{August 2021 -- May 2025}
+	\resumeItemListStart
+	\resumeItem{Wrote 7 tests and acted as event supervisor across It's About Time, Fermi Problems, Optics, and Codebusters categories for high school competitors over 4 years}
+	\resumeItem{Joined finance board during 2023-24 to secure sponsorship funding for the high-school contest}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading{\textbf{Student Activities Council} $|$ \footnotesize\emph{Executive Board}\vspace{1pt}}{February 2023 - December 2024}
+	\resumeItemListStart
+	\resumeItem{Managed the approval and allocation of a \$1.5 million budget for over 300 student groups}
+	\resumeItem{Led part of the New Group Recognition Process each fall and spearheaded improvements to club debt policies}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Putnam Club}\vspace{1pt} $|$ \footnotesize\emph{Organizer}}{August 2021 - December 2024}
+	\resumeItemListStart
+	\resumeItem{Organized club that meets weekly on Sundays in the fall to practice for the Putnam Exam}
+	\resumeItemListEnd
+	
+	\vspace{-5pt}
+	\resumeSubHeadingListEnd
+	
+	\section{Teaching}
+	\resumeSubHeadingListStart
+	\resumeProjectHeading
+	{\textbf{UPenn Math Teaching Assistant}\vspace{1pt} $|$ \footnotesize\emph{Teaching Assistant}}{September 2022 -- May 2025}
+	\resumeItemListStart
+	\resumeItem{Responsible for grading assignments/exams, weekly office hours, administering weekly quizzes and recitations}
+	\resumeItem{Classes included: Calculus II (x2), Honors Calculus I, Honors Calculus II, Abstract Linear Algebra}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Ross Mathematics Program} $|$ \footnotesize\emph{Administrator}\vspace{1pt}}{Summer 2024}
+	\resumeItemListStart
+	\resumeItem{Was an administrator during the 6-week math camp for $\sim$80 high schoolers, $\sim$12 counselors, $\sim$5 professors}
+	\resumeItem{Handled various organizational tasks, coordinating social events for the students, and preparing various mathematical talks, including an week-long introduction to point set topology talk series}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{AwesomeMath Summer Program}\vspace{1pt} $|$ \footnotesize\emph{Teaching Assistant}}{Summer 2022/Summer 2023/Summer 2025}
+	\resumeItemListStart
+	\resumeItem{Was a TA for multiple summers. Did 2 courses per each 3-week session for 9 weeks each summer}
+	\resumeItem{Hosted problem sessions and graded daily HW for classes between 10-30 students}
+	\resumeItem{Taught primarily combinatorics I/II, algebra III/IV, and number theory III/IV. See details}
+	\href{https://www.awesomemath.org/wp-pdf-files/amsp/amsp_course_catalog_2024_v1.pdf#zoom=150}{\hspace{-0.35cm}\underline{here}}
+	\resumeItemListEnd
+	
+	\resumeSubHeadingListEnd 	
+\end{document}
