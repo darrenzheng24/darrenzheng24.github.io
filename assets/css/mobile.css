@@ -28,14 +28,14 @@
 	}
 
 	.sidebar-nav {
-		margin: 10px;
 		margin-bottom: 1em;
+		margin-top: 1em !important;
 	}
 
 	/* Adjust sidebar navigation items for mobile */
 	.sidebar-nav li {
 		display: inline-block;
-		margin: 0 10px;
+		margin: 0 14px;
 		white-space: nowrap;
 		overflow: hidden;
 		max-width: 7.5ch;
@@ -80,7 +80,7 @@
 	}
 
 	#sidebar-search-form {
-		--width-of-input: 75% !important;
+		--width-of-input: 85% !important;
 	}
 
 	/* Adjust posts list when on smaller screen */
