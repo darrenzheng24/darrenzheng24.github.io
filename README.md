@@ -8,3 +8,4 @@ TO-DO List:
 6. [ ] Add shortcodes for Theorems, Definitions, Propositions, etc.
 7. [ ] Bibtex generator in combination with footnotes
 8. [ ] Minor change: position of Copy Code button to ignore horizontal scroll
+9. [ ] Change the mobile dropdown view
