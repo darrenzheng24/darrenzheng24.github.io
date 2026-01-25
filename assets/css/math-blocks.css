@@ -77,6 +77,20 @@
   margin-left: 0.25em;
 }
 
+.math-block__number {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.math-block__number::before {
+  content: " " attr(data-number);
+}
+
+/* Hide auto counter when custom number is provided */
+.math-block--custom-number.math-block--numbered .math-block__type::after {
+  content: none;
+}
+
 .math-block__period {
   font-weight: 700;
 }
