@@ -182,3 +182,28 @@ This is a code block.
 {{< /tab >}}
 
 {{< /tabs >}}
+
+## Math Theorem Environments
+Since KaTeX does not contain the `amsmath` package's theorem/proof/proposition environments, I've designed some custom ones with CSS using a `mathblock` shortcode. There is a built-in counter with optional anchors, titles, and colors.
+
+{{< mathblock type="Theorem" name="Pythagorean">}}
+$a^{2} + b^{2} = c^{2}$
+{{</mathblock>}}
+
+{{< mathblock type="Proposition" name="Quadratic Formula">}}
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+{{</mathblock>}}
+
+{{< mathblock type="Lemma">}}
+$$\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e$$
+{{</mathblock>}}
+
+{{< mathblock type="Definition">}}
+The derivative of a function $f$ at a point $x$ is defined as:
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+{{</mathblock>}}
+
+{{< mathblock type="Corollary">}}
+$$\int_a^b f(x) \, dx = F(b) - F(a)$$
+where $F$ is an antiderivative of $f$.
+{{</mathblock>}}
