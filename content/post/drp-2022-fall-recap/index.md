@@ -32,8 +32,12 @@ First, we need to take a quick detour to define what we mean when we say that tw
 
 Naturally, as topologists, we might look to defining equivalence by homeomorphism. However, if we care about classifying knots up to homeomorphism, all knots are equivalent!
 
-Theorem 1.1 - All knots are homeomorphic.
+{{< theorem type="Theorem" name="1.1" >}}
+All knots are homeomorphic.
+{{< /theorem >}}
 
-Proof: Since being homeomorphic is an equivalence relation, it is sufficient to show that $S^{1}$ and any arbitrary knot $K$ are homeomorphic. Let $f: [0, 1] \to \text{Im} (f)$ and $g: [0, 1] \to S^{1}$.
+{{< theorem type="Proof" >}}
+Since being homeomorphic is an equivalence relation, it is sufficient to show that $S^{1}$ and any arbitrary knot $K$ are homeomorphic. Let $f: [0, 1] \to \text{Im} (f)$ and $g: [0, 1] \to S^{1}$.
+{{< /theorem >}}
 
 The above theorem shows that we need to find a weaker notion of homeomorphism.

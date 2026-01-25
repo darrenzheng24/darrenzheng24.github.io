@@ -1,0 +1,58 @@
+{{- /*
+Renders a mathematical theorem, proposition, lemma, or other statement block.
+
+@param {string} [type=Theorem] The type of statement (Theorem, Proposition, Lemma, Corollary, Definition, Remark, Example, Proof, Conjecture, Claim).
+@param {string} [name] Optional name for the theorem (e.g., "Pythagorean Theorem").
+@param {string} [label] Optional label for cross-referencing (creates an anchor).
+@param {string} [class] Additional CSS classes to add.
+
+@examples
+
+  {{< theorem >}}
+  Every continuous function on a closed interval is bounded.
+  {{< /theorem >}}
+
+  {{< theorem type="Definition" >}}
+  A topological space is **compact** if every open cover has a finite subcover.
+  {{< /theorem >}}
+
+  {{< theorem type="Theorem" name="Bolzano-Weierstrass" >}}
+  Every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence.
+  {{< /theorem >}}
+
+  {{< theorem type="Proposition" label="prop-main" >}}
+  This proposition can be referenced elsewhere using the label.
+  {{< /theorem >}}
+
+  {{< theorem type="Proof" >}}
+  We proceed by induction...
+  {{< /theorem >}}
+
+*/}}
+
+{{- /* Get arguments. */}}
+{{- $type := or (.Get "type") "Theorem" }}
+{{- $name := .Get "name" }}
+{{- $label := .Get "label" }}
+{{- $class := or (.Get "class") "" }}
+
+{{- /* Normalize type for CSS class. */}}
+{{- $typeClass := $type | lower | replaceRE "\\s+" "-" }}
+
+{{- /* Build CSS classes. */}}
+{{- $classes := slice "math-block" (printf "math-block--%s" $typeClass) }}
+{{- with $class }}
+  {{- $classes = $classes | append . }}
+{{- end }}
+
+{{- /* Render. */}}
+<div class="{{ delimit $classes " " }}"{{ with $label }} id="{{ . }}"{{ end }}>
+  <p class="math-block__header">
+    <span class="math-block__type">{{ $type }}{{ with $name }}{{ end }}</span>
+    {{- with $name }}<span class="math-block__name">({{ . }})</span>{{ end }}
+    {{- if ne (lower $type) "proof" }}<span class="math-block__period">.</span>{{ end }}
+  </p>
+  <div class="math-block__content">
+    {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+  </div>
+</div>
