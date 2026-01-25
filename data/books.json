@@ -1,0 +1,492 @@
+[
+  {
+    "title": "The Pragmatic Programmer",
+    "authors": ["David Thomas", "Andrew Hunt"],
+    "isbn": "9780135957059",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2025-06-15",
+    "dateFinished": "2025-08-20",
+    "description": "A timeless guide to software craftsmanship covering everything from personal responsibility to architectural techniques for keeping code flexible and easy to adapt."
+  },
+  {
+    "title": "Gödel, Escher, Bach",
+    "authors": ["Douglas Hofstadter"],
+    "isbn": "9780465026562",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2025-12-01",
+    "dateFinished": null,
+    "description": "An exploration of how self-reference and formal rules allow systems to acquire meaning despite being made of meaningless elements, weaving together mathematics, art, and music."
+  },
+  {
+    "title": "Structure and Interpretation of Computer Programs",
+    "authors": ["Harold Abelson", "Gerald Jay Sussman"],
+    "isbn": "9780262510875",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-11-10",
+    "dateFinished": null,
+    "description": "The classic MIT textbook that teaches the principles of programming and computational thinking using Scheme, focusing on abstraction and modularity."
+  },
+  {
+    "title": "Clean Code",
+    "authors": ["Robert C. Martin"],
+    "isbn": "9780132350884",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2025-03-01",
+    "dateFinished": "2025-05-15",
+    "description": "A handbook of agile software craftsmanship presenting best practices for writing readable, maintainable, and elegant code."
+  },
+  {
+    "title": "Introduction to Algorithms",
+    "authors": ["Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"],
+    "isbn": "9780262046305",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2025-10-20",
+    "dateFinished": null,
+    "description": "The comprehensive textbook covering a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers."
+  },
+  {
+    "title": "The Art of Computer Programming",
+    "authors": ["Donald E. Knuth"],
+    "isbn": "9780201896831",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-09-05",
+    "dateFinished": null,
+    "description": "Knuth's monumental multi-volume work covering fundamental algorithms and data structures with rigorous mathematical analysis."
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "authors": ["Martin Kleppmann"],
+    "isbn": "9781449373320",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2025-01-10",
+    "dateFinished": "2025-04-22",
+    "description": "A practical guide to the big ideas behind reliable, scalable, and maintainable data systems, covering databases, streaming, and distributed systems."
+  },
+  {
+    "title": "The Mythical Man-Month",
+    "authors": ["Frederick P. Brooks Jr."],
+    "isbn": "9780201835953",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-08-15",
+    "dateFinished": null,
+    "description": "Essays on software engineering and project management, famous for Brooks's Law: adding manpower to a late software project makes it later."
+  },
+  {
+    "title": "Code Complete",
+    "authors": ["Steve McConnell"],
+    "isbn": "9780735619678",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-11-20",
+    "dateFinished": "2025-02-28",
+    "description": "A comprehensive guide to software construction, covering code design, defensive programming, debugging, and developer productivity."
+  },
+  {
+    "title": "Refactoring",
+    "authors": ["Martin Fowler"],
+    "isbn": "9780134757599",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2026-01-05",
+    "dateFinished": null,
+    "description": "The definitive guide to improving the design of existing code through small, behavior-preserving transformations."
+  },
+  {
+    "title": "Design Patterns",
+    "authors": ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
+    "isbn": "9780201633610",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-08-10",
+    "dateFinished": "2024-12-15",
+    "description": "The classic Gang of Four book introducing 23 foundational design patterns for object-oriented software development."
+  },
+  {
+    "title": "Working Effectively with Legacy Code",
+    "authors": ["Michael Feathers"],
+    "isbn": "9780131177055",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2025-02-20",
+    "dateFinished": "2025-06-10",
+    "description": "Strategies for safely making changes to old, untested codebases, introducing techniques for adding tests and improving design."
+  },
+  {
+    "title": "Domain-Driven Design",
+    "authors": ["Eric Evans"],
+    "isbn": "9780321125217",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-07-22",
+    "dateFinished": null,
+    "description": "A comprehensive approach to software development that centers the project on an evolving model of the core business domain."
+  },
+  {
+    "title": "The Phoenix Project",
+    "authors": ["Gene Kim", "Kevin Behr", "George Spafford"],
+    "isbn": "9781942788294",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2025-04-05",
+    "dateFinished": "2025-05-20",
+    "description": "A novel about IT, DevOps, and helping your business win, following an IT manager's journey to save a critical project."
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "authors": ["Daniel Kahneman"],
+    "isbn": "9780374533557",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-06-15",
+    "dateFinished": "2024-09-30",
+    "description": "Nobel laureate Daniel Kahneman's exploration of the two systems that drive the way we think and make decisions."
+  },
+  {
+    "title": "Atomic Habits",
+    "authors": ["James Clear"],
+    "isbn": "9780735211292",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-03-10",
+    "dateFinished": "2024-04-25",
+    "description": "A practical guide to building good habits and breaking bad ones through small, incremental changes."
+  },
+  {
+    "title": "Deep Work",
+    "authors": ["Cal Newport"],
+    "isbn": "9781455586691",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-05-01",
+    "dateFinished": "2024-06-18",
+    "description": "Rules for focused success in a distracted world, arguing that deep work is becoming increasingly valuable and rare."
+  },
+  {
+    "title": "The Rust Programming Language",
+    "authors": ["Steve Klabnik", "Carol Nichols"],
+    "isbn": "9781718500440",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2025-11-15",
+    "dateFinished": null,
+    "description": "The official book on Rust, covering ownership, borrowing, lifetimes, and building safe, concurrent programs."
+  },
+  {
+    "title": "Programming Pearls",
+    "authors": ["Jon Bentley"],
+    "isbn": "9780201657883",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2025-01-25",
+    "dateFinished": "2025-03-15",
+    "description": "A collection of essays on programming techniques, algorithm design, and problem-solving approaches."
+  },
+  {
+    "title": "The Go Programming Language",
+    "authors": ["Alan Donovan", "Brian Kernighan"],
+    "isbn": "9780134190440",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-09-05",
+    "dateFinished": "2024-11-20",
+    "description": "The authoritative guide to Go programming, written by a Go team member and the co-author of The C Programming Language."
+  },
+  {
+    "title": "Eloquent JavaScript",
+    "authors": ["Marijn Haverbeke"],
+    "isbn": "9781593279509",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-02-10",
+    "dateFinished": "2024-05-15",
+    "description": "A modern introduction to programming through JavaScript, covering fundamentals, browser APIs, and Node.js."
+  },
+  {
+    "title": "You Don't Know JS Yet",
+    "authors": ["Kyle Simpson"],
+    "isbn": "9798602477429",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-10-01",
+    "dateFinished": null,
+    "description": "A deep dive into the core mechanisms of JavaScript, exploring scope, closures, prototypes, and async patterns."
+  },
+  {
+    "title": "Effective Java",
+    "authors": ["Joshua Bloch"],
+    "isbn": "9780134685991",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-06-20",
+    "dateFinished": null,
+    "description": "Best practices for Java programming from a former Java architect at Google, covering design patterns and API design."
+  },
+  {
+    "title": "Head First Design Patterns",
+    "authors": ["Eric Freeman", "Elisabeth Robson"],
+    "isbn": "9781492078005",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-07-15",
+    "dateFinished": "2024-10-05",
+    "description": "A brain-friendly guide to design patterns using visual learning techniques and engaging examples."
+  },
+  {
+    "title": "Cracking the Coding Interview",
+    "authors": ["Gayle Laakmann McDowell"],
+    "isbn": "9780984782857",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-01-05",
+    "dateFinished": "2024-04-10",
+    "description": "189 programming questions and solutions to help prepare for technical interviews at top tech companies."
+  },
+  {
+    "title": "System Design Interview",
+    "authors": ["Alex Xu"],
+    "isbn": "9798664653403",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2025-03-15",
+    "dateFinished": "2025-05-28",
+    "description": "An insider's guide to system design interviews, covering scalability, databases, caching, and distributed systems."
+  },
+  {
+    "title": "The Algorithm Design Manual",
+    "authors": ["Steven Skiena"],
+    "isbn": "9783030542559",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-12-10",
+    "dateFinished": null,
+    "description": "A practical guide to algorithm design with real-world applications, war stories, and a comprehensive catalog of algorithms."
+  },
+  {
+    "title": "Concrete Mathematics",
+    "authors": ["Ronald Graham", "Donald Knuth", "Oren Patashnik"],
+    "isbn": "9780201558029",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2025-09-20",
+    "dateFinished": null,
+    "description": "A foundation for computer science mathematics, covering sums, recurrences, number theory, and discrete probability."
+  },
+  {
+    "title": "Linear Algebra Done Right",
+    "authors": ["Sheldon Axler"],
+    "isbn": "9783319110790",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-04-20",
+    "dateFinished": "2024-08-15",
+    "description": "An elegant approach to linear algebra that emphasizes linear maps over matrices and determinants."
+  },
+  {
+    "title": "Topology",
+    "authors": ["James Munkres"],
+    "isbn": "9780131816299",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-08-05",
+    "dateFinished": null,
+    "description": "The standard undergraduate text in point-set and algebraic topology, known for its clarity and thoroughness."
+  },
+  {
+    "title": "Real Analysis",
+    "authors": ["Royden", "Fitzpatrick"],
+    "isbn": "9780131437470",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-11-25",
+    "dateFinished": null,
+    "description": "A comprehensive treatment of measure theory, integration, and functional analysis for graduate students."
+  },
+  {
+    "title": "Abstract Algebra",
+    "authors": ["David Dummit", "Richard Foote"],
+    "isbn": "9780471433347",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2025-10-15",
+    "dateFinished": null,
+    "description": "The comprehensive text covering groups, rings, modules, fields, and Galois theory with numerous examples."
+  },
+  {
+    "title": "Principles of Mathematical Analysis",
+    "authors": ["Walter Rudin"],
+    "isbn": "9780070542358",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-01-15",
+    "dateFinished": "2024-06-30",
+    "description": "Baby Rudin - the classic text for rigorous undergraduate real analysis, known for its elegant proofs."
+  },
+  {
+    "title": "A Book of Abstract Algebra",
+    "authors": ["Charles Pinter"],
+    "isbn": "9780486474175",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-08-25",
+    "dateFinished": "2024-11-10",
+    "description": "An accessible introduction to abstract algebra with clear explanations and engaging exercises."
+  },
+  {
+    "title": "The C Programming Language",
+    "authors": ["Brian Kernighan", "Dennis Ritchie"],
+    "isbn": "9780131103627",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2023-11-01",
+    "dateFinished": "2024-01-20",
+    "description": "The definitive reference for C programming by its creators, known as K&R C."
+  },
+  {
+    "title": "Computer Systems: A Programmer's Perspective",
+    "authors": ["Randal Bryant", "David O'Hallaron"],
+    "isbn": "9780134092669",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-02-15",
+    "dateFinished": "2024-07-20",
+    "description": "A deep dive into how computer systems work from a programmer's viewpoint, covering memory, linking, and optimization."
+  },
+  {
+    "title": "Operating Systems: Three Easy Pieces",
+    "authors": ["Remzi Arpaci-Dusseau", "Andrea Arpaci-Dusseau"],
+    "isbn": "9781985086593",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-06-01",
+    "dateFinished": "2024-10-15",
+    "description": "A free, accessible guide to operating systems covering virtualization, concurrency, and persistence."
+  },
+  {
+    "title": "Computer Networking: A Top-Down Approach",
+    "authors": ["James Kurose", "Keith Ross"],
+    "isbn": "9780136681557",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-07-10",
+    "dateFinished": null,
+    "description": "A modern approach to networking that starts with applications and works down to the physical layer."
+  },
+  {
+    "title": "Database System Concepts",
+    "authors": ["Abraham Silberschatz", "Henry Korth", "S. Sudarshan"],
+    "isbn": "9780078022159",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-09-15",
+    "dateFinished": null,
+    "description": "The comprehensive textbook on database design, SQL, transaction processing, and distributed databases."
+  },
+  {
+    "title": "Compilers: Principles, Techniques, and Tools",
+    "authors": ["Alfred Aho", "Monica Lam", "Ravi Sethi", "Jeffrey Ullman"],
+    "isbn": "9780321486813",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-12-05",
+    "dateFinished": null,
+    "description": "The Dragon Book - the classic reference on compiler construction covering lexing, parsing, and code generation."
+  },
+  {
+    "title": "Artificial Intelligence: A Modern Approach",
+    "authors": ["Stuart Russell", "Peter Norvig"],
+    "isbn": "9780134610993",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-10-25",
+    "dateFinished": null,
+    "description": "The definitive textbook on AI covering search, logic, probabilistic reasoning, machine learning, and robotics."
+  },
+  {
+    "title": "Deep Learning",
+    "authors": ["Ian Goodfellow", "Yoshua Bengio", "Aaron Courville"],
+    "isbn": "9780262035613",
+    "status": "reading",
+    "rating": null,
+    "dateAdded": "2025-08-20",
+    "dateFinished": null,
+    "description": "The comprehensive textbook on deep learning covering neural networks, optimization, and modern architectures."
+  },
+  {
+    "title": "Hands-On Machine Learning",
+    "authors": ["Aurélien Géron"],
+    "isbn": "9781098125974",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2025-02-10",
+    "dateFinished": "2025-07-15",
+    "description": "A practical guide to machine learning with Scikit-Learn, Keras, and TensorFlow for building intelligent systems."
+  },
+  {
+    "title": "Pattern Recognition and Machine Learning",
+    "authors": ["Christopher Bishop"],
+    "isbn": "9780387310732",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-11-05",
+    "dateFinished": null,
+    "description": "A comprehensive introduction to pattern recognition and machine learning from a Bayesian perspective."
+  },
+  {
+    "title": "The Lean Startup",
+    "authors": ["Eric Ries"],
+    "isbn": "9780307887894",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-10-10",
+    "dateFinished": "2024-12-05",
+    "description": "A methodology for developing businesses and products through validated learning and rapid iteration."
+  },
+  {
+    "title": "Zero to One",
+    "authors": ["Peter Thiel", "Blake Masters"],
+    "isbn": "9780804139298",
+    "status": "completed",
+    "rating": 4,
+    "dateAdded": "2024-11-15",
+    "dateFinished": "2024-12-20",
+    "description": "Notes on startups and how to build the future, focusing on creating new things rather than copying existing ones."
+  },
+  {
+    "title": "The Hard Thing About Hard Things",
+    "authors": ["Ben Horowitz"],
+    "isbn": "9780062273208",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-06-05",
+    "dateFinished": null,
+    "description": "Practical wisdom for managing the struggles of building a business, from a successful Silicon Valley entrepreneur."
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "authors": ["Yuval Noah Harari"],
+    "isbn": "9780062316097",
+    "status": "completed",
+    "rating": 5,
+    "dateAdded": "2024-04-01",
+    "dateFinished": "2024-06-25",
+    "description": "A sweeping narrative of human history from the emergence of Homo sapiens to the present day."
+  },
+  {
+    "title": "Homo Deus",
+    "authors": ["Yuval Noah Harari"],
+    "isbn": "9780062464316",
+    "status": "want-to-read",
+    "rating": null,
+    "dateAdded": "2025-05-15",
+    "dateFinished": null,
+    "description": "A look at humanity's future, exploring how we might gain power over famine, plague, and war."
+  }
+]

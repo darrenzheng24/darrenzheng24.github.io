@@ -1,0 +1,84 @@
+{{- /*
+  Book Card Component
+  Displays a book with cover image from Open Library API
+  Falls back to SVG placeholder on error
+  
+  Parameters:
+    - book: Book object with title, authors, isbn, status, rating
+*/ -}}
+
+{{- $book := . -}}
+{{- $title := $book.title -}}
+{{- $authors := $book.authors -}}
+{{- $authorString := delimit $authors ", " -}}
+{{- $isbn := $book.isbn -}}
+{{- $status := $book.status -}}
+{{- $rating := $book.rating | default 0 -}}
+{{- $dateFinished := $book.dateFinished -}}
+{{- $description := $book.description | default "" -}}
+
+{{- /* Generate Open Library cover URL */ -}}
+{{- $coverUrl := printf "https://covers.openlibrary.org/b/isbn/%s-M.jpg" $isbn -}}
+
+{{- /* Generate SVG placeholder */ -}}
+{{- $svgPlaceholder := partial "svg-placeholder.html" (dict "title" $title "author" $authorString) -}}
+
+{{- /* Status badge colors */ -}}
+{{- $statusClass := "" -}}
+{{- $statusLabel := "" -}}
+{{- if eq $status "reading" -}}
+  {{- $statusClass = "status-reading" -}}
+  {{- $statusLabel = "Currently Reading" -}}
+{{- else if eq $status "completed" -}}
+  {{- $statusClass = "status-completed" -}}
+  {{- $statusLabel = "Completed" -}}
+{{- else if eq $status "want-to-read" -}}
+  {{- $statusClass = "status-want-to-read" -}}
+  {{- $statusLabel = "Want to Read" -}}
+{{- end -}}
+
+<article class="book-card" 
+         data-status="{{ $status }}"
+         data-title="{{ $title }}"
+         data-author="{{ $authorString }}"
+         data-description="{{ $description }}"
+         data-cover="{{ $coverUrl }}"
+         data-rating="{{ $rating }}"
+         data-date-finished="{{ with $dateFinished }}{{ dateFormat "January 2006" . }}{{ end }}"
+         data-status-label="{{ $statusLabel }}"
+         data-status-class="{{ $statusClass }}"
+         tabindex="0"
+         role="button"
+         aria-label="View details for {{ $title }}">
+  <div class="book-cover-container">
+    <img 
+      class="book-cover" 
+      src="{{ $coverUrl }}" 
+      alt="Cover of {{ $title }}"
+      loading="lazy"
+      onerror="this.onerror=null; this.src='{{ $svgPlaceholder }}';"
+    />
+    <span class="book-status-badge {{ $statusClass }}">{{ $statusLabel }}</span>
+  </div>
+  
+  <div class="book-info">
+    <h3 class="book-title">{{ $title }}</h3>
+    <p class="book-author">{{ $authorString }}</p>
+    
+    {{- if and $rating (gt $rating 0) -}}
+    <div class="book-rating" aria-label="Rating: {{ $rating }} out of 5 stars">
+      {{- range seq 1 5 -}}
+        {{- if le . $rating -}}
+          <span class="star filled">★</span>
+        {{- else -}}
+          <span class="star">☆</span>
+        {{- end -}}
+      {{- end -}}
+    </div>
+    {{- end -}}
+    
+    {{- if $dateFinished -}}
+    <p class="book-date">Finished: {{ dateFormat "Jan 2006" $dateFinished }}</p>
+    {{- end -}}
+  </div>
+</article>

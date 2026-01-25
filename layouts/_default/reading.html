@@ -1,0 +1,205 @@
+{{ define "main" }}
+<article class="reading-list">
+  <header class="reading-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+    <div class="reading-intro">
+      {{ . }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{- $books := site.Data.books -}}
+  
+  {{- /* Group books by status */ -}}
+  {{- $reading := where $books "status" "reading" -}}
+  {{- $completed := where $books "status" "completed" -}}
+  {{- $wantToRead := where $books "status" "want-to-read" -}}
+  
+  {{- /* Stats summary */ -}}
+  <div class="reading-stats">
+    <div class="stat-item">
+      <span class="stat-number">{{ len $reading }}</span>
+      <span class="stat-label">Currently Reading</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ len $completed }}</span>
+      <span class="stat-label">Completed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ len $wantToRead }}</span>
+      <span class="stat-label">Want to Read</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{{ len $books }}</span>
+      <span class="stat-label">Total Books</span>
+    </div>
+  </div>
+
+  {{- /* Currently Reading Section */ -}}
+  {{ if $reading }}
+  <section class="book-section" id="currently-reading">
+    <h2>
+      <span class="section-icon">📖</span>
+      Currently Reading
+    </h2>
+    <div class="book-grid">
+      {{- range $reading -}}
+        {{ partial "book-card.html" . }}
+      {{- end -}}
+    </div>
+  </section>
+  {{ end }}
+
+  {{- /* Completed Section */ -}}
+  {{ if $completed }}
+  <section class="book-section" id="completed">
+    <h2>
+      <span class="section-icon">✅</span>
+      Completed
+    </h2>
+    <div class="book-grid">
+      {{- range sort $completed "dateFinished" "desc" -}}
+        {{ partial "book-card.html" . }}
+      {{- end -}}
+    </div>
+  </section>
+  {{ end }}
+
+  {{- /* Want to Read Section */ -}}
+  {{ if $wantToRead }}
+  <section class="book-section" id="want-to-read">
+    <h2>
+      <span class="section-icon">📚</span>
+      Want to Read
+    </h2>
+    <div class="book-grid">
+      {{- range sort $wantToRead "dateAdded" "desc" -}}
+        {{ partial "book-card.html" . }}
+      {{- end -}}
+    </div>
+  </section>
+  {{ end }}
+
+  {{- /* Empty state */ -}}
+  {{ if not $books }}
+  <div class="empty-state">
+    <p>No books in the reading list yet.</p>
+  </div>
+  {{ end }}
+</article>
+
+{{- /* Book Details Modal */ -}}
+<div class="book-modal-overlay" id="book-modal" aria-hidden="true">
+  <div class="book-modal" role="dialog" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close modal">&times;</button>
+    <div class="modal-content">
+      <div class="modal-cover">
+        <img id="modal-cover-img" src="" alt="" />
+        <span class="book-status-badge" id="modal-status-badge"></span>
+      </div>
+      <div class="modal-details">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <p id="modal-author" class="modal-author"></p>
+        <div id="modal-rating" class="modal-rating"></div>
+        <p id="modal-date" class="modal-date"></p>
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p id="modal-description-text"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const modal = document.getElementById('book-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalAuthor = document.getElementById('modal-author');
+  const modalCover = document.getElementById('modal-cover-img');
+  const modalRating = document.getElementById('modal-rating');
+  const modalDate = document.getElementById('modal-date');
+  const modalDescription = document.getElementById('modal-description-text');
+  const modalStatusBadge = document.getElementById('modal-status-badge');
+  const closeBtn = modal.querySelector('.modal-close');
+
+  // Generate star rating HTML
+  function generateStars(rating) {
+    if (!rating || rating === 0) return '';
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+      stars += i <= rating 
+        ? '<span class="star filled">★</span>' 
+        : '<span class="star">☆</span>';
+    }
+    return stars;
+  }
+
+  // Open modal with book data
+  function openModal(card) {
+    const title = card.dataset.title;
+    const author = card.dataset.author;
+    const cover = card.dataset.cover;
+    const rating = parseInt(card.dataset.rating) || 0;
+    const dateFinished = card.dataset.dateFinished;
+    const description = card.dataset.description;
+    const statusLabel = card.dataset.statusLabel;
+    const statusClass = card.dataset.statusClass;
+
+    modalTitle.textContent = title;
+    modalAuthor.textContent = author;
+    modalCover.src = cover;
+    modalCover.alt = 'Cover of ' + title;
+    modalRating.innerHTML = generateStars(rating);
+    modalDate.textContent = dateFinished ? 'Finished: ' + dateFinished : '';
+    modalDate.style.display = dateFinished ? 'block' : 'none';
+    modalDescription.textContent = description || 'No description available.';
+    
+    // Update status badge
+    modalStatusBadge.textContent = statusLabel;
+    modalStatusBadge.className = 'book-status-badge ' + statusClass;
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    
+    // Focus the close button for accessibility
+    closeBtn.focus();
+  }
+
+  // Close modal
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Event listeners for book cards
+  document.querySelectorAll('.book-card').forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+
+  // Close button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close on overlay click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();
+</script>
+{{ end }}
