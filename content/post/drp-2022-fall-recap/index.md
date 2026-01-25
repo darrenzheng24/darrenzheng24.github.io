@@ -32,8 +32,56 @@ First, we need to take a quick detour to define what we mean when we say that tw
 
 Naturally, as topologists, we might look to defining equivalence by homeomorphism. However, if we care about classifying knots up to homeomorphism, all knots are equivalent!
 
-Theorem 1.1 - All knots are homeomorphic.
+{{< mathblock type="Theorem" >}}
+All knots are homeomorphic.
+{{< /mathblock >}}
 
-Proof: Since being homeomorphic is an equivalence relation, it is sufficient to show that $S^{1}$ and any arbitrary knot $K$ are homeomorphic. Let $f: [0, 1] \to \text{Im} (f)$ and $g: [0, 1] \to S^{1}$.
+{{< mathblock type="Proof" >}}
+Since being homeomorphic is an equivalence relation, it is sufficient to show that $S^{1}$ and any arbitrary knot $K$ are homeomorphic. Let $f: [0, 1] \to \text{Im} (f)$ and $g: [0, 1] \to S^{1}$.
+{{< /mathblock >}}
 
 The above theorem shows that we need to find a weaker notion of homeomorphism.
+
+---
+
+## Math Block Showcase (Testing)
+
+{{< mathblock type="Definition" >}}
+Two knots $K_1$ and $K_2$ are **ambient isotopic** if there exists a continuous family of homeomorphisms $h_t: \mathbb{R}^3 \to \mathbb{R}^3$ for $t \in [0,1]$ such that $h_0 = \text{id}$ and $h_1(K_1) = K_2$.
+{{< /mathblock >}}
+
+{{< mathblock type="Theorem" name="Reidemeister" label="thm-reidemeister" >}}
+Two knot diagrams represent the same knot if and only if one can be transformed into the other by a finite sequence of Reidemeister moves.
+{{< /mathblock >}}
+
+{{< mathblock type="Proposition" >}}
+The trefoil knot is not equivalent to the unknot.
+{{< /mathblock >}}
+
+{{< mathblock type="Lemma" >}}
+If $K$ is a knot and $D$ is a diagram of $K$, then the crossing number $c(K) \leq c(D)$.
+{{< /mathblock >}}
+
+{{< mathblock type="Corollary" >}}
+The unknot is the unique knot with crossing number zero.
+{{< /mathblock >}}
+
+{{< mathblock type="Conjecture" >}}
+Every knot can be unknotted by changing at most $\frac{c(K)}{2}$ crossings.
+{{< /mathblock >}}
+
+{{< mathblock type="Claim" >}}
+The figure-eight knot is amphichiral (equivalent to its mirror image).
+{{< /mathblock >}}
+
+{{< mathblock type="Remark" >}}
+The study of knot invariants is central to distinguishing non-equivalent knots. Common invariants include the crossing number, bridge number, and various polynomial invariants.
+{{< /mathblock >}}
+
+{{< mathblock type="Example" >}}
+The trefoil knot $3_1$ has crossing number 3. Its Jones polynomial is $V(t) = t + t^3 - t^4$.
+{{< /mathblock >}}
+
+{{< mathblock type="Proof" >}}
+By [Reidemeister's Theorem](#thm-reidemeister), we can verify that no sequence of Reidemeister moves transforms the trefoil into the unknot. Alternatively, we compute their Jones polynomials and observe they differ.
+{{< /mathblock >}}

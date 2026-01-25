@@ -15,10 +15,12 @@ Falconer's Conjecture  asks if
 $$\dim{A} > \frac{n}{2} \text{ implies } \mathcal{L}^{1}(D(A)) > 0$$
 From Theorem 4.6 in [Mattila][], we already have seen that for a Borel set $A \subset \R^{n}$, we get a positive Lebesgue measure of the distance set whenever $\dim{A} > \frac{n}{2} + \frac{1}{2}$.[^1] We can address the gap in the hypothesis via the following theorem. 
 
-> **Theorem 15.1** (Wolff-Erdoğan Distance Set Theorem): Let $A \subset \R^{n}$ be a Borel set and $n \geq 2$. 
-> 
-> 1. If $\dim A > \frac{n}{2} + \frac{1}{3}$, then $\mathcal{L}^{1}(D(A)) > 0$.
-> 2. If we are in the intermediate case of $\frac{n}{2} \leq \dim{A} \leq \frac{n}{2} + \frac{1}{3}$, then $\dim{D(A)} \geq \frac{6\dim{A}+2-3n}{4}$. 
+{{< mathblock type="Theorem" number="15.1" name="Wolff-Erdoğan Distance Set Theorem" >}}
+Let $A \subset \R^{n}$ be a Borel set and $n \geq 2$. 
+
+1. If $\dim A > \frac{n}{2} + \frac{1}{3}$, then $\mathcal{L}^{1}(D(A)) > 0$.
+2. If we are in the intermediate case of $\frac{n}{2} \leq \dim{A} \leq \frac{n}{2} + \frac{1}{3}$, then $\dim{D(A)} \geq \frac{6\dim{A}+2-3n}{4}$. 
+{{< /mathblock >}} 
 
 We aim to summarize the treatment given in Chapters 15 and 16 of [Mattila][]. Further details may be found there.
 
@@ -87,9 +89,11 @@ $$\abs{L(\mu)(u)} \lesssim \gamma(n, s)^{-1} u^{s-\frac{n+1}{2}}I_{s}(\mu)$$
 
 ### Bounding via Plancherel's
 
-**Proposition 15.2** - Suppose that $\mu \in M(\R^{n})$, $n \geq 2$, $s > 0$ and $I_{s}(\mu) < \infty$. 
+{{< mathblock type="Proposition" number="15.2" >}}
+Suppose that $\mu \in M(\R^{n})$, $n \geq 2$, $s > 0$ and $I_{s}(\mu) < \infty$. 
 1. If $s > \frac{n}{2}$ and $\int_{1}^{\infty}{\sigma(\mu)(r)^{2}r^{n-1} \,dr} < \infty$ (in other words, $\Sigma(\mu) \in L^{2}(\R)$), then $\Delta(\mu) \in L^{2}(\R)$. Furthermore, $\delta(\mu) \ll \mathcal{L}^{1}$.
 2. If $0 < t < 1$, $s > \frac{n+t - 1}{2}$ and $\int_{1}^{\infty}{\sigma(\mu)(r)^{2}r^{n + t - 2} \,dr} < \infty$, then $I_{t}(\Delta(\mu)) < \infty$. 
+{{< /mathblock >}} 
 
 {{< inlineNote "Proof of (1):" >}} 
 
@@ -119,9 +123,11 @@ In particular, this means that at least for sufficiently nice $f$, these are in 
 ### Strengthening the Result
 A little bit more work gives us the following.[^2]
 
-**Proposition 15.3** - Suppose that $C$, $s$ and $t$ are positive numbers, $t \leq s$, and $\mu \in \mathcal{M}(\R^{n})$, $n \geq 2$, are chosen such that $I_{s}(\mu) < \infty$ and $\sigma(\mu)(r) \leq Cr^{-t}$ for all $r > 0$. Then,
+{{< mathblock type="Proposition" number="15.3" >}}
+Suppose that $C$, $s$ and $t$ are positive numbers, $t \leq s$, and $\mu \in \mathcal{M}(\R^{n})$, $n \geq 2$, are chosen such that $I_{s}(\mu) < \infty$ and $\sigma(\mu)(r) \leq Cr^{-t}$ for all $r > 0$. Then,
 1. If $s + t \geq n$, then $\mathcal{L^{1}(D(\text{spt}\mu))} > 0$. 
 2. If $s + t < n$, then $\dim{D(\text{spt}\mu)} \geq s + t - n + 1$
+{{< /mathblock >}}
 
 {{< inlineNote "Proof of (1):">}}
 This is relatively straightforward. We can calculate that
@@ -153,18 +159,22 @@ If we had a particular estimate, combining it with Proposition 15.3 would yield 
 
 In the early 2000's, Wolff (in $n=2$) & Erdoğan (for $n \geq 2$) proved the following.
 
-**Theorem 15.5** - For all $\frac{n-2}{2} \leq s < n$, $n \geq 2$, $\epsilon > 0$ and $\mu \in \mathcal{M}(\R^{n})$ with spt$\mu \subset B(0, 1)$, we have for $r > 1$
+{{< mathblock type="Theorem" number="15.5" >}}
+For all $\frac{n-2}{2} \leq s < n$, $n \geq 2$, $\epsilon > 0$ and $\mu \in \mathcal{M}(\R^{n})$ with spt$\mu \subset B(0, 1)$, we have for $r > 1$
 $$\sigma(\mu)(r) \leq C(n, s, \epsilon)r^{\epsilon - \frac{n + 2s - 2}{4}}I_{s}(\mu)$$
+{{< /mathblock >}}
 
 In the above bound, comparing the exponents, we get something along the lines of $\epsilon + \frac{n - 2s}{4} \leq \frac{1}{4} + \epsilon$. How do we know that this is sharp?[^3]
 
 ## Sketching How to Prove Wolff-Erdoğan in dimension 2
 We can prove an almost equivalent result.  
 
-**Theorem 16.1** - For any $s \in [\frac{n-2}{2}, n]$, $n \geq 2$, $\epsilon > 0$ and every $\mu$ with support inside $B_{1}(0)$, if we have
+{{< mathblock type="Theorem" number="16.1" >}}
+For any $s \in [\frac{n-2}{2}, n]$, $n \geq 2$, $\epsilon > 0$ and every $\mu$ with support inside $B_{1}(0)$, if we have
 $$\mu(B_{q}(x)) \leq q^{s} \text{ for all } x \in \R^{n}, q > 0$$
 , then the spherical averages satisfy
 $$\sigma(\mu)(r) \leq C(n, s, \epsilon)\mu(\R^{n})r^{\frac{n+2s-2}{4}}$$ for $r > 1$. 
+{{< /mathblock >}} 
 
 {{< inlineNote "Proof Sketch:">}}
 First, we reduce integrating over a sphere to integrating over the annuli $A_{r} = \{x \in \R^{n} \lvert r - 1 < \lvert x \rvert < r + 1\}$. We roughly have that $\sigma(\mu)(r) \approx \int_{A_{r}}{\lvert \hat{\mu}^{2} \rvert \,dr}$. By duality, this reduces to

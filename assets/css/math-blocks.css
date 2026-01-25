@@ -1,0 +1,252 @@
+/* purgecss start ignore */
+
+/* Mathematical Theorem/Proposition Blocks */
+
+/* Initialize separate counters for each type at the article/post level */
+.post {
+  counter-reset: theorem definition proposition lemma corollary conjecture claim;
+}
+
+.math-block {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--gold, #e8be33);
+  background-color: rgba(232, 190, 51, 0.08);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Each numbered type increments its own counter */
+.math-block--theorem.math-block--numbered {
+  counter-increment: theorem;
+}
+.math-block--definition.math-block--numbered {
+  counter-increment: definition;
+}
+.math-block--proposition.math-block--numbered {
+  counter-increment: proposition;
+}
+.math-block--lemma.math-block--numbered {
+  counter-increment: lemma;
+}
+.math-block--corollary.math-block--numbered {
+  counter-increment: corollary;
+}
+.math-block--conjecture.math-block--numbered {
+  counter-increment: conjecture;
+}
+.math-block--claim.math-block--numbered {
+  counter-increment: claim;
+}
+
+.math-block__header {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.math-block__type {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Display the appropriate counter for each type */
+.math-block--theorem.math-block--numbered .math-block__type::after {
+  content: " " counter(theorem);
+}
+.math-block--definition.math-block--numbered .math-block__type::after {
+  content: " " counter(definition);
+}
+.math-block--proposition.math-block--numbered .math-block__type::after {
+  content: " " counter(proposition);
+}
+.math-block--lemma.math-block--numbered .math-block__type::after {
+  content: " " counter(lemma);
+}
+.math-block--corollary.math-block--numbered .math-block__type::after {
+  content: " " counter(corollary);
+}
+.math-block--conjecture.math-block--numbered .math-block__type::after {
+  content: " " counter(conjecture);
+}
+.math-block--claim.math-block--numbered .math-block__type::after {
+  content: " " counter(claim);
+}
+
+.math-block__name {
+  font-style: italic;
+  margin-left: 0.25em;
+}
+
+.math-block__number {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.math-block__number::before {
+  content: " " attr(data-number);
+}
+
+/* Hide auto counter when custom number is provided */
+.math-block--custom-number.math-block--numbered .math-block__type::after {
+  content: none;
+}
+
+.math-block__period {
+  font-weight: 700;
+}
+
+.math-block__content {
+  margin: 0;
+}
+
+.math-block__content > *:first-child {
+  margin-top: 0;
+}
+
+.math-block__content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Definition - blue accent */
+.math-block--definition {
+  border-left-color: #4a90d9;
+  background-color: rgba(74, 144, 217, 0.08);
+}
+
+/* Theorem - gold/orange accent (default) */
+.math-block--theorem {
+  border-left-color: var(--gold, #e8be33);
+  background-color: rgba(232, 190, 51, 0.08);
+}
+
+/* Proposition - teal accent */
+.math-block--proposition {
+  border-left-color: #20a7a0;
+  background-color: rgba(32, 167, 160, 0.08);
+}
+
+/* Lemma - purple accent */
+.math-block--lemma {
+  border-left-color: #9370db;
+  background-color: rgba(147, 112, 219, 0.08);
+}
+
+/* Corollary - green accent */
+.math-block--corollary {
+  border-left-color: #5cb85c;
+  background-color: rgba(92, 184, 92, 0.08);
+}
+
+/* Conjecture - pink accent */
+.math-block--conjecture {
+  border-left-color: var(--neon-pink, #ff6ec7);
+  background-color: rgba(255, 110, 199, 0.08);
+}
+
+/* Claim - orange accent */
+.math-block--claim {
+  border-left-color: #e67e22;
+  background-color: rgba(230, 126, 34, 0.08);
+}
+
+/* Remark - gray accent */
+.math-block--remark {
+  border-left-color: #888;
+  background-color: rgba(136, 136, 136, 0.08);
+}
+
+/* Example - cyan accent */
+.math-block--example {
+  border-left-color: #17a2b8;
+  background-color: rgba(23, 162, 184, 0.08);
+}
+
+/* Proof - togglable with minimal styling and QED symbol */
+details.math-block--proof {
+  border-left-color: #666;
+  background-color: transparent;
+  border-left-width: 2px;
+  padding: 0.75rem 1.25rem;
+}
+
+details.math-block--proof > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+details.math-block--proof > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.math-block--proof > summary::before {
+  content: "▶";
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+details.math-block--proof[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details.math-block--proof .math-block__type {
+  font-style: italic;
+  font-weight: 400;
+}
+
+details.math-block--proof .math-block__content {
+  margin-top: 0.5rem;
+}
+
+details.math-block--proof .math-block__content::after {
+  content: "□";
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Dark theme adjustments */
+body.dark-theme .math-block {
+  background-color: rgba(232, 190, 51, 0.12);
+}
+
+body.dark-theme .math-block--definition {
+  background-color: rgba(74, 144, 217, 0.12);
+}
+
+body.dark-theme .math-block--proposition {
+  background-color: rgba(32, 167, 160, 0.12);
+}
+
+body.dark-theme .math-block--lemma {
+  background-color: rgba(147, 112, 219, 0.12);
+}
+
+body.dark-theme .math-block--corollary {
+  background-color: rgba(92, 184, 92, 0.12);
+}
+
+body.dark-theme .math-block--conjecture {
+  background-color: rgba(255, 110, 199, 0.12);
+}
+
+body.dark-theme .math-block--claim {
+  background-color: rgba(230, 126, 34, 0.12);
+}
+
+body.dark-theme .math-block--remark {
+  background-color: rgba(136, 136, 136, 0.12);
+}
+
+body.dark-theme .math-block--example {
+  background-color: rgba(23, 162, 184, 0.12);
+}
+
+body.dark-theme .math-block--proof {
+  background-color: transparent;
+}
+
+/* purgecss end ignore */

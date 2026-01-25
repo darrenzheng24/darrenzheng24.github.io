@@ -1,0 +1,99 @@
+{{- /*
+Renders a mathematical theorem, proposition, lemma, or other statement block.
+
+@param {string} [type=Theorem] The type of statement (Theorem, Proposition, Lemma, Corollary, Definition, Remark, Example, Proof, Conjecture, Claim).
+@param {string} [name] Optional name for the theorem (e.g., "Pythagorean Theorem").
+@param {string} [number] Optional custom number to override automatic counter (e.g., "15.1").
+@param {string} [label] Optional label for cross-referencing (creates an anchor).
+@param {string} [class] Additional CSS classes to add.
+@param {bool} [open=false] For Proof blocks, whether to show content initially (proofs are togglable by default).
+
+@examples
+
+  {{< mathblock >}}
+  Every continuous function on a closed interval is bounded.
+  {{< /mathblock >}}
+
+  {{< mathblock type="Definition" >}}
+  A topological space is **compact** if every open cover has a finite subcover.
+  {{< /mathblock >}}
+
+  {{< mathblock type="Theorem" name="Bolzano-Weierstrass" >}}
+  Every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence.
+  {{< /mathblock >}}
+
+  {{< mathblock type="Proposition" label="prop-main" >}}
+  This proposition can be referenced elsewhere using the label.
+  {{< /mathblock >}}
+
+  {{< mathblock type="Theorem" number="15.1" >}}
+  Custom numbering overrides the automatic counter.
+  {{< /mathblock >}}
+
+  {{< mathblock type="Proof" >}}
+  We proceed by induction... (collapsed by default)
+  {{< /mathblock >}}
+
+  {{< mathblock type="Proof" open=true >}}
+  This proof is expanded by default.
+  {{< /mathblock >}}
+
+*/}}
+
+{{- /* Get arguments. */}}
+{{- $type := or (.Get "type") "Theorem" }}
+{{- $name := .Get "name" }}
+{{- $number := .Get "number" }}
+{{- $label := .Get "label" }}
+{{- $class := or (.Get "class") "" }}
+{{- $open := false }}
+{{- if in (slice "false" false 0) (.Get "open") }}
+  {{- $open = false }}
+{{- else if in (slice "true" true 1) (.Get "open") }}
+  {{- $open = true }}
+{{- end }}
+{{- $isProof := eq (lower $type) "proof" }}
+
+{{- /* Determine if this type should be numbered (excludes proof, remark, example) */}}
+{{- $unnumberedTypes := slice "proof" "remark" "example" }}
+{{- $isNumbered := not (in $unnumberedTypes (lower $type)) }}
+
+{{- /* Normalize type for CSS class. */}}
+{{- $typeClass := $type | lower | replaceRE "\\s+" "-" }}
+
+{{- /* Build CSS classes. */}}
+{{- $classes := slice "math-block" (printf "math-block--%s" $typeClass) }}
+{{- if $isNumbered }}
+  {{- $classes = $classes | append "math-block--numbered" }}
+{{- end }}
+{{- if $number }}
+  {{- $classes = $classes | append "math-block--custom-number" }}
+{{- end }}
+{{- with $class }}
+  {{- $classes = $classes | append . }}
+{{- end }}
+
+{{- /* Render - proofs are togglable using details/summary. */}}
+{{- if $isProof }}
+<details class="{{ delimit $classes " " }}"{{ with $label }} id="{{ . }}"{{ end }}{{ if $open }} open{{ end }}>
+  <summary class="math-block__header">
+    <span class="math-block__type">{{ $type }}</span>
+    {{- with $number }}<span class="math-block__number" data-number="{{ . }}"></span>{{ end }}
+    {{- with $name }}<span class="math-block__name">({{ . }})</span>{{ end }}
+  </summary>
+  <div class="math-block__content">
+    {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+  </div>
+</details>
+{{- else }}
+<div class="{{ delimit $classes " " }}"{{ with $label }} id="{{ . }}"{{ end }}>
+  <p class="math-block__header">
+    <span class="math-block__type">{{ $type }}</span>
+    {{- with $number }}<span class="math-block__number" data-number="{{ . }}"></span>{{ end }}
+    {{- with $name }}<span class="math-block__name">({{ . }})</span>{{ end }}
+  </p>
+  <div class="math-block__content">
+    {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+  </div>
+</div>
+{{- end }}
