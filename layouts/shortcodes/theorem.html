@@ -5,6 +5,7 @@ Renders a mathematical theorem, proposition, lemma, or other statement block.
 @param {string} [name] Optional name for the theorem (e.g., "Pythagorean Theorem").
 @param {string} [label] Optional label for cross-referencing (creates an anchor).
 @param {string} [class] Additional CSS classes to add.
+@param {bool} [open=false] For Proof blocks, whether to show content initially (proofs are togglable by default).
 
 @examples
 
@@ -25,7 +26,11 @@ Renders a mathematical theorem, proposition, lemma, or other statement block.
   {{< /theorem >}}
 
   {{< theorem type="Proof" >}}
-  We proceed by induction...
+  We proceed by induction... (collapsed by default)
+  {{< /theorem >}}
+
+  {{< theorem type="Proof" open=true >}}
+  This proof is expanded by default.
   {{< /theorem >}}
 
 */}}
@@ -35,24 +40,49 @@ Renders a mathematical theorem, proposition, lemma, or other statement block.
 {{- $name := .Get "name" }}
 {{- $label := .Get "label" }}
 {{- $class := or (.Get "class") "" }}
+{{- $open := false }}
+{{- if in (slice "false" false 0) (.Get "open") }}
+  {{- $open = false }}
+{{- else if in (slice "true" true 1) (.Get "open") }}
+  {{- $open = true }}
+{{- end }}
+{{- $isProof := eq (lower $type) "proof" }}
+
+{{- /* Determine if this type should be numbered (excludes proof, remark, example) */}}
+{{- $unnumberedTypes := slice "proof" "remark" "example" }}
+{{- $isNumbered := not (in $unnumberedTypes (lower $type)) }}
 
 {{- /* Normalize type for CSS class. */}}
 {{- $typeClass := $type | lower | replaceRE "\\s+" "-" }}
 
 {{- /* Build CSS classes. */}}
 {{- $classes := slice "math-block" (printf "math-block--%s" $typeClass) }}
+{{- if $isNumbered }}
+  {{- $classes = $classes | append "math-block--numbered" }}
+{{- end }}
 {{- with $class }}
   {{- $classes = $classes | append . }}
 {{- end }}
 
-{{- /* Render. */}}
+{{- /* Render - proofs are togglable using details/summary. */}}
+{{- if $isProof }}
+<details class="{{ delimit $classes " " }}"{{ with $label }} id="{{ . }}"{{ end }}{{ if $open }} open{{ end }}>
+  <summary class="math-block__header">
+    <span class="math-block__type">{{ $type }}</span>
+    {{- with $name }}<span class="math-block__name">({{ . }})</span>{{ end }}
+  </summary>
+  <div class="math-block__content">
+    {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+  </div>
+</details>
+{{- else }}
 <div class="{{ delimit $classes " " }}"{{ with $label }} id="{{ . }}"{{ end }}>
   <p class="math-block__header">
-    <span class="math-block__type">{{ $type }}{{ with $name }}{{ end }}</span>
+    <span class="math-block__type">{{ $type }}</span>
     {{- with $name }}<span class="math-block__name">({{ . }})</span>{{ end }}
-    {{- if ne (lower $type) "proof" }}<span class="math-block__period">.</span>{{ end }}
   </p>
   <div class="math-block__content">
     {{- .Inner | .Page.RenderString (dict "display" "block") -}}
   </div>
 </div>
+{{- end }}

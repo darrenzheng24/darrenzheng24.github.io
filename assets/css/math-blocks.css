@@ -2,12 +2,40 @@
 
 /* Mathematical Theorem/Proposition Blocks */
 
+/* Initialize separate counters for each type at the article/post level */
+.post {
+  counter-reset: theorem definition proposition lemma corollary conjecture claim;
+}
+
 .math-block {
   margin: 1.5rem 0;
   padding: 1rem 1.25rem;
   border-left: 4px solid var(--gold, #e8be33);
   background-color: rgba(232, 190, 51, 0.08);
   border-radius: 0 4px 4px 0;
+}
+
+/* Each numbered type increments its own counter */
+.math-block--theorem.math-block--numbered {
+  counter-increment: theorem;
+}
+.math-block--definition.math-block--numbered {
+  counter-increment: definition;
+}
+.math-block--proposition.math-block--numbered {
+  counter-increment: proposition;
+}
+.math-block--lemma.math-block--numbered {
+  counter-increment: lemma;
+}
+.math-block--corollary.math-block--numbered {
+  counter-increment: corollary;
+}
+.math-block--conjecture.math-block--numbered {
+  counter-increment: conjecture;
+}
+.math-block--claim.math-block--numbered {
+  counter-increment: claim;
 }
 
 .math-block__header {
@@ -19,6 +47,29 @@
 .math-block__type {
   font-weight: 700;
   font-style: normal;
+}
+
+/* Display the appropriate counter for each type */
+.math-block--theorem.math-block--numbered .math-block__type::after {
+  content: " " counter(theorem);
+}
+.math-block--definition.math-block--numbered .math-block__type::after {
+  content: " " counter(definition);
+}
+.math-block--proposition.math-block--numbered .math-block__type::after {
+  content: " " counter(proposition);
+}
+.math-block--lemma.math-block--numbered .math-block__type::after {
+  content: " " counter(lemma);
+}
+.math-block--corollary.math-block--numbered .math-block__type::after {
+  content: " " counter(corollary);
+}
+.math-block--conjecture.math-block--numbered .math-block__type::after {
+  content: " " counter(conjecture);
+}
+.math-block--claim.math-block--numbered .math-block__type::after {
+  content: " " counter(claim);
 }
 
 .math-block__name {
@@ -96,20 +147,46 @@
   background-color: rgba(23, 162, 184, 0.08);
 }
 
-/* Proof - minimal styling with QED symbol */
-.math-block--proof {
+/* Proof - togglable with minimal styling and QED symbol */
+details.math-block--proof {
   border-left-color: #666;
   background-color: transparent;
   border-left-width: 2px;
   padding: 0.75rem 1.25rem;
 }
 
-.math-block--proof .math-block__type {
+details.math-block--proof > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+details.math-block--proof > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.math-block--proof > summary::before {
+  content: "▶";
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+details.math-block--proof[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details.math-block--proof .math-block__type {
   font-style: italic;
   font-weight: 400;
 }
 
-.math-block--proof .math-block__content::after {
+details.math-block--proof .math-block__content {
+  margin-top: 0.5rem;
+}
+
+details.math-block--proof .math-block__content::after {
   content: "□";
   display: block;
   text-align: right;
