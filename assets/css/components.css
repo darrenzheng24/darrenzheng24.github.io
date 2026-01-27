@@ -170,4 +170,36 @@ table {
   color: #FFA500;
   font-weight: bold;
 }
+
+/* Puzzle Answer Box */
+.puzzle_answer {
+  border-left: 2px solid #666;
+  background-color: rgba(102, 102, 102, 0.04);
+  border-radius: 0 4px 4px 0;
+  margin: 1em 0;
+  padding: 0.75rem 1rem;
+  box-shadow: none;
+}
+.puzzle_answer[open]::after {
+	content: "∎";
+	display: block;
+	text-align: right;
+	color: var(--text-color);
+	font-size: 1.2em;
+	margin-top: 0.5em;
+	margin-right: 0.2em;
+}
+.puzzle_answer > summary {
+	font-weight: 500;
+	color: var(--text-color);
+	cursor: pointer;
+	outline: none;
+	padding: 0.2em 0;
+	background: none;
+}
+
+.dark-theme .puzzle_answer {
+  background-color: rgba(102, 102, 102, 0.08);
+}
+
 /* purgecss end ignore */

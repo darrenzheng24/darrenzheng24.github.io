@@ -13,7 +13,7 @@ displayHomepage: true
 ---
 For Frontmatter configs, we have the following: 
 
-| Parameter | Type | Value |
+| Parameter | Type | Value (Default) |
 |-----------|-------| ------|
 | title | `string` | Title |
 | date | `YEAR-MONTH-DAYT00:00:00Z` | Date  |
@@ -23,9 +23,9 @@ For Frontmatter configs, we have the following:
 | tags | `array` | Taxonomic terms |
 | series | `string` | Whether it is part of a series of posts |
 | featuredImage | `image path` | Optional relative path to image for post |
-| readingtime | `boolean` | Whether to display reading time |
-| hidetoc | `boolean` | Whether to enable ToC for post |
-| displayHomepage | `boolean` | Whether to display on homepage |
+| readingtime | `boolean` (Default: True) | Whether to display reading time |
+| hidetoc | `boolean` (Default: False) | Whether to enable ToC for post |
+| displayHomepage | `boolean` (Default: True)| Whether to display on homepage |
 
 Below are some of the features I added for content writing. For global features, you can refer [here](/post/setting-up-a-personal-website-with-hugo/).
 
