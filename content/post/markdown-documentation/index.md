@@ -184,7 +184,7 @@ This is a code block.
 {{< /tabs >}}
 
 ## Math Theorem Environments
-Since KaTeX does not contain the `amsmath` package's theorem/proof/proposition environments, I've designed some custom ones with CSS using a `mathblock` shortcode. There is a built-in counter with optional anchors, titles, and colors.
+Since KaTeX does not contain the `amsmath` package's theorem/proof/proposition environments, I've designed some custom ones with CSS using a `mathblock` shortcode. There is a built-in counter with optional anchors, titles, and colors. The current options are theorem, proposition, lemma, corollary, definition, remark, example, proof, conjecture, and claim.
 
 {{< mathblock type="Theorem" name="Pythagorean">}}
 $a^{2} + b^{2} = c^{2}$
