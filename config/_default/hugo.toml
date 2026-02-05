@@ -45,3 +45,8 @@ cleanDestinationDir = true
   [contentTypes.'text/org']
   [contentTypes.'text/pandoc']
   [contentTypes.'text/rst']
+
+# Sitemap Settings
+[sitemap]
+  changefreq = 'weekly'
+  
