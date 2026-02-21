@@ -3,10 +3,10 @@
 % Author : Darren Zheng
 % Based on: https://github.com/jakegut/resume (which was itself based on https://github.com/sb2nov/resume)
 % License : MIT
-% Last Updated: Jan 2026
+% Last Updated: Feb 2026
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper, 11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -21,7 +21,8 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{fontawesome5}
-\usepackage[letterpaper, margin=0.5in, top=0.4in, bottom=0.4in]{geometry} % Optimized Margins
+\usepackage[letterpaper, margin=0.5in, top=0.35in, bottom=0.35in]{geometry} % Optimized Margins
+\usepackage{amsfonts}
 
 \input{glyphtounicode}
 
@@ -49,11 +50,7 @@
 \pdfgentounicode=1
 
 % -------------------- CUSTOM COMMANDS --------------------
-\newcommand{\resumeItem}[1]{
-	\item\small{
-		{#1 \vspace{-2pt}}
-	}
-}
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
 
 \newcommand{\resumeSubheading}[4]{
 	\vspace{-2pt}\item
@@ -63,48 +60,37 @@
 	\end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-	\item
-	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-		\textit{\small#1} & \textit{\small #2} \\
-	\end{tabular*}\vspace{-7pt}
-}
-
 \newcommand{\resumeProjectHeading}[2]{
-	\item
-	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-		\small#1 & #2 \\
-	\end{tabular*}\vspace{-7pt}
+	\item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\small#1 & #2 \\\end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.05in, label={}]}
 	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
 	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-10pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\setlength{\footskip}{4.08003pt}
 \begin{document}
-	% -------------------- HEADING--------------------
+	% -------------------- HEADING --------------------
 	\vspace*{-30pt}
 	\begin{center}
 		\small
 		\textbf{\Large \scshape Darren Zheng} \\ \vspace{4pt}
 		\faIcon{address-card} \href{https://darrenzheng24.github.io/}{\underline{Personal Website}} \hspace{8pt} 
 		\faIcon{envelope} \href{mailto:dzheng24@sas.upenn.edu}{\underline{dzheng24@sas.upenn.edu}} \hspace{8pt}
-		\faIcon{linkedin} \href{https://www.linkedin.com/in/darrenzheng24/}{\underline{Linkedin}}
+		\faIcon{linkedin} \href{https://www.linkedin.com/in/darrenzheng24/}{\underline{LinkedIn}}
 	\end{center}
 	
+	\vspace*{-15pt}
 	% -------------------- EDUCATION --------------------
 	\section{Education}
 	\resumeSubHeadingListStart
 	\resumeSubheading
-	{University of Pennsylvania}{Aug 2021 --- May 2025}
-	{Bachelor of Arts in Mathematics, Minor in Statistics \& Data Science, Ben Franklin Scholar}{B.A. GPA: 3.51/4.0}
+	{University of Pennsylvania}{Aug 2021 -- May 2025}
+	{B.A. in Mathematics, Minor in Statistics \& Data Science, Ben Franklin Scholar}{B.A. GPA: 3.51/4.0}
 	\resumeItemListStart
-	\resumeItem{Relevant Coursework: Data Analytics and Statistical Computing, Intro to Optimization, Corporate Finance, Abstract Probability Theory, Computer Algorithms, Stochastic Processes, Partial Differential Equations}
+	\resumeItem{Relevant Coursework: Data Science in Python, Statistical Computing with R, Optimization, Computer Algorithms, Corporate Finance, Probability Theory, Stochastic Processes, Statistical Inference, Partial Differential Equations}
 	\resumeItemListEnd
 	\resumeSubHeadingListEnd
 	
@@ -112,95 +98,97 @@
 	\section{Projects}
 	\resumeSubHeadingListStart
 	\resumeProjectHeading
-	{\textbf{Undergraduate Honor's Thesis} $|$ \href{https://darrenzheng24.github.io/projects/papers/INTRINSIC\%20MORSE\%20FUNCTIONS\%20ON\%20GRASSMANNIANS.pdf}{\underline{\footnotesize\emph{Link to PDF}}}}{June 2024 --- May 2025}
+	{\textbf{Undergraduate Honor's Thesis}}{June 2024 -- May 2025}
 	\resumeItemListStart
-	\resumeItem{Constructed intrinsic Morse functions on Grassmannian manifolds to compute its Morse homology under Prof. Dennis DeTurck}
+	\resumeItem{Constructed intrinsic Morse functions on Grassmannian manifolds $G_{k}(\mathbb{R}^{4})$ to compute singular homology groups}
 	\resumeItemListEnd
 	
 	\resumeProjectHeading
-	{\textbf{Directed Reading Program} $|$ \href{https://darrenzheng24.github.io/projects/}{\underline{\footnotesize\emph{Link to Presentations}}}}{Aug 2022 --- May 2025}
+	{\textbf{Directed Reading Program}}{Aug 2022 -- May 2025}
 	\resumeItemListStart
-	\resumeItem{Semester-long independent study with a graduate student. Prepared a presentation/write-up at the end of each semester to rest of participants and mentors}
-	\resumeItem{Topics: Classification of Hyperbolic Knots, Generating Functions, Pontryagin Duality, Brownian Motion, Erdős Set Distance Problem, Falconer's Conjecture, Mapping Class Groups}
+	\resumeItem{Engaged in independent study across 6 semesters, covering knot theory, generating functions, Brownian motion, stochastic calculus, additive combinatorics, Falconer's conjecture, and mapping class groups}
+	\resumeItem{Prepared expository write-ups and delivered presentations to the Mathematics Department, translating abstract concepts to a diverse audience of students and professors}
 	\resumeItemListEnd
 	
 	\resumeProjectHeading
-	{\textbf{EWS Detection using Topological Data Analysis} $|$ \href{https://darrenzheng24.github.io/projects/class-projects/Final\%20Report.pdf}{\underline{\footnotesize\emph{Link to PDF}}}}{Jan 2024 --- Apr 2024}
+	{\textbf{Detecting Warning Signals of Financial Collapse using Topological Data Analysis}}{Jan 2024 -- Apr 2024}
 	\resumeItemListStart
-	\resumeItem{Applied a proposed persistent-homology-based methodology from a paper by Gidea \& Katz in Python \& R to study the time-series of certain stock market indicators as potential early warning signs of market collapse}
+	\resumeItem{Applied persistent homology techniques to time-series data to develop early warning signals for market crashes}
+	\resumeItem{Implemented Python pipeline (\texttt{scikit-tda}, \texttt{risper}, \texttt{persim}) to transform historic stock index data into persistence landscapes for sliding window analysis}
+	\resumeItem{Conducted statistical validation using Mann-Kendall test to analyze significance of methodology}
 	\resumeItemListEnd
 	\resumeSubHeadingListEnd
 	
 	% -------------------- EXPERIENCE --------------------
+	\section{Experience}
+	\resumeSubHeadingListStart
+	
+	\resumeProjectHeading
+	{\textbf{Private Competitive Mathematics Coaching} $|$ \footnotesize\emph{Tutor}}{May 2025 -- Present}
+	\resumeItemListStart
+	\resumeItem{Guide 14 students with individualized training for math contests, such as AIME, USAMO, and MathCounts}
+	\resumeItem{Prepare personalized problem sets \& mock exams to target technical gaps based on past student performance}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{University of Pennsylvania Math Department} $|$ \footnotesize\emph{Teaching Assistant}}{Aug 2022 -- May 2025}
+	\resumeItemListStart
+	\resumeItem{Developed and delivered weekly recitations for various proof-based calculus and linear algebra courses}
+	\resumeItem{Graded homework/exams, providing feedback on proof-writing; Received 2 Departmental teaching awards}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Ross Mathematics Program} $|$ \footnotesize\emph{Administrator}}{June 2024 -- July 2024}
+	\resumeItemListStart
+	\resumeItem{Managed operations for a 6-week residential summer math camp for $\sim\!80$ high schoolers and $\sim\!20$ instructional staff}
+	\resumeItem{Scheduled social and educational programming to minimize time conflicts, coordinating with the host university}
+	\resumeItem{Presented some mathematical talks, involving formal logic, algebraic and point-set topology to advanced students}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{AwesomeMath Summer Program} $|$ \footnotesize\emph{Teaching Assistant}}{June - Aug 2022/2023/2025}
+	\resumeItemListStart
+	\resumeItem{Instructed six 3-week-long courses of $\sim\!15$-$30$ participants, facilitating problem sessions and active learning}
+	\resumeItem{Taught primarily number theory, combinatorics, and abstract algebra}
+	\resumeItemListEnd
+	\resumeSubHeadingListEnd 
+	% -------------------- ACTIVITIES --------------------
 	\section{Activities}
 	\resumeSubHeadingListStart
 	\resumeProjectHeading
-	{\textbf{Penn Math Contest Club} $|$ \footnotesize\emph{Co-founder \& President}}{Aug 2021 --- May 2025}
+	{\textbf{Penn Math Contest Club} $|$ \footnotesize\emph{Co-founder \& President}}{Aug 2021 -- May 2025}
 	\resumeItemListStart
-	\resumeItem{Co-founded new club during freshmen year, focused on hosting a math contest for high schoolers}
-	\resumeItem{Helped write and quality-check $\sim$120 original problems per year for the test, organized day-of logistics, operated social outreach with local schools, secured funding from sponsors, and wrote handbooks for future organizers}
-	\resumeItem{Grew club from 40 participants (online due to COVID) to $\sim$150 in-person and $\sim$220 online participants in Spring 2025; \href{https://sites.google.com/view/pennmathcontest/home}{\underline{\footnotesize\emph{More details on website here}}}}
+	\resumeItem{Established a new student club that organizes an on-campus high-school mathematics contest with original problems}
+	\resumeItem{Planned event logistics, coordinating with campus facilities \& training $\sim\!30$ club members/volunteers; Secured corporate sponsorships to offset operational expenses. Created material for future leadership}
+	\resumeItem{Grew from $\sim\!40$ online participants (COVID) to $\sim\!380$ participants in Spring 2025 through outreach to schools}
 	\resumeItemListEnd
 	
 	\resumeProjectHeading
-	{\textbf{Penn Undergraduate Math Society} $|$ \footnotesize\emph{President}}{Jan 2021 --- May 2025}
+	{\textbf{Penn Undergraduate Math Society} $|$ \footnotesize\emph{President}}{Jan 2024 -- May 2025}
 	\resumeItemListStart
-	\resumeItem{Joined board as freshmen liaison, president during senior year. Ran events for all math-adjacent undergraduates}
-	\resumeItem{Events include: Course \& Major Advising, Graduate Student Talks, Integration Bee, Department Merch Sale, Alumni Career Insights, Weekly Office Hours, DRP × PUMS Mini-Talks, Faculty Lunches, Industry Panels}
+	\resumeItem{Led Penn's undergraduate math club, directing a board of $\sim\!10$ to support math-adjacent programming}
+	\resumeItem{Organized various events ($\sim\!13$ per semester), including major/course advising, research talks, integration bee, merch sale, faculty lunches, DRP x PUMS collaboration, and industry panels}
 	\resumeItemListEnd
 	
 	\resumeProjectHeading
-	{\textbf{Science Olympiad at Penn} $|$ \footnotesize\emph{Test Writer \& Event Supervisor}}{Aug 2021 --- May 2025}
+	{\textbf{Science Olympiad at Penn} $|$ \footnotesize\emph{Test Writer \& Event Supervisor}}{Aug 2021 - May 2025}
 	\resumeItemListStart
-	\resumeItem{Wrote 7 tests and acted as event supervisor across It's About Time, Fermi Problems, Optics, and Codebusters categories for high school competitors over 4 years}
-	\resumeItem{Joined finance board during 2023 --- 2024 to secure sponsorship funding for the high-school contest}
+	\resumeItem{Authored 7 state-level tests over 4 years and designed practical lab components, specializing in chronology, astronomy, cryptography, optics and Fermi estimates}
+	\resumeItem{Utilized automated rubrics and guidelines for volunteers to ensure consistent scoring across $200$+ participants}
 	\resumeItemListEnd
 	
-	\resumeProjectHeading{\textbf{Student Activities Council} $|$ \footnotesize\emph{Executive Board}}{Feb 2023 --- Dec 2024}
+	\resumeProjectHeading{\textbf{Student Activities Council} $|$ \footnotesize\emph{Executive Board}}{Feb 2023 -- Dec 2024}
 	\resumeItemListStart
-	\resumeItem{Managed the approval and allocation of a \$1.5 million budget for over 300 student groups}
-	\resumeItem{Led part of the New Group Recognition Process each fall and spearheaded improvements to club debt policies}
+	\resumeItem{Oversaw strategic allocation of an $\sim\!1.7$ million annual budget to over 300 student groups, determining budgets and representing their interests to the University administration}
+	\resumeItem{Spearheaded changes to club debt policies and interviews for the new group recognition process}
 	\resumeItemListEnd
 	
-	\resumeProjectHeading
-	{\textbf{Putnam Club}\vspace{1pt} $|$ \footnotesize\emph{Organizer}}{Aug 2021 --- Dec 2024}
-	\resumeItemListStart
-	\resumeItem{Organized club that meets weekly on Sundays in the fall to practice for the Putnam Exam}
-	\resumeItemListEnd
-	\resumeSubHeadingListEnd
 	
-	% -------------------- TEACHING --------------------
-	\section{Teaching}
-	\resumeSubHeadingListStart
-	\resumeProjectHeading
-	{\textbf{University of Pennsylvania Math Department} $|$ \footnotesize\emph{Teaching Assistant}}{Aug 2022 --- May 2025}
-	\resumeItemListStart
-	\resumeItem{Was responsible for grading assignments/exams, weekly office hours, administering weekly quizzes and recitations}
-	\resumeItem{Classes included: Calculus II (x2), Honors Calculus I, Honors Calculus II, Abstract Linear Algebra}
-	\resumeItemListEnd
-	
-	\resumeProjectHeading
-	{\textbf{Ross Mathematics Program} $|$ \footnotesize\emph{Administrator}}{June 2024 --- July 2024}
-	\resumeItemListStart
-	\resumeItem{Was an administrator during the 6-week math camp for $\sim$80 high schoolers, $\sim$12 counselors, $\sim$5 professors}
-	\resumeItem{Handled various organizational tasks, coordinating social events for the students, and preparing various mathematical talks, including an introduction to point set topology talk series}
-	\resumeItemListEnd
-	
-	\resumeProjectHeading
-	{\textbf{AwesomeMath Summer Program} $|$ \footnotesize\emph{Teaching Assistant}}{June 2022 / June 2023 / June 2025}
-	\resumeItemListStart
-	\resumeItem{Was a TA for multiple summers. Did 2 courses per each 3-week session for 9 weeks each summer}
-	\resumeItem{Hosted problem sessions and graded daily HW for classes between 10-30 students}
-	\resumeItem{Taught primarily combinatorics I/II, algebra III/IV, and number theory III/IV}
-	\resumeItemListEnd
-	\resumeSubHeadingListEnd
-	
+	\resumeSubHeadingListEnd 
 	% -------------------- SKILLS --------------------
-	\section{Skills \& Technologies}
+	\section{Technical Skills}
 	\begin{itemize}[leftmargin=0.15in, label={}]
-		\small{\item{
-				\textbf{Languages}{: Python (Numpy, Pandas), R, Matlab, Java, JavaScript, Go, \LaTeX, Excel VBA}
-		}}
-	\end{itemize}
-	
+		\small\item{\textbf{Languages}{: Python, Java, SQL, Go, JavaScript}}
+		\small\item{\textbf{Tools}{: NumPy, Pandas, \LaTeX, Excel VBA, HTML/CSS, Git}}
+	\end{itemize}	
 \end{document}
