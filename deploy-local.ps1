@@ -4,20 +4,21 @@
 #     -buildOnly    Only build the site, don't serve
 #     -drafts       Include draft posts
 #     -skipLatex    Skip LaTeX compilation
+#     -latexOnly    Only compile LaTeX files, skip Hugo build/serve
 
 param(
     [switch]$buildOnly,
     [switch]$drafts,
-    [switch]$skipLatex
+    [switch]$skipLatex,
+    [switch]$latexOnly
 )
 
 $ErrorActionPreference = "Stop"
 
 Write-Host "=== Hugo Local Deployment ===" -ForegroundColor Green
 
-Write-Host "Compiling Latex Files..." -ForegroundColor Green
 # Compile LaTeX files to PDF
-if (-not $skipLatex) {
+if ($latexOnly -or -not $skipLatex) {
     Write-Host "Compiling LaTeX files..." -ForegroundColor Yellow
     $texFiles = Get-ChildItem -Path "." -Filter "*.tex" -Recurse -ErrorAction SilentlyContinue
     foreach ($tex in $texFiles) {
@@ -34,6 +35,12 @@ if (-not $skipLatex) {
         }
         Pop-Location
     }
+}
+
+# Exit early if latex-only mode
+if ($latexOnly) {
+    Write-Host "LaTeX compilation complete!" -ForegroundColor Green
+    exit 0
 }
 
 # Clean and build
