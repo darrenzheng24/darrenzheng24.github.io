@@ -7,3 +7,4 @@ TO-DO List:
 5. [ ] Change the mobile dropdown view
 6. [ ] Refactor the color settings to be more centralized in seperate CONFIG and utilize base-classes from HYDE theme
 7. [ ] Change the quiz. Write more content.
+8. [ ] More minimalism in design? 2nd casual blog?
