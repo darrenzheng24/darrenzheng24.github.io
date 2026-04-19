@@ -8,3 +8,5 @@ TO-DO List:
 6. [ ] Refactor the color settings to be more centralized in seperate CONFIG and utilize base-classes from HYDE theme
 7. [ ] Change the quiz. Write more content.
 8. [ ] More minimalism in design? 2nd casual blog?
+9. [ ] CV update
+10. [ ] Add no AI disclaimer
