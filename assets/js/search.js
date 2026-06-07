@@ -20,7 +20,7 @@
     const titleElement = document.getElementById('search-results-title');
 
     // Update the h1 element with the italicized and bolded search query
-    titleElement.innerHTML = `Search Results for <b>${query}</b>`;
+    titleElement.innerHTML = `Search Results for <b>[${query}]</b>`;
 
     // Filter out results linking to the default "/" URL
     const filteredResults = TotalResults.filter(r => r.raw_url !== "/");
