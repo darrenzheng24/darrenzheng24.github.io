@@ -13,3 +13,4 @@ TO-DO List:
 11. [ ] Create \tags page similar to Date dropdown on homepage sidebar
 12. [ ] Update this README.md and change To-Do list to internal file
 13. [ ] separate personal blog posts through another subsite?
+14. [ ] Change desktop table of contents to have bullets?
